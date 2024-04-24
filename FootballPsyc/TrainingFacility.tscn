@@ -1,6 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://di1uay3254iau"]
+[gd_scene load_steps=22 format=3 uid="uid://di1uay3254iau"]
 
 [ext_resource type="ArrayMesh" uid="uid://cyqs6majjx1ux" path="res://Assets/Landscape/Landscape_Plane_001.res" id="1_6b7bq"]
+[ext_resource type="Texture2D" uid="uid://c6jhiid17kbd" path="res://kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="1_g2nfo"]
+[ext_resource type="PackedScene" uid="uid://bndt6catsod58" path="res://Player.tscn" id="2_e2nam"]
 [ext_resource type="ArrayMesh" uid="uid://cbladmocsiyyp" path="res://Assets/Landscape/Pitch_SM_Pitch.res" id="2_n06qv"]
 [ext_resource type="ArrayMesh" uid="uid://cer0t2d1oojn2" path="res://Assets/Assets_SM_Flag.res" id="3_ldptm"]
 [ext_resource type="ArrayMesh" uid="uid://ccnxtus7ll3y5" path="res://Assets/Assets_SM_GoalPost.res" id="4_1q71q"]
@@ -16,7 +18,33 @@
 [ext_resource type="ArrayMesh" uid="uid://lg5ug5rurxvx" path="res://Assets/Buildings/SM__House3.res" id="14_6jh6l"]
 [ext_resource type="ArrayMesh" uid="uid://7r7rtk85baks" path="res://Assets/Buildings/SM__House2.res" id="15_jy1vb"]
 
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_e76qn"]
+panorama = ExtResource("1_g2nfo")
+
+[sub_resource type="Sky" id="Sky_velgi"]
+sky_material = SubResource("PanoramaSkyMaterial_e76qn")
+
+[sub_resource type="Environment" id="Environment_ciuxy"]
+background_mode = 2
+sky = SubResource("Sky_velgi")
+
+[sub_resource type="BoxMesh" id="BoxMesh_n4j81"]
+
 [node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ciuxy")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(0.958572, -0.284852, 0, 0.159275, 0.535985, 0.829067, -0.236161, -0.79472, 0.55915, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldEnvironment"]
+transform = Transform3D(0.3, 0, 0, 0, 1.8, 0, 0, 0, 0.3, 0.207, 1.10504, 1.44)
+mesh = SubResource("BoxMesh_n4j81")
+skeleton = NodePath("../../Player")
+
+[node name="Player" parent="." instance=ExtResource("2_e2nam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.207026, 0, 1.4405)
 
 [node name="LandscapePlane001" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_6b7bq")

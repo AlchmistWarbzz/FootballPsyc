@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bndt6catsod58"]
+[gd_scene load_steps=3 format=3 uid="uid://bndt6catsod58"]
 
 [ext_resource type="Script" path="res://VRstart.gd" id="1_16504"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_gff0v"]
 
 [node name="Player" type="Node3D"]
 script = ExtResource("1_16504")
@@ -14,6 +16,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
 tracker = &"left_hand"
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/LeftHand"]
+transform = Transform3D(0.1, 0, 0, 0, 0.0787656, 0.0616115, 0, -0.0616115, 0.0787656, 0, 0, 0)
+mesh = SubResource("BoxMesh_gff0v")
+
 [node name="RightHand" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
 tracker = &"right_hand"
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="XROrigin3D/RightHand"]
+transform = Transform3D(0.1, 0, 0, 0, 0.0787656, 0.0616115, 0, -0.0616115, 0.0787656, 0, 0, 0)
+mesh = SubResource("BoxMesh_gff0v")
+skeleton = NodePath("../../LeftHand")
