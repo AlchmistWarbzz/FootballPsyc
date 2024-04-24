@@ -15,13 +15,23 @@ run/main_scene="res://TrainingFacility.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd"
+
 [dotnet]
 
 project/assembly_name="Football Psychology"
 
-[rendering]
+[editor_plugins]
 
-renderer/rendering_method="gl_compatibility"
+enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
+
+[layer_names]
+
+3d_physics/layer_1="Floor"
+3d_physics/layer_2="Player"
+3d_physics/layer_3="Ball"
 
 [xr]
 

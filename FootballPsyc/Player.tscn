@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bndt6catsod58"]
+[gd_scene load_steps=7 format=3 uid="uid://bndt6catsod58"]
 
 [ext_resource type="Script" path="res://VRstart.gd" id="1_16504"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="2_0y1ba"]
+[ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="2_ww6ra"]
+[ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="3_a6y6g"]
+[ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="4_vwq0j"]
+[ext_resource type="PackedScene" uid="uid://c78tjrtiyqna8" path="res://addons/godot-xr-tools/functions/movement_grapple.tscn" id="6_rqc0e"]
 
 [node name="Player" type="Node3D"]
 script = ExtResource("1_16504")
@@ -10,10 +15,20 @@ script = ExtResource("1_16504")
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 
+[node name="PlayerBody" parent="XROrigin3D/XRCamera3D" instance=ExtResource("2_0y1ba")]
+
 [node name="LeftHand" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
 tracker = &"left_hand"
 
+[node name="LeftHand" parent="XROrigin3D/LeftHand" instance=ExtResource("2_ww6ra")]
+
+[node name="FunctionTeleport" parent="XROrigin3D/LeftHand" instance=ExtResource("4_vwq0j")]
+
 [node name="RightHand" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
 tracker = &"right_hand"
+
+[node name="RightHand" parent="XROrigin3D/RightHand" instance=ExtResource("3_a6y6g")]
+
+[node name="MovementGrapple" parent="XROrigin3D/RightHand" instance=ExtResource("6_rqc0e")]
