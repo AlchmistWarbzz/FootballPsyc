@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://di1uay3254iau"]
+[gd_scene load_steps=24 format=3 uid="uid://di1uay3254iau"]
 
 [ext_resource type="ArrayMesh" uid="uid://cyqs6majjx1ux" path="res://Assets/Landscape/Landscape_Plane_001.res" id="1_6b7bq"]
 [ext_resource type="Texture2D" uid="uid://c6jhiid17kbd" path="res://kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="1_g2nfo"]
@@ -30,6 +30,10 @@ sky = SubResource("Sky_velgi")
 
 [sub_resource type="BoxMesh" id="BoxMesh_n4j81"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_qmp26"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xhnl2"]
+
 [node name="Node3D" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -38,20 +42,36 @@ environment = SubResource("Environment_ciuxy")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(0.958572, -0.284852, 0, 0.159275, 0.535985, 0.829067, -0.236161, -0.79472, 0.55915, 0, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldEnvironment"]
-transform = Transform3D(0.3, 0, 0, 0, 1.8, 0, 0, 0, 0.3, 0.207, 1.10504, 1.44)
+[node name="1_8m reference" type="MeshInstance3D" parent="WorldEnvironment"]
+transform = Transform3D(0.3, 0, 0, 0, 1.8, 0, 0, 0, 0.3, 1.85894, 1.10504, 0.0339384)
 mesh = SubResource("BoxMesh_n4j81")
 skeleton = NodePath("../../Player")
 
 [node name="Player" parent="." instance=ExtResource("2_e2nam")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.207026, 0, 1.4405)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-16.5254, 0, 0, 0, -0.0211296, 0, 0, 0, -22.2605, 0, 0, 0)
+mesh = SubResource("BoxMesh_qmp26")
+skeleton = NodePath("../1_8m reference2")
+
+[node name="1_8m reference2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 1.8, 0, 0, 0, 0.3, -0.551344, 1.10504, 3.38322)
+mesh = SubResource("BoxMesh_n4j81")
+skeleton = NodePath("../Player")
 
 [node name="LandscapePlane001" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_6b7bq")
 
-[node name="PitchSmPitch" type="MeshInstance3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.865229, 0)
+
+[node name="PitchSmPitch" type="MeshInstance3D" parent="StaticBody3D"]
 mesh = ExtResource("2_n06qv")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(200, 0, 0, 0, 0.1, 0, 0, 0, 200, 0, 0, 0)
+shape = SubResource("BoxShape3D_xhnl2")
 
 [node name="AssetsSmFlag" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.5, 0, 33)
