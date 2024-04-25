@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0symyqh55c5q"
-path.s3tc="res://.godot/imported/Untitled.png-c50394378411b68f417b072e9e800848.s3tc.ctex"
+uid="uid://g1fjnht7g1bm"
+path.s3tc="res://.godot/imported/Good.png-5eac3193525d884ce111173250087a48.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Import GLTF/Untitled.png"
-dest_files=["res://.godot/imported/Untitled.png-c50394378411b68f417b072e9e800848.s3tc.ctex"]
+source_file="res://UI/Sprites/Good.png"
+dest_files=["res://.godot/imported/Good.png-5eac3193525d884ce111173250087a48.s3tc.ctex"]
 
 [params]
 

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0symyqh55c5q"
-path.s3tc="res://.godot/imported/Untitled.png-c50394378411b68f417b072e9e800848.s3tc.ctex"
+uid="uid://ifqi2usxlla6"
+path.s3tc="res://.godot/imported/Block.png-0825d7688511693dfd47f40edd1fee91.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Import GLTF/Untitled.png"
-dest_files=["res://.godot/imported/Untitled.png-c50394378411b68f417b072e9e800848.s3tc.ctex"]
+source_file="res://UI/Sprites/Block.png"
+dest_files=["res://.godot/imported/Block.png-0825d7688511693dfd47f40edd1fee91.s3tc.ctex"]
 
 [params]
 
