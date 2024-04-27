@@ -25,7 +25,7 @@ project/assembly_name="Football Psychology"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg", "res://addons/godotopenxrvendors/plugin.cfg")
 
 [input]
 
@@ -40,6 +40,10 @@ Enter={
 3d_physics/layer_1="Floor"
 3d_physics/layer_2="Player"
 3d_physics/layer_3="Ball"
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true
 
 [xr]
 
