@@ -1,14 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://bndt6catsod58"]
+[gd_scene load_steps=10 format=3 uid="uid://bndt6catsod58"]
 
-[ext_resource type="Script" path="res://VRstart.gd" id="1_16504"]
+[ext_resource type="Script" path="res://main.gd" id="1_jgssp"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="2_0y1ba"]
 [ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="2_ww6ra"]
+[ext_resource type="PackedScene" path="res://addons/godot-xr-tools/misc/vr_common_shader_cache.tscn" id="3_7btmi"]
 [ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="3_a6y6g"]
 [ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="4_vwq0j"]
 [ext_resource type="PackedScene" uid="uid://c78tjrtiyqna8" path="res://addons/godot-xr-tools/functions/movement_grapple.tscn" id="6_rqc0e"]
+[ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="7_rmi6i"]
+[ext_resource type="PackedScene" uid="uid://bqumugyvkct4r" path="res://addons/godot-xr-tools/staging/loading_screen.tscn" id="9_g8wa8"]
 
 [node name="Player" type="Node3D"]
-script = ExtResource("1_16504")
+script = ExtResource("1_jgssp")
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
 
@@ -16,6 +19,8 @@ script = ExtResource("1_16504")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 
 [node name="PlayerBody" parent="XROrigin3D/XRCamera3D" instance=ExtResource("2_0y1ba")]
+
+[node name="VRCommonShaderCache" parent="XROrigin3D/XRCamera3D" instance=ExtResource("3_7btmi")]
 
 [node name="LeftHand" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
@@ -32,3 +37,7 @@ tracker = &"right_hand"
 [node name="RightHand" parent="XROrigin3D/RightHand" instance=ExtResource("3_a6y6g")]
 
 [node name="MovementGrapple" parent="XROrigin3D/RightHand" instance=ExtResource("6_rqc0e")]
+
+[node name="StartXR" parent="." instance=ExtResource("7_rmi6i")]
+
+[node name="LoadingScreen" parent="." instance=ExtResource("9_g8wa8")]
