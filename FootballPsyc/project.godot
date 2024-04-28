@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd"
+OrchestratorNodeFactory="*res://addons/orchestrator/orchestrator_node_factory.gd"
+Orchestrator="*res://addons/orchestrator/orchestrator.gd"
 
 [dotnet]
 
@@ -25,7 +27,7 @@ project/assembly_name="Football Psychology"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg", "res://addons/godotopenxrvendors/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg", "res://addons/godotopenxrvendors/plugin.cfg", "res://addons/orchestrator/plugin.cfg")
 
 [input]
 
