@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://clc5dre31iskm"]
+[gd_scene load_steps=2 format=3 uid="uid://clc5dre31iskm"]
 
 [ext_resource type="Script" path="res://addons/godot-xr-tools/xr/start_xr.gd" id="1_ljt1b"]
-[ext_resource type="ArrayMesh" uid="uid://lg5ug5rurxvx" path="res://Game Content/Assets/Buildings/SM__House3.res" id="2_4rens"]
 
 [node name="StartXR" type="Node"]
 script = ExtResource("1_ljt1b")
@@ -22,9 +21,5 @@ offset_bottom = 52.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Enter VR"
-
-[node name="SmHouse3" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11125, 0, 1.32829)
-mesh = ExtResource("2_4rens")
 
 [connection signal="pressed" from="EnterWebXR/EnterVRButton" to="." method="_on_enter_webxr_button_pressed"]
