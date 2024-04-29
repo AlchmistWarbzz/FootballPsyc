@@ -1,8 +1,9 @@
 
 FootballPsyc/android/
 
-FootballPsyc/addons/
 
 *.import
 
 *.gltf
+
+FootballPsyc/components/
