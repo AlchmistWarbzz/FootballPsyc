@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://addons/godot-xr-tools/player/player_body.gd" id="1"]
 
-[node name="lllllllllllllllllllllllllllllllllllllllllllllllllllll" type="CharacterBody3D" groups=["player_body"]]
+[node name="player_body" type="CharacterBody3D" groups=["player_body"]]
 process_priority = -100
 process_physics_priority = -100
 top_level = true

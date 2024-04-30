@@ -137,13 +137,14 @@ var _movement_providers := Array()
 var _player_height_overrides := { }
 
 # Player height override - current height
-var _player_height_override_current : float = 1.8
+var _player_height_override_current : float = 0.0
 
 # Player height override - target height
 var _player_height_override_target : float = 0.0
 
 # Player height override - enabled
-var _player_height_override_enabled : bool = true
+var _player_height_override_enabled : bool = false
+
 # Player height override - lerp between real and override
 var _player_height_override_lerp : float = 0.0
 
@@ -569,7 +570,7 @@ func _update_body_under_camera(delta : float):
 		# height so we can cast a virtual head up and probe the where we hit the
 		# ceiling.
 		var reduced_height : float = max(
-			current_height - 1.8,
+			current_height - 0.1,
 			player_radius)
 
 		# Calculate how much we want to grow to hit the target height
