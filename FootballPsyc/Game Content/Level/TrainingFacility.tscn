@@ -560,7 +560,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_xhnl2"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_ag747"]
+size = Vector3(1, 0.0682373, 1)
 
 [node name="Node3D" type="Node3D"]
 
@@ -698,16 +699,9 @@ transform = Transform3D(0.1, 0, 2.11224e-06, 0, 0.186665, 0, -1.19209e-07, 0, 1,
 sprite_frames = SubResource("SpriteFrames_bpw65")
 script = ExtResource("12_h5r7r")
 
-[node name="Pitch" type="StaticBody3D" parent="CloseUp"]
+[node name="PitchSmPitch" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.865229, 0)
-
-[node name="PitchSmPitch" type="MeshInstance3D" parent="CloseUp/Pitch"]
 mesh = ExtResource("11_nqp77")
-skeleton = NodePath("../../..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CloseUp/Pitch"]
-transform = Transform3D(200, 0, 0, 0, 0.1, 0, 0, 0, 200, 0, 0, 0)
-shape = SubResource("BoxShape3D_xhnl2")
 
 [node name="Environment" type="Node3D" parent="."]
 
@@ -806,9 +800,15 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 mesh = ExtResource("19_kebkx")
 skeleton = NodePath("../AssetsSmFloodLight7")
 
-[node name="LandscapePlane001" type="MeshInstance3D" parent="Environment"]
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="LandscapePlane001" type="MeshInstance3D" parent="StaticBody3D"]
 mesh = ExtResource("20_x47fr")
 skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(500, 0, 0, 0, 1, 0, 0, 0, 500, 0, 0.165957, 0)
+shape = SubResource("BoxShape3D_ag747")
 
 [node name="FencingBack" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 50, 0, -5)
@@ -1682,3 +1682,12 @@ modulate = Color(1, 0, 0, 1)
 texture_filter = 0
 texture = ExtResource("23_rfurd")
 script = ExtResource("24_x8fa2")
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0264266, 0.72512, -34.9257)
+
+[node name="AssetsSmFlag" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.364659, 0.258738, 0.162598)
+visible = false
+mesh = ExtResource("5_0e5ms")
+skeleton = NodePath("../..")
