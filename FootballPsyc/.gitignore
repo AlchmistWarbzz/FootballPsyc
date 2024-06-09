@@ -1,2 +1,11 @@
 # Godot 4+ specific ignores
 .godot/
+
+FootballPsyc/android/
+
+
+*.import
+
+
+
+*.tmp

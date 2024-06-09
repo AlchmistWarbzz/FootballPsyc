@@ -1,3 +1,5 @@
+# Godot 4+ specific ignores
+.godot/
 
 FootballPsyc/android/
 
@@ -5,6 +7,5 @@ FootballPsyc/android/
 *.import
 
 
-FootballPsyc/components/
 
 *.tmp
