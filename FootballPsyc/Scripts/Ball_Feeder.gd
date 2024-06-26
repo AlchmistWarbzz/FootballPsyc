@@ -31,8 +31,8 @@ func _process(_delta):
 func _on_task_manager_trial_started(is_blue_ball: bool, is_left_feeder: bool):
 	if _left_feeder == is_left_feeder:
 		instantiate_ball(is_blue_ball)
-		AudioManager.ball_feeder_launch_sfx.set_pitch_scale(1.0 - (randf() / 10.0))
-		AudioManager.ball_feeder_launch_sfx.play()
+		#AudioManager.ball_feeder_launch_sfx.set_pitch_scale(1.0 - (randf() / 10.0))
+		#AudioManager.ball_feeder_launch_sfx.play()
 
 func _on_task_manager_trial_ended():
 	if _ball != null:

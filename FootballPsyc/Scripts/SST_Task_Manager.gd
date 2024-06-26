@@ -67,7 +67,7 @@ var stop_signal_shown: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	AudioManager.ambience_sfx.play()
+	#AudioManager.ambience_sfx.play()
 	
 	reset_counters()
 	
@@ -178,10 +178,10 @@ func _process(_delta: float) -> void:
 				stop_signal_shown = true
 				
 				stop_signal.emit()
-				AudioManager.footsteps_sfx.play(0.0)
-				AudioManager.footsteps_sfx.play(3.55)
+				#AudioManager.footsteps_sfx.play(0.0)
+				#AudioManager.footsteps_sfx.play(3.55)
 			
-			if (Input.is_action_just_pressed("kick_left") or Input.is_action_just_pressed("kick_right")) and not has_responded:
+			if (Input.is_action_just_pressed("trigger_click") or Input.is_action_just_pressed("kick_right")) and not has_responded:
 				has_responded = true
 				is_trial_passed = false
 				#ball_kicked.emit($PlaceholderFixation.global_position, ball_kick_magnitude)
@@ -196,7 +196,7 @@ func _process(_delta: float) -> void:
 func scene_reset():
 	print("scene_reset")
 	
-	AudioManager.footsteps_sfx.stop()
+	##AudioManager.footsteps_sfx.stop()
 	
 	# enable ball feeders
 	#$PlaceholderBallFeederLeft/BallFeeder.process_mode = Node.PROCESS_MODE_ALWAYS

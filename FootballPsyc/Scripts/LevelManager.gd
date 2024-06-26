@@ -5,6 +5,7 @@ var trial_length : int
 var main_scene : Node3D = null
 var loaded_level : Level = null
 var task_to_load_UI : int = 0
+var keyboard: bool = false
 
 var subject_name : String = "Subject"
 

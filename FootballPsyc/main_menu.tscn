@@ -56,6 +56,7 @@ offset_right = 232.0
 offset_bottom = 476.0
 grow_horizontal = 2
 grow_vertical = 2
+toggle_mode = true
 
 [node name="Button3" type="Button" parent="TextureRect"]
 layout_mode = 1
@@ -70,6 +71,7 @@ offset_right = 750.0
 offset_bottom = 477.0
 grow_horizontal = 2
 grow_vertical = 2
+toggle_mode = true
 
 [connection signal="pressed" from="TextureRect/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="TextureRect/Button2" to="." method="_on_button_2_pressed"]
