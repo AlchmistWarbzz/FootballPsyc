@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0gg4pr11ikjn"]
+
+[ext_resource type="ArrayMesh" uid="uid://bis5nw018x4an" path="res://Assets/Props/Assets_SM_SGoalPost.res" id="1_h8agx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7ll78"]
+size = Vector3(0.5, 2.5, 2)
+
+[node name="MiniGoal" type="StaticBody3D"]
+
+[node name="GoalPostMesh" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_h8agx")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.681999, 0.731354, 0, -0.731354, 0.681999, 0, 0, 0, 1, 0.178639, 0.880559, 0)
+shape = SubResource("BoxShape3D_7ll78")

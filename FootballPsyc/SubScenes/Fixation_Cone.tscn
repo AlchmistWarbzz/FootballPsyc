@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ch6twcwku22s0"]
+
+[ext_resource type="ArrayMesh" uid="uid://d3e6ptcggdtdo" path="res://Assets/Props/Assets_SM_Cone.res" id="1_n4r3j"]
+
+[node name="FixationCone" type="MeshInstance3D"]
+mesh = ExtResource("1_n4r3j")
+skeleton = NodePath("../..")

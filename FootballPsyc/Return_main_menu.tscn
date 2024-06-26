@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpsyghfjl8hq"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_eivqs"]
+
+[node name="Return_main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eivqs")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+offset_left = 27.0
+offset_top = 20.0
+offset_right = 141.0
+offset_bottom = 59.0
+toggle_mode = true
+text = "Quit to Menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
