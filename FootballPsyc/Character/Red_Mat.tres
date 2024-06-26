@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dr26rih24gt50"]
+
+[ext_resource type="Texture2D" uid="uid://bthu4biand23f" path="res://Import GLTF/RedTeam.png" id="1_lqj2e"]
+
+[resource]
+albedo_texture = ExtResource("1_lqj2e")
