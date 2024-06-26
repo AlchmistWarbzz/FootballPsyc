@@ -37,9 +37,11 @@ tracker = &"right_hand"
 [node name="RightHand" parent="XROrigin3D/RightHand" instance=ExtResource("3_a6y6g")]
 
 [node name="FunctionPointer" parent="XROrigin3D/RightHand" instance=ExtResource("5_g4d5a")]
+show_laser = 2
 
 [node name="FunctionPickup" parent="XROrigin3D/RightHand" instance=ExtResource("5_porkx")]
 
 [node name="MovementTurn" parent="XROrigin3D/RightHand" instance=ExtResource("8_vjvi8")]
 
 [node name="player_body" parent="XROrigin3D" instance=ExtResource("2_0y1ba")]
+enabled = false
