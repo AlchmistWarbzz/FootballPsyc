@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Football Psychology"
-run/main_scene="res://Level/FootballPitchSST.tscn"
+run/main_scene="res://FootballPitchSST.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -21,6 +21,7 @@ XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd
 OrchestratorNodeFactory="*res://addons/orchestrator/orchestrator_node_factory.gd"
 Orchestrator="*res://addons/orchestrator/orchestrator.gd"
 LevelManager="*res://Scripts/LevelManager.gd"
+AudioManager="*res://Scripts/AudioManager.gd"
 
 [dotnet]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dfi240ptdepwf"]
 
-[ext_resource type="Script" path="res://Scripts/trial_rules.gd" id="1_0iudw"]
+[ext_resource type="Script" path="res://trial_rules.gd" id="1_0iudw"]
 [ext_resource type="Texture2D" uid="uid://btih0klgnh1s" path="res://UI/How To Play/stop_signal_instructions.png" id="2_kirou"]
 [ext_resource type="Texture2D" uid="uid://3cvkqwb56o2b" path="res://UI/How To Play/colour_ball_instructions.png" id="3_38lel"]
 [ext_resource type="Texture2D" uid="uid://cbnn8sglkgdly" path="res://UI/How To Play/target_digit_instructions.png" id="4_bvmi8"]
