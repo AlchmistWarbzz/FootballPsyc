@@ -1,16 +1,16 @@
-[gd_scene load_steps=108 format=3 uid="uid://di1uay3254iau"]
+[gd_scene load_steps=110 format=3 uid="uid://di1uay3254iau"]
 
-[ext_resource type="Texture2D" uid="uid://c6jhiid17kbd" path="res://Game Content/kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="1_388w3"]
+[ext_resource type="Texture2D" uid="uid://bln88jusbr2wx" path="res://Game Content/kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="1_388w3"]
 [ext_resource type="PackedScene" uid="uid://bndt6catsod58" path="res://Game Content/Player.tscn" id="2_3vou3"]
 [ext_resource type="ArrayMesh" uid="uid://dclcgxblc5lmm" path="res://Game Content/Assets/Assets_SM_Fencing.res" id="3_earvg"]
 [ext_resource type="ArrayMesh" uid="uid://dpyym3swarlva" path="res://Game Content/Assets/Landscape/SM_ENV__HedgeS.res" id="4_ppqv3"]
 [ext_resource type="ArrayMesh" uid="uid://cer0t2d1oojn2" path="res://Game Content/Assets/Assets_SM_Flag.res" id="5_0e5ms"]
 [ext_resource type="ArrayMesh" uid="uid://ccnxtus7ll3y5" path="res://Game Content/Assets/Assets_SM_GoalPost.res" id="6_ijevc"]
-[ext_resource type="Texture2D" uid="uid://b2bjtkv2ae2km" path="res://Import GLTF/M_PitchDiffuse.png" id="7_un8np"]
-[ext_resource type="Texture2D" uid="uid://bktaoime404qr" path="res://Game Content/UI/Sprites/BDS Test.png" id="8_3rb78"]
-[ext_resource type="Texture2D" uid="uid://6es00n51d3wf" path="res://Game Content/UI/Animations/Go_Trial Anim.png" id="9_i2ipb"]
+[ext_resource type="Texture2D" uid="uid://brws0gsw3kjx3" path="res://Import GLTF/M_PitchDiffuse.png" id="7_un8np"]
+[ext_resource type="Texture2D" uid="uid://bbhl33qs4t2g3" path="res://Game Content/UI/Sprites/BDS Test.png" id="8_3rb78"]
+[ext_resource type="Texture2D" uid="uid://bg0hidgpawows" path="res://Game Content/UI/Animations/Go_Trial Anim.png" id="9_i2ipb"]
 [ext_resource type="Script" path="res://Game Content/UI/Go_Trial.gd" id="10_wqiqa"]
-[ext_resource type="Texture2D" uid="uid://dnxd4g4bqpc1d" path="res://Game Content/UI/Animations/HowToPlay.jpg" id="11_5byhi"]
+[ext_resource type="Texture2D" uid="uid://c8fxredl76tpr" path="res://Game Content/UI/Animations/HowToPlay.jpg" id="11_5byhi"]
 [ext_resource type="ArrayMesh" uid="uid://cbladmocsiyyp" path="res://Game Content/Assets/Landscape/Pitch_SM_Pitch.res" id="11_nqp77"]
 [ext_resource type="ArrayMesh" uid="uid://cvu1dblv46k3f" path="res://Game Content/Assets/Landscape/SM_ENV__Dirt MountT2.res" id="12_7wpfi"]
 [ext_resource type="Script" path="res://Game Content/Level/HowToPlay.gd" id="12_h5r7r"]
@@ -22,10 +22,12 @@
 [ext_resource type="ArrayMesh" uid="uid://7r7rtk85baks" path="res://Game Content/Assets/Buildings/SM__House2.res" id="18_ba48g"]
 [ext_resource type="ArrayMesh" uid="uid://cleg55x62tpks" path="res://Game Content/Assets/Assets_SM_FloodLight.res" id="19_kebkx"]
 [ext_resource type="ArrayMesh" uid="uid://cyqs6majjx1ux" path="res://Game Content/Assets/Landscape/Landscape_Plane_001.res" id="20_x47fr"]
-[ext_resource type="ArrayMesh" uid="uid://ctlc3kbd786o3" path="res://Game Content/Assets/Landscape/SM_ENV__TreeT1.res" id="21_8ri51"]
-[ext_resource type="Texture2D" uid="uid://ifqi2usxlla6" path="res://Game Content/UI/Sprites/Block.png" id="22_i508s"]
-[ext_resource type="Texture2D" uid="uid://ob7ytgvs3mg2" path="res://Game Content/UI/Sprites/Good_Bad.png" id="23_rfurd"]
+[ext_resource type="Texture2D" uid="uid://kpk0ge45tskj" path="res://Game Content/UI/Sprites/Block.png" id="22_i508s"]
+[ext_resource type="Texture2D" uid="uid://doepgnq3arnmp" path="res://Game Content/UI/Sprites/Good_Bad.png" id="23_rfurd"]
+[ext_resource type="ArrayMesh" uid="uid://c2vfhjpfdms6g" path="res://Game Content/Assets/trees/Trees_Tree1.res" id="23_uwbmu"]
+[ext_resource type="ArrayMesh" uid="uid://cfnp6mj7ict8t" path="res://Game Content/Assets/trees/Trees_Tree2.res" id="24_euuud"]
 [ext_resource type="Script" path="res://Game Content/Scripts/VisibleTest.gd" id="24_x8fa2"]
+[ext_resource type="ArrayMesh" uid="uid://tu2r6ggg5ib4" path="res://Game Content/Assets/trees/Trees_Tree3.res" id="25_wyokc"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_e76qn"]
 panorama = ExtResource("1_388w3")
@@ -963,703 +965,703 @@ mesh = ExtResource("3_earvg")
 transform = Transform3D(0.0540788, 0, 0.998537, 0, 1, 0, -0.998537, 0, 0.0540788, 0, 0, 0)
 
 [node name="SmEnvTreeT1" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.0540789, 0, -0.998537, 0, 1, 0, 0.998537, 0, 0.0540789, -3.24473, 0.162084, -59.9122)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.304499, 0, 0.952513, 0, 1, 0, -0.952513, 0, -0.304499, -3.24473, -0.239006, -59.9122)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT2" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.77095, 0.52289, -61.411)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.326492, 0, -0.9452, 0, 1, 0, 0.9452, 0, -0.326492, -9.77095, 0.1218, -61.411)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT3" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.561232, 0, -0.82766, 0, 1, 0, 0.82766, 0, -0.561232, -16.8082, 0.516263, -59.0349)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.837624, 0, 0.546249, 0, 1, 0, -0.546249, 0, 0.837624, -16.8082, 0.115173, -59.0349)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT4" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.984891, 0, 0.173185, 0, 1, 0, -0.173185, 0, 0.984891, -23.1189, 0.914258, -60.6856)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.719037, 0, -0.694974, 0, 1, 0, 0.694974, 0, -0.719037, -23.1189, 0.513168, -60.6856)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT5" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.704041, 0, -0.710162, 0, 1, 0, 0.710162, 0, 0.704041, -29.2099, 0.567299, -60.3557)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.946036, 0, 0.324067, 0, 1, 0, -0.324067, 0, -0.946036, -29.2099, 0.166209, -60.3557)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT6" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.704042, 0, -0.710163, 0, 1, 0, 0.710163, 0, 0.704042, -35.0313, 0.128721, -57.5445)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.780618, 0, -0.625013, 0, 1, 0, 0.625013, 0, 0.780618, -35.0313, -0.272369, -57.5445)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT7" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.736785, 0, 0.676133, 0, 1, 0, -0.676133, 0, -0.736785, -41.389, 1.31247, -62.3058)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.920167, 0, -0.391535, 0, 1, 0, 0.391535, 0, 0.920167, -41.389, 0.91138, -62.3058)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT8" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.675748, 0, -0.737139, 0, 1, 0, 0.737139, 0, 0.675748, -47.1039, 2.6677, -59.2469)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.786486, 0, 0.617615, 0, 1, 0, -0.617615, 0, -0.786486, -47.1039, 2.26661, -59.2469)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT9" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.675749, 0, -0.737139, 0, 1, 0, 0.737139, 0, 0.675749, -45.3018, 0.795022, -50.9105)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.822536, 0, 0.568722, 0, 1, 0, -0.568722, 0, -0.822536, -45.3018, 0.393932, -50.9105)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT10" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.782483, 0, -0.622681, 0, 1, 0, 0.622681, 0, 0.782483, -46.6684, 0.915816, -44.4332)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.888631, 0, 0.458636, 0, 1, 0, -0.458636, 0, -0.888631, -46.6684, 0.514726, -44.4332)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT11" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.782484, 0, -0.622681, 0, 1, 0, 0.622681, 0, 0.782484, -49.1862, 1.7743, -38.8161)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.970095, 0, -0.242751, 0, 1, 0, 0.242751, 0, 0.970095, -49.1862, 1.37321, -38.8161)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT12" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.256694, 0, -0.966498, 0, 1, 0, 0.966498, 0, -0.256694, -53.0759, 2.40747, -35.3397)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.169848, 0, 0.985476, 0, 1, 0, -0.985476, 0, 0.169848, -53.0759, 2.00638, -35.3397)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT13" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.977521, 0, 0.210863, 0, 1, 0, -0.210863, 0, -0.977521, -44.2298, 0.49647, -24.4077)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.963802, 0, -0.266637, 0, 1, 0, 0.266637, 0, -0.963802, -44.2298, 0.0953803, -24.4077)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT14" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.552043, 0, 0.833821, 0, 1, 0, -0.833821, 0, -0.552043, -49.1689, 0.661931, -14.2329)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.637105, 0, -0.770782, 0, 1, 0, 0.770782, 0, 0.637105, -49.1689, 0.260841, -14.2329)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT15" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.497974, 0, -0.867198, 0, 1, 0, 0.867198, 0, -0.497974, -45.2779, -0.065783, -8.15349)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.980967, 0, 0.194203, 0, 1, 0, -0.194203, 0, 0.980967, -45.2779, -0.466873, -8.15349)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT16" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.552043, 0, 0.83382, 0, 1, 0, -0.83382, 0, -0.552043, -52.43, 1.64879, -21.5165)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(1, 0, -0.00278984, 0, 1, 0, 0.00278984, 0, 1, -52.43, 1.2477, -21.5165)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT17" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.497974, 0, -0.867198, 0, 1, 0, 0.867198, 0, -0.497974, -48.5479, -0.065783, -0.650683)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.643938, 0, -0.765084, 0, 1, 0, 0.765084, 0, -0.643938, -48.5479, -0.466873, -0.650682)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT18" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.96814, 0, 0.25043, 0, 1, 0, -0.25043, 0, -0.96814, -50.9429, -0.065783, 6.55328)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.96814, 0, 0.25043, 0, 1, 0, -0.25043, 0, -0.96814, -50.9429, -0.466873, 6.55328)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT19" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.428687, 0, 0.903458, 0, 1, 0, -0.903458, 0, -0.428687, -46.6255, -0.065783, 13.4512)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.617078, 0, -0.786908, 0, 1, 0, 0.786908, 0, -0.617078, -46.6255, -0.466873, 13.4512)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT20" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.428687, 0, 0.903458, 0, 1, 0, -0.903458, 0, -0.428687, -48.947, -0.065783, 21.3336)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.924695, 0, 0.380719, 0, 1, 0, -0.380719, 0, 0.924695, -48.947, -0.466873, 21.3336)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT21" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.428687, 0, 0.903458, 0, 1, 0, -0.903458, 0, -0.428687, -45.6648, -0.0523347, 26.6586)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.837008, 0, 0.547198, 0, 1, 0, -0.547198, 0, -0.837008, -45.6648, -0.453424, 26.6586)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT22" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.208201, 0, -0.97809, 0, 1, 0, 0.97809, 0, -0.208201, -41.7527, -0.217693, 30.7491)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.0771214, 0, -0.997025, 0, 1, 0, 0.997025, 0, 0.0771214, -41.7527, -0.618783, 30.7491)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT23" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.208201, 0, -0.97809, 0, 1, 0, 0.97809, 0, -0.208201, -46.9213, -0.217693, 43.2945)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.980299, 0, 0.197537, 0, 1, 0, -0.197537, 0, -0.980299, -46.9213, -0.618783, 43.2945)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT24" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.208201, 0, -0.978089, 0, 1, 0, 0.978089, 0, -0.208201, -40.6055, -0.217693, 49.1988)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.0803746, 0, 0.996767, 0, 1, 0, -0.996767, 0, -0.0803746, -40.6055, -0.618783, 49.1988)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT37" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.962694, 0, -0.270597, 0, 1, 0, 0.270597, 0, 0.962694, 48.8408, -0.173749, -8.00551)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.70374, 0, -0.710459, 0, 1, 0, 0.710459, 0, -0.70374, 48.8408, -0.574839, -8.00551)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT25" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.208201, 0, -0.978089, 0, 1, 0, 0.978089, 0, -0.208201, -40.0295, -0.217693, 59.8349)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.00445212, 0, -0.999993, 0, 1, 0, 0.999993, 0, 0.00445212, -40.0295, -0.618783, 59.8349)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT26" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.934331, 0, -0.356415, 0, 1, 0, 0.356415, 0, -0.934331, -30.9368, -0.217693, 59.3317)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.882334, 0, 0.47063, 0, 1, 0, -0.47063, 0, 0.882334, -30.9368, -0.618783, 59.3317)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT27" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.156489, 0, 0.987682, 0, 1, 0, -0.987682, 0, -0.156489, -22.4139, 0.558988, 60.676)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.18464, 0, -0.982808, 0, 1, 0, 0.982808, 0, 0.18464, -22.4139, 0.157898, 60.676)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT28" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.284918, 0, 0.958555, 0, 1, 0, -0.958555, 0, 0.284918, -17.5437, 0.8474, 68.5742)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.304431, 0, -0.952537, 0, 1, 0, 0.952537, 0, -0.304431, -17.5437, 0.44631, 68.5742)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT29" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.608654, 0, 0.793439, 0, 1, 0, -0.793439, 0, -0.608654, -9.1768, 0.189082, 64.2647)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.74212, 0, -0.670271, 0, 1, 0, 0.670271, 0, 0.74212, -9.1768, -0.212008, 64.2647)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT30" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.409954, 0, 0.912109, 0, 1, 0, -0.912109, 0, 0.409954, 15.5991, 1.00215, 74.2418)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.978695, 0, -0.205332, 0, 1, 0, 0.205332, 0, 0.978695, 15.5991, 0.60106, 74.2418)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT31" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.409953, 0, 0.912109, 0, 1, 0, -0.912109, 0, 0.409953, 22.809, 0.960554, 72.1838)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.991724, 0, -0.128401, 0, 1, 0, 0.128401, 0, -0.991724, 22.809, 0.559464, 72.1838)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT32" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.994667, 0, -0.103154, 0, 1, 0, 0.103154, 0, 0.994667, 33.8451, 0.577879, 74.1474)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.845675, 0, 0.533701, 0, 1, 0, -0.533701, 0, -0.845675, 33.8451, 0.176789, 74.1474)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT33" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.282373, 0, 0.959307, 0, 1, 0, -0.959307, 0, 0.282373, 43.6671, -0.125186, 14.3543)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.902059, 0, 0.431617, 0, 1, 0, -0.431617, 0, 0.902059, 43.6671, -0.526276, 14.3543)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT34" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.515087, 0, 0.85714, 0, 1, 0, -0.85714, 0, -0.515087, 50.3531, -0.0726806, 9.5181)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.136196, 0, 0.990683, 0, 1, 0, -0.990683, 0, 0.136196, 50.3531, -0.47377, 9.5181)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT35" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.494425, 0, 0.869222, 0, 1, 0, -0.869222, 0, 0.494425, 44.0432, -0.195608, 3.207)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.994427, 0, -0.105445, 0, 1, 0, 0.105445, 0, 0.994427, 44.0432, -0.596698, 3.207)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT36" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.962694, 0, -0.270598, 0, 1, 0, 0.270598, 0, 0.962694, 52.5906, -0.0933856, -2.56376)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.550848, 0, -0.834607, 0, 1, 0, 0.834607, 0, 0.550848, 52.5906, -0.494475, -2.56376)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT38" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.919368, 0, -0.3934, 0, 1, 0, 0.3934, 0, -0.919368, 44.5597, -0.173749, -13.6931)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.793207, 0, -0.608952, 0, 1, 0, 0.608952, 0, 0.793207, 44.5597, -0.574839, -13.6931)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT39" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.919368, 0, -0.3934, 0, 1, 0, 0.3934, 0, -0.919368, 39.0891, -0.173749, -17.8831)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.675516, 0, -0.737346, 0, 1, 0, 0.737346, 0, 0.675516, 39.0891, -0.574839, -17.8831)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT40" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.919368, 0, -0.3934, 0, 1, 0, 0.3934, 0, -0.919368, 59.8323, 1.07458, -34.5987)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.965713, 0, -0.259615, 0, 1, 0, 0.259615, 0, -0.965713, 59.8323, 0.67349, -34.5987)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT41" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.214892, 0, -0.976638, 0, 1, 0, 0.976638, 0, 0.214892, 51.9944, 0.457681, -38.1972)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.954855, 0, -0.297072, 0, 1, 0, 0.297072, 0, 0.954855, 51.9944, 0.0565913, -38.1972)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT42" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.788974, 0, 0.614425, 0, 1, 0, -0.614425, 0, 0.788974, 45.1457, -0.0251318, -41.9105)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.463933, 0, 0.885869, 0, 1, 0, -0.885869, 0, -0.463933, 45.1457, -0.426221, -41.9105)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT43" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.994128, 0, 0.108194, 0, 1, 0, -0.108194, 0, 0.994128, 41.3824, -0.464292, -46.3425)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.109009, 0, -0.994039, 0, 1, 0, 0.994039, 0, 0.109009, 41.3824, -0.865382, -46.3425)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT44" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.994128, 0, 0.108194, 0, 1, 0, -0.108194, 0, 0.994128, 41.9648, 0.019894, -56.5888)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.159343, 0, 0.987221, 0, 1, 0, -0.987221, 0, 0.159343, 41.9648, -0.381196, -56.5888)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT45" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.994128, 0, 0.108194, 0, 1, 0, -0.108194, 0, 0.994128, 40.6342, 1.24071, -63.8331)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.41472, 0, 0.909947, 0, 1, 0, -0.909947, 0, 0.41472, 40.6342, 0.83962, -63.8331)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT46" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.994127, 0, 0.108194, 0, 1, 0, -0.108194, 0, 0.994127, 31.1321, 0.0936459, -61.4769)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.347242, 0, -0.937772, 0, 1, 0, 0.937772, 0, -0.347242, 31.1321, -0.307444, -61.4769)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT47" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.994127, 0, 0.108194, 0, 1, 0, -0.108194, 0, 0.994127, 22.5885, -0.202222, -62.5104)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.48093, 0, -0.876756, 0, 1, 0, 0.876756, 0, 0.48093, 22.5885, -0.603312, -62.5104)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT48" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.229356, 0, -0.973339, 0, 1, 0, 0.973339, 0, 0.229356, 15.6985, -0.335705, -58.284)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.789983, 0, 0.613123, 0, 1, 0, -0.613123, 0, -0.789983, 15.6985, -0.736795, -58.284)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT49" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.245996, 0, -0.969267, 0, 1, 0, 0.969267, 0, -0.245996, 9.30029, -0.335705, -59.4524)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.351673, 0, 0.936119, 0, 1, 0, -0.936119, 0, 0.351673, 9.30029, -0.736795, -59.4524)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT50" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.67714, 0, -0.735849, 0, 1, 0, 0.735849, 0, -0.67714, 3.0345, -0.335705, -61.8226)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.773209, 0, -0.634145, 0, 1, 0, 0.634145, 0, 0.773209, 3.0345, -0.736795, -61.8226)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT51" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.675748, 0, -0.737139, 0, 1, 0, 0.737139, 0, 0.675748, -59.1118, 4.73, -52.0766)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.975826, 0, -0.21857, 0, 1, 0, 0.21857, 0, -0.975826, -59.1118, 4.32891, -52.0766)
+mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT52" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.675749, 0, -0.737138, 0, 1, 0, 0.737138, 0, 0.675749, -57.9995, 5.0052, -61.6224)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.651411, 0, 0.75873, 0, 1, 0, -0.75873, 0, 0.651411, -57.9995, 4.60411, -61.6224)
+mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT137" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.675749, 0, -0.737138, 0, 1, 0, 0.737138, 0, 0.675749, -54.4503, 6.20362, -74.9037)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.700415, 0, -0.713741, 0, 1, 0, 0.713741, 0, 0.700415, -54.4503, 5.80253, -74.9037)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT138" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.675749, 0, -0.737137, 0, 1, 0, 0.737137, 0, 0.675749, -38.7936, 0.334595, -89.2565)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.621453, 0, -0.783456, 0, 1, 0, 0.783456, 0, 0.621453, -38.7936, -0.0664947, -89.2565)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT139" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.675749, 0, -0.737137, 0, 1, 0, 0.737137, 0, 0.675749, -28.3164, 0.334595, -85.7004)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.975454, 0, -0.220219, 0, 1, 0, 0.220219, 0, 0.975454, -28.3164, -0.0664947, -85.7004)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT140" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.675749, 0, -0.737137, 0, 1, 0, 0.737137, 0, 0.675749, -11.8382, 0.37933, -100.806)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.205114, 0, -0.978742, 0, 1, 0, 0.978742, 0, 0.205114, -11.8382, -0.0217597, -100.806)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT53" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.451364, 0, 0.892346, 0, 1, 0, -0.892346, 0, -0.451364, -63.3695, 5.3227, -45.3497)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.781221, 0, 0.624264, 0, 1, 0, -0.624264, 0, -0.781221, -63.3695, 4.92161, -45.3497)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT54" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.782484, 0, -0.62268, 0, 1, 0, 0.62268, 0, 0.782484, -87.5168, 8.01433, -53.8754)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.782484, 0, -0.62268, 0, 1, 0, 0.62268, 0, 0.782484, -87.5168, 7.61324, -53.8754)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT55" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.256693, 0, -0.966498, 0, 1, 0, 0.966498, 0, -0.256693, -65.6318, 3.56394, -32.5258)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.256693, 0, -0.966498, 0, 1, 0, 0.966498, 0, -0.256693, -65.6318, 3.16285, -32.5258)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT56" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.977521, 0, 0.210863, 0, 1, 0, -0.210863, 0, -0.977521, -95.7941, 11.5539, -53.3767)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.977521, 0, 0.210863, 0, 1, 0, -0.210863, 0, -0.977521, -95.7941, 11.1528, -53.3767)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT57" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.335878, 0, 0.94191, 0, 1, 0, -0.94191, 0, 0.335878, -61.3266, 2.05441, -21.3159)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.335878, 0, 0.94191, 0, 1, 0, -0.94191, 0, 0.335878, -61.3266, 1.65332, -21.3159)
+mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT58" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.497974, 0, -0.867198, 0, 1, 0, 0.867198, 0, -0.497974, -95.4725, 5.96461, -23.3756)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.497974, 0, -0.867198, 0, 1, 0, 0.867198, 0, -0.497974, -95.4725, 5.56352, -23.3756)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT59" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.552043, 0, 0.83382, 0, 1, 0, -0.83382, 0, -0.552043, -74.3243, 1.64879, -7.02102)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.552043, 0, 0.83382, 0, 1, 0, -0.83382, 0, -0.552043, -74.3243, 1.2477, -7.02102)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT60" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.981397, 0, 0.192011, 0, 1, 0, -0.192011, 0, 0.981397, -104.239, 11.7575, -38.3359)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.981397, 0, 0.192011, 0, 1, 0, -0.192011, 0, 0.981397, -104.239, 11.3564, -38.3359)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT61" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.968139, 0, 0.250429, 0, 1, 0, -0.250429, 0, -0.968139, -68.2216, 1.72129, 4.09434)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.968139, 0, 0.250429, 0, 1, 0, -0.250429, 0, -0.968139, -68.2216, 1.3202, 4.09434)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT62" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.43081, 0, -0.902447, 0, 1, 0, 0.902447, 0, -0.43081, -70.3851, 1.61111, 14.066)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.43081, 0, -0.902447, 0, 1, 0, 0.902447, 0, -0.43081, -70.3851, 1.21002, 14.066)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT63" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.434193, 0, 0.900824, 0, 1, 0, -0.900824, 0, 0.434193, -81.8716, 4.54483, 31.7197)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.434193, 0, 0.900824, 0, 1, 0, -0.900824, 0, 0.434193, -81.8716, 4.14374, 31.7197)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT136" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.434193, 0, 0.900823, 0, 1, 0, -0.900823, 0, 0.434193, -101.569, 4.54483, 33.9924)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.434193, 0, 0.900823, 0, 1, 0, -0.900823, 0, 0.434193, -101.569, 4.14374, 33.9924)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT64" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.428687, 0, 0.903458, 0, 1, 0, -0.903458, 0, -0.428687, -70.4514, 3.18864, 35.8898)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.428687, 0, 0.903458, 0, 1, 0, -0.903458, 0, -0.428687, -70.4514, 2.78755, 35.8898)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT65" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.967893, 0, 0.25138, 0, 1, 0, -0.25138, 0, 0.967893, -97.8386, 9.58368, -44.6038)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.967893, 0, 0.25138, 0, 1, 0, -0.25138, 0, 0.967893, -97.8386, 9.18259, -44.6038)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT66" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.967892, 0, 0.25138, 0, 1, 0, -0.25138, 0, 0.967892, -109.364, 12.2998, -21.5704)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.967892, 0, 0.25138, 0, 1, 0, -0.25138, 0, 0.967892, -109.364, 11.8987, -21.5704)
+mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT67" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.967892, 0, 0.25138, 0, 1, 0, -0.25138, 0, 0.967892, -105.267, 8.80756, -5.79777)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.967892, 0, 0.25138, 0, 1, 0, -0.25138, 0, 0.967892, -105.267, 8.40647, -5.79777)
+mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT84" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.941536, 0, 0.336918, 0, 1, 0, -0.336918, 0, 0.941536, -101.541, 7.06685, -13.3373)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.941536, 0, 0.336918, 0, 1, 0, -0.336918, 0, 0.941536, -101.541, 6.66576, -13.3373)
+mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT68" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.771636, 0, 0.636069, 0, 1, 0, -0.636069, 0, 0.771636, -106.47, 7.25982, 18.2955)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.771636, 0, 0.636069, 0, 1, 0, -0.636069, 0, 0.771636, -106.47, 6.85873, 18.2955)
+mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT69" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.771636, 0, 0.636069, 0, 1, 0, -0.636069, 0, 0.771636, -109.011, 9.51147, 2.98945)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.771636, 0, 0.636069, 0, 1, 0, -0.636069, 0, 0.771636, -109.011, 9.11038, 2.98945)
+mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT70" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.675748, 0, -0.737139, 0, 1, 0, 0.737139, 0, 0.675748, 2.36622, 0.41369, -71.8384)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.675748, 0, -0.737139, 0, 1, 0, 0.737139, 0, 0.675748, 2.36622, 0.0126003, -71.8384)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT71" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.675749, 0, -0.737138, 0, 1, 0, 0.737138, 0, 0.675749, -16.585, 2.14685, -70.6549)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.675749, 0, -0.737138, 0, 1, 0, 0.737138, 0, 0.675749, -16.585, 1.74576, -70.6549)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT72" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.451364, 0, 0.892345, 0, 1, 0, -0.892345, 0, -0.451364, -37.3587, 2.5833, -68.4044)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.451364, 0, 0.892345, 0, 1, 0, -0.892345, 0, -0.451364, -37.3587, 2.18221, -68.4044)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT73" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.782484, 0, -0.622679, 0, 1, 0, 0.622679, 0, 0.782484, -6.94322, 0.260357, -79.6285)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.782484, 0, -0.622679, 0, 1, 0, 0.622679, 0, 0.782484, -6.94322, -0.140733, -79.6285)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT74" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.256693, 0, -0.966497, 0, 1, 0, 0.966497, 0, -0.256693, 7.83811, -0.0460596, -82.4751)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.256693, 0, -0.966497, 0, 1, 0, 0.966497, 0, -0.256693, 7.83811, -0.447149, -82.4751)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT75" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.977521, 0, 0.210863, 0, 1, 0, -0.210863, 0, -0.977521, 0.458596, 2.21584, -99.0416)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.977521, 0, 0.210863, 0, 1, 0, -0.210863, 0, -0.977521, 0.458596, 1.81475, -99.0416)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT76" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.335878, 0, 0.941909, 0, 1, 0, -0.941909, 0, 0.335878, 21.5479, 0.422493, -78.9037)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.335878, 0, 0.941909, 0, 1, 0, -0.941909, 0, 0.335878, 21.5479, 0.0214033, -78.9037)
+mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT77" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.675748, 0, -0.737139, 0, 1, 0, 0.737139, 0, 0.675748, 34.5448, 1.55614, -79.2507)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.675748, 0, -0.737139, 0, 1, 0, 0.737139, 0, 0.675748, 34.5448, 1.15505, -79.2507)
+mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT78" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.675749, 0, -0.737137, 0, 1, 0, 0.737137, 0, 0.675749, 22.9594, 2.74302, -109.456)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.675749, 0, -0.737137, 0, 1, 0, 0.737137, 0, 0.675749, 22.9594, 2.34193, -109.456)
+mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT79" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.451364, 0, 0.892345, 0, 1, 0, -0.892345, 0, -0.451364, 48.499, 2.5833, -83.8656)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.451364, 0, 0.892345, 0, 1, 0, -0.892345, 0, -0.451364, 48.499, 2.18221, -83.8656)
+mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT80" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.782483, 0, -0.622678, 0, 1, 0, 0.622678, 0, 0.782483, 40.0358, 3.76566, -101.895)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.782483, 0, -0.622678, 0, 1, 0, 0.622678, 0, 0.782483, 40.0358, 3.36457, -101.895)
+mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT81" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.256693, 0, -0.966497, 0, 1, 0, 0.966497, 0, -0.256693, 28.5579, 1.97083, -89.4825)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.256693, 0, -0.966497, 0, 1, 0, 0.966497, 0, -0.256693, 28.5579, 1.56974, -89.4825)
+mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT82" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.977521, 0, 0.210863, 0, 1, 0, -0.210863, 0, -0.977521, 60.3516, 4.82844, -86.1219)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.977521, 0, 0.210863, 0, 1, 0, -0.210863, 0, -0.977521, 60.3516, 4.42735, -86.1219)
+mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT83" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.977819, 0, 0.209468, 0, 1, 0, -0.209468, 0, 0.977819, 53.998, 3.62965, -66.5779)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.977819, 0, 0.209468, 0, 1, 0, -0.209468, 0, 0.977819, 53.998, 3.22856, -66.5779)
+mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT85" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.0892921, 0, -0.996008, 0, 1, 0, 0.996008, 0, -0.0892921, 56.1397, 3.57593, -56.5803)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.0892921, 0, -0.996008, 0, 1, 0, 0.996008, 0, -0.0892921, 56.1397, 3.17484, -56.5803)
+mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT86" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.0892921, 0, -0.996008, 0, 1, 0, 0.996008, 0, -0.0892921, 60.6706, 3.07625, -50.3348)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.0892921, 0, -0.996008, 0, 1, 0, 0.996008, 0, -0.0892921, 60.6706, 2.67516, -50.3348)
+mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT87" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.208337, 0, 0.978059, 0, 1, 0, -0.978059, 0, 0.208337, 67.8918, 3.36437, -44.621)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.208337, 0, 0.978059, 0, 1, 0, -0.978059, 0, 0.208337, 67.8918, 2.96328, -44.621)
+mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT88" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.208337, 0, 0.978059, 0, 1, 0, -0.978059, 0, 0.208337, 73.1579, 1.73531, -27.8425)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.208337, 0, 0.978059, 0, 1, 0, -0.978059, 0, 0.208337, 73.1579, 1.33422, -27.8425)
+mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT89" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.345182, 0, -0.938538, 0, 1, 0, 0.938538, 0, -0.345182, 70.6555, 0.614542, -16.0948)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.345182, 0, -0.938538, 0, 1, 0, 0.938538, 0, -0.345182, 70.6555, 0.213452, -16.0948)
+mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT90" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.345182, 0, -0.938538, 0, 1, 0, 0.938538, 0, -0.345182, 97.8195, 1.79016, -10.4472)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.345182, 0, -0.938538, 0, 1, 0, 0.938538, 0, -0.345182, 97.8195, 1.38907, -10.4472)
+mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT91" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.424945, 0, 0.905221, 0, 1, 0, -0.905221, 0, -0.424945, 105.125, 0.589373, 26.7378)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.424945, 0, 0.905221, 0, 1, 0, -0.905221, 0, -0.424945, 105.125, 0.188283, 26.7378)
+mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT92" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.657006, 0, 0.753887, 0, 1, 0, -0.753887, 0, 0.657006, 103.966, 0.962453, 43.4784)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.657006, 0, 0.753887, 0, 1, 0, -0.753887, 0, 0.657006, 103.966, 0.561363, 43.4784)
+mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT93" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.657005, 0, 0.753887, 0, 1, 0, -0.753887, 0, 0.657005, 114.27, 2.48332, 56.1519)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.657005, 0, 0.753887, 0, 1, 0, -0.753887, 0, 0.657005, 114.27, 2.08223, 56.1519)
+mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT94" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.657005, 0, 0.753886, 0, 1, 0, -0.753886, 0, 0.657005, 109.869, 2.05441, 61.2023)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.657005, 0, 0.753886, 0, 1, 0, -0.753886, 0, 0.657005, 109.869, 1.65332, 61.2023)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT95" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.736205, 0, -0.676758, 0, 1, 0, 0.676758, 0, 0.736205, 110.074, 2.05441, 67.0301)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.736205, 0, -0.676758, 0, 1, 0, 0.676758, 0, 0.736205, 110.074, 1.65332, 67.0301)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT96" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.327908, 0, -0.944709, 0, 1, 0, 0.944709, 0, -0.327908, 103.484, 1.38132, 69.79)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.327908, 0, -0.944709, 0, 1, 0, 0.944709, 0, -0.327908, 103.484, 0.98023, 69.79)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT97" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.989806, 0, 0.142419, 0, 1, 0, -0.142419, 0, -0.989806, 101.724, 1.38132, 76.5311)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.989806, 0, 0.142419, 0, 1, 0, -0.142419, 0, -0.989806, 101.724, 0.98023, 76.5311)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT98" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.989806, 0, 0.142419, 0, 1, 0, -0.142419, 0, -0.989806, 110.348, 3.61493, 78.7499)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.989806, 0, 0.142419, 0, 1, 0, -0.142419, 0, -0.989806, 110.348, 3.21384, 78.7499)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT99" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.989805, 0, 0.142419, 0, 1, 0, -0.142419, 0, -0.989805, 116.104, 3.69327, 73.8454)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.989805, 0, 0.142419, 0, 1, 0, -0.142419, 0, -0.989805, 116.104, 3.29218, 73.8454)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT100" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.989805, 0, 0.142419, 0, 1, 0, -0.142419, 0, -0.989805, 123.473, 3.69327, 65.0902)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.989805, 0, 0.142419, 0, 1, 0, -0.142419, 0, -0.989805, 123.473, 3.29218, 65.0902)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT101" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.657005, 0, 0.753886, 0, 1, 0, -0.753886, 0, 0.657005, 46.6808, 1.20399, 89.4623)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.657005, 0, 0.753886, 0, 1, 0, -0.753886, 0, 0.657005, 46.6808, 0.8029, 89.4623)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT112" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.991139, 0, -0.132825, 0, 1, 0, 0.132825, 0, 0.991139, 59.5193, 1.36068, 88.7136)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.991139, 0, -0.132825, 0, 1, 0, 0.132825, 0, 0.991139, 59.5193, 0.95959, 88.7136)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT102" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.657005, 0, 0.753886, 0, 1, 0, -0.753886, 0, 0.657005, 36.7294, 1.60302, 94.1195)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.657005, 0, 0.753886, 0, 1, 0, -0.753886, 0, 0.657005, 36.7294, 1.20193, 94.1195)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT103" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.736205, 0, -0.676758, 0, 1, 0, 0.676758, 0, 0.736205, 25.7123, 1.62315, 97.1911)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.736205, 0, -0.676758, 0, 1, 0, 0.676758, 0, 0.736205, 25.7123, 1.22206, 97.1911)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT104" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.327908, 0, -0.944709, 0, 1, 0, 0.944709, 0, -0.327908, 16.6998, 1.38132, 97.6398)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.327908, 0, -0.944709, 0, 1, 0, 0.944709, 0, -0.327908, 16.6998, 0.98023, 97.6398)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT105" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.989805, 0, 0.142419, 0, 1, 0, -0.142419, 0, -0.989805, 68.9008, 1.62445, 112.668)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.989805, 0, 0.142419, 0, 1, 0, -0.142419, 0, -0.989805, 68.9008, 1.22336, 112.668)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT106" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.989805, 0, 0.142419, 0, 1, 0, -0.142419, 0, -0.989805, 67.2372, 6.03506, 118.043)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.989805, 0, 0.142419, 0, 1, 0, -0.142419, 0, -0.989805, 67.2372, 5.63397, 118.043)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT107" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.989805, 0, 0.142419, 0, 1, 0, -0.142419, 0, -0.989805, 51.4238, 5.07763, 119.624)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.989805, 0, 0.142419, 0, 1, 0, -0.142419, 0, -0.989805, 51.4238, 4.67654, 119.624)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT108" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.989805, 0, 0.142419, 0, 1, 0, -0.142419, 0, -0.989805, 41.9894, 5.00128, 119.715)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.989805, 0, 0.142419, 0, 1, 0, -0.142419, 0, -0.989805, 41.9894, 4.60019, 119.715)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT109" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.989804, 0, 0.142419, 0, 1, 0, -0.142419, 0, -0.989804, 57.2448, 3.83958, 116.894)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.989804, 0, 0.142419, 0, 1, 0, -0.142419, 0, -0.989804, 57.2448, 3.43849, 116.894)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT110" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.135453, 0, 0.990782, 0, 1, 0, -0.990782, 0, 0.135453, 29.7665, 6.28168, 126.305)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.135453, 0, 0.990782, 0, 1, 0, -0.990782, 0, 0.135453, 29.7665, 5.88059, 126.305)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT111" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.135453, 0, 0.990782, 0, 1, 0, -0.990782, 0, 0.135453, 15.5517, 3.03791, 127.83)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.135453, 0, 0.990782, 0, 1, 0, -0.990782, 0, 0.135453, 15.5517, 2.63682, 127.83)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT113" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.135453, 0, 0.990782, 0, 1, 0, -0.990782, 0, 0.135453, -26.6578, 2.64873, 126.363)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.135453, 0, 0.990782, 0, 1, 0, -0.990782, 0, 0.135453, -26.6578, 2.24764, 126.363)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT114" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.135453, 0, 0.990782, 0, 1, 0, -0.990782, 0, 0.135453, -38.8984, -0.178929, 117.185)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.135453, 0, 0.990782, 0, 1, 0, -0.990782, 0, 0.135453, -38.8984, -0.580019, 117.185)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT115" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.135453, 0, 0.990782, 0, 1, 0, -0.990782, 0, 0.135453, -41.0564, 0.361207, 90.4407)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.135453, 0, 0.990782, 0, 1, 0, -0.990782, 0, 0.135453, -41.0564, -0.0398827, 90.4407)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT116" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.135453, 0, 0.990782, 0, 1, 0, -0.990782, 0, 0.135453, -61.7199, 2.63273, 124.231)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.135453, 0, 0.990782, 0, 1, 0, -0.990782, 0, 0.135453, -61.7199, 2.23164, 124.231)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT117" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.135453, 0, 0.990782, 0, 1, 0, -0.990782, 0, 0.135453, -47.191, 6.3297, 131.646)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.135453, 0, 0.990782, 0, 1, 0, -0.990782, 0, 0.135453, -47.191, 5.92861, 131.646)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT118" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.135453, 0, 0.990782, 0, 1, 0, -0.990782, 0, 0.135453, -41.3672, 7.48923, 136.816)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.226784, 0, -0.973943, 0, 1, 0, 0.973943, 0, -0.226784, -41.3672, 7.08814, 136.816)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT119" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.135453, 0, 0.990782, 0, 1, 0, -0.990782, 0, 0.135453, -31.4416, 6.79285, 133.799)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.135453, 0, 0.990782, 0, 1, 0, -0.990782, 0, 0.135453, -31.4416, 6.39176, 133.799)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT120" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.135453, 0, 0.990782, 0, 1, 0, -0.990782, 0, 0.135453, -66.7118, 4.82183, 117.824)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.135453, 0, 0.990782, 0, 1, 0, -0.990782, 0, 0.135453, -66.7118, 4.42074, 117.824)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT121" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.135453, 0, 0.990782, 0, 1, 0, -0.990782, 0, 0.135453, -64.0423, 1.20292, 106.228)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.894464, 0, 0.447136, 0, 1, 0, -0.447136, 0, 0.894464, -64.0423, 0.80183, 106.228)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT122" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.135453, 0, 0.990782, 0, 1, 0, -0.990782, 0, 0.135453, -71.2293, 0.786247, 94.2109)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.859442, 0, -0.51123, 0, 1, 0, 0.51123, 0, 0.859442, -71.2293, 0.385157, 94.2109)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT123" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.949543, 0, 0.31363, 0, 1, 0, -0.31363, 0, 0.949543, -69.6443, 1.05166, 77.8649)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.969733, 0, -0.244159, 0, 1, 0, 0.244159, 0, -0.969733, -69.6443, 0.65057, 77.8649)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT124" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(-0.832328, 0, -0.554279, 0, 1, 0, 0.554279, 0, -0.832328, -67.1976, 1.05166, 68.3314)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.921155, 0, 0.38919, 0, 1, 0, -0.38919, 0, 0.921155, -67.1976, 0.65057, 68.3314)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT125" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.634785, 0, -0.772685, 0, 1, 0, 0.772685, 0, 0.634785, -68.5456, 2.36008, 56.8343)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.62463, 0, 0.780917, 0, 1, 0, -0.780917, 0, -0.62463, -68.5456, 1.95899, 56.8343)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT126" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.634785, 0, -0.772685, 0, 1, 0, 0.772685, 0, 0.634785, -74.6988, 4.10863, 49.3444)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.62201, 0, 0.783006, 0, 1, 0, -0.783006, 0, -0.62201, -74.6988, 3.70754, 49.3444)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT127" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.135453, 0, 0.990782, 0, 1, 0, -0.990782, 0, 0.135453, -73.9816, 10.0061, 116.83)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.806235, 0, -0.591592, 0, 1, 0, 0.591592, 0, -0.806235, -73.9816, 9.60501, 116.83)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT128" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.135453, 0, 0.990782, 0, 1, 0, -0.990782, 0, 0.135453, -72.2939, 6.20962, 104.004)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.440145, 0, 0.897925, 0, 1, 0, -0.897925, 0, -0.440145, -72.2939, 5.80853, 104.004)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT129" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.62542, 0, -0.780285, 0, 1, 0, 0.780285, 0, 0.62542, -86.4428, 10.4313, 102.376)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.926047, 0, -0.377401, 0, 1, 0, 0.377401, 0, 0.926047, -86.4428, 10.0302, 102.376)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT130" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.625418, 0, -0.780283, 0, 1, 0, 0.780283, 0, 0.625418, -76.0246, 8.15705, 101.074)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.747853, 0, 0.663855, 0, 1, 0, -0.663855, 0, -0.747853, -76.0246, 7.75596, 101.074)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT131" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.625418, 0, -0.780284, 0, 1, 0, 0.780284, 0, 0.625418, -94.1412, 9.64087, 101.652)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.917876, 0, 0.396856, 0, 1, 0, -0.396856, 0, -0.917876, -94.1412, 9.23978, 101.652)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT132" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.625417, 0, -0.780283, 0, 1, 0, 0.780283, 0, 0.625417, -89.4252, 15.6908, 123.396)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.816527, 0, -0.577297, 0, 1, 0, 0.577297, 0, 0.816527, -89.4252, 15.2897, 123.396)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT135" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.625417, 0, -0.780283, 0, 1, 0, 0.780283, 0, 0.625417, -80.555, 13.8887, 119.07)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(-0.848099, 0, 0.529826, 0, 1, 0, -0.529826, 0, -0.848099, -80.555, 13.4876, 119.07)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT134" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.625417, 0, -0.780283, 0, 1, 0, 0.780283, 0, 0.625417, -94.5915, 14.329, 119.83)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.899347, 0, -0.437222, 0, 1, 0, 0.437222, 0, 0.899347, -94.5915, 13.9279, 119.83)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT133" type="MeshInstance3D" parent="Trees"]
-transform = Transform3D(0.625417, 0, -0.780283, 0, 1, 0, 0.780283, 0, 0.625417, -74.6321, 10.7404, 129.815)
-mesh = ExtResource("21_8ri51")
+transform = Transform3D(0.876394, 0, -0.481581, 0, 1, 0, 0.481581, 0, 0.876394, -74.6321, 10.3393, 129.815)
+mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="Sprite3D2" type="Sprite3D" parent="."]
