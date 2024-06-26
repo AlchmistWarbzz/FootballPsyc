@@ -1,4 +1,4 @@
-[gd_scene load_steps=110 format=3 uid="uid://di1uay3254iau"]
+[gd_scene load_steps=109 format=3 uid="uid://di1uay3254iau"]
 
 [ext_resource type="Texture2D" uid="uid://c6jhiid17kbd" path="res://kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="1_388w3"]
 [ext_resource type="PackedScene" uid="uid://bndt6catsod58" path="res://Player.tscn" id="2_3vou3"]
@@ -7,7 +7,6 @@
 [ext_resource type="ArrayMesh" uid="uid://cer0t2d1oojn2" path="res://Assets/Assets_SM_Flag.res" id="5_0e5ms"]
 [ext_resource type="ArrayMesh" uid="uid://ccnxtus7ll3y5" path="res://Assets/Assets_SM_GoalPost.res" id="6_ijevc"]
 [ext_resource type="Texture2D" uid="uid://b2bjtkv2ae2km" path="res://Import GLTF/M_PitchDiffuse.png" id="7_un8np"]
-[ext_resource type="Texture2D" uid="uid://bktaoime404qr" path="res://UI/Sprites/BDS Test.png" id="8_3rb78"]
 [ext_resource type="Texture2D" uid="uid://6es00n51d3wf" path="res://UI/Animations/Go_Trial Anim.png" id="9_i2ipb"]
 [ext_resource type="Script" path="res://UI/Go_Trial.gd" id="10_wqiqa"]
 [ext_resource type="Texture2D" uid="uid://dnxd4g4bqpc1d" path="res://UI/Animations/HowToPlay.jpg" id="11_5byhi"]
@@ -28,6 +27,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cfnp6mj7ict8t" path="res://Assets/trees/Trees_Tree2.res" id="24_euuud"]
 [ext_resource type="Script" path="res://Scripts/VisibleTest.gd" id="24_x8fa2"]
 [ext_resource type="ArrayMesh" uid="uid://tu2r6ggg5ib4" path="res://Assets/trees/Trees_Tree3.res" id="25_wyokc"]
+[ext_resource type="PackedScene" uid="uid://0eikh5w6hthu" path="res://floating_menu.tscn" id="29_kdwo1"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_e76qn"]
 panorama = ExtResource("1_388w3")
@@ -38,8 +38,6 @@ sky_material = SubResource("PanoramaSkyMaterial_e76qn")
 [sub_resource type="Environment" id="Environment_ciuxy"]
 background_mode = 2
 sky = SubResource("Sky_velgi")
-
-[sub_resource type="BoxMesh" id="BoxMesh_n4j81"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_qmp26"]
 
@@ -573,23 +571,13 @@ environment = SubResource("Environment_ciuxy")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(0.958572, -0.284852, -2.73682e-07, 0.159275, 0.535985, 0.829067, -0.236161, -0.79472, 0.55915, 0, 0, 0)
 
-[node name="1_8m reference" type="MeshInstance3D" parent="WorldEnvironment"]
-transform = Transform3D(0.3, 0, 0, 0, 1.8, 0, 0, 0, 0.3, 1.85894, 1.10504, 0.0339384)
-mesh = SubResource("BoxMesh_n4j81")
-skeleton = NodePath("../../Player")
-
 [node name="Player" parent="." instance=ExtResource("2_3vou3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.172806, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.172806, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-16.5254, 0, 0, 0, -0.0211296, 0, 0, 0, -22.2605, 0, 0, 0)
 mesh = SubResource("BoxMesh_qmp26")
-skeleton = NodePath("../1_8m reference2")
-
-[node name="1_8m reference2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.3, 0, 0, 0, 1.8, 0, 0, 0, 0.3, -0.551344, 1.10504, 3.38322)
-mesh = SubResource("BoxMesh_n4j81")
-skeleton = NodePath("../Player")
+skeleton = NodePath("")
 
 [node name="CarPark" type="Node3D" parent="."]
 
@@ -683,10 +671,6 @@ mesh = SubResource("BoxMesh_qg0hg")
 transform = Transform3D(0.285714, 0, 0, 0, 0.666667, 0, 0, 0, 1, -0.296097, 0, 0.0478134)
 mesh = SubResource("BoxMesh_qg0hg")
 material = SubResource("StandardMaterial3D_j5gon")
-
-[node name="Sprite3D" type="Sprite3D" parent="CloseUp/CSGMesh3D"]
-transform = Transform3D(0.036, 0, -7.07805e-08, 0, 0.07, 0, 2.08616e-07, 0, 10, 0.167337, 0.0158367, -6.15353)
-texture = ExtResource("8_3rb78")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CloseUp/CSGMesh3D"]
 transform = Transform3D(0.107143, 0, 0, 0, 0.25, 0, 0, 0, 10, -0.287543, 0.0197241, 1.09833)
@@ -966,701 +950,841 @@ transform = Transform3D(0.0540788, 0, 0.998537, 0, 1, 0, -0.998537, 0, 0.0540788
 
 [node name="SmEnvTreeT1" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.304499, 0, 0.952513, 0, 1, 0, -0.952513, 0, -0.304499, -3.24473, -0.239006, -59.9122)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT2" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.326492, 0, -0.9452, 0, 1, 0, 0.9452, 0, -0.326492, -9.77095, 0.1218, -61.411)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT3" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.837624, 0, 0.546249, 0, 1, 0, -0.546249, 0, 0.837624, -16.8082, 0.115173, -59.0349)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT4" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.719037, 0, -0.694974, 0, 1, 0, 0.694974, 0, -0.719037, -23.1189, 0.513168, -60.6856)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT5" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.946036, 0, 0.324067, 0, 1, 0, -0.324067, 0, -0.946036, -29.2099, 0.166209, -60.3557)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT6" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.780618, 0, -0.625013, 0, 1, 0, 0.625013, 0, 0.780618, -35.0313, -0.272369, -57.5445)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT7" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.920167, 0, -0.391535, 0, 1, 0, 0.391535, 0, 0.920167, -41.389, 0.91138, -62.3058)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT8" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.786486, 0, 0.617615, 0, 1, 0, -0.617615, 0, -0.786486, -47.1039, 2.26661, -59.2469)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT9" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.822536, 0, 0.568722, 0, 1, 0, -0.568722, 0, -0.822536, -45.3018, 0.393932, -50.9105)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT10" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.888631, 0, 0.458636, 0, 1, 0, -0.458636, 0, -0.888631, -46.6684, 0.514726, -44.4332)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT11" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.970095, 0, -0.242751, 0, 1, 0, 0.242751, 0, 0.970095, -49.1862, 1.37321, -38.8161)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT12" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.169848, 0, 0.985476, 0, 1, 0, -0.985476, 0, 0.169848, -53.0759, 2.00638, -35.3397)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT13" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.963802, 0, -0.266637, 0, 1, 0, 0.266637, 0, -0.963802, -44.2298, 0.0953803, -24.4077)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT14" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.637105, 0, -0.770782, 0, 1, 0, 0.770782, 0, 0.637105, -49.1689, 0.260841, -14.2329)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT15" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.980967, 0, 0.194203, 0, 1, 0, -0.194203, 0, 0.980967, -45.2779, -0.466873, -8.15349)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT16" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(1, 0, -0.00278984, 0, 1, 0, 0.00278984, 0, 1, -52.43, 1.2477, -21.5165)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT17" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.643938, 0, -0.765084, 0, 1, 0, 0.765084, 0, -0.643938, -48.5479, -0.466873, -0.650682)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT18" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.96814, 0, 0.25043, 0, 1, 0, -0.25043, 0, -0.96814, -50.9429, -0.466873, 6.55328)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT19" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.617078, 0, -0.786908, 0, 1, 0, 0.786908, 0, -0.617078, -46.6255, -0.466873, 13.4512)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT20" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.924695, 0, 0.380719, 0, 1, 0, -0.380719, 0, 0.924695, -48.947, -0.466873, 21.3336)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT21" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.837008, 0, 0.547198, 0, 1, 0, -0.547198, 0, -0.837008, -45.6648, -0.453424, 26.6586)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT22" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.0771214, 0, -0.997025, 0, 1, 0, 0.997025, 0, 0.0771214, -41.7527, -0.618783, 30.7491)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT23" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.980299, 0, 0.197537, 0, 1, 0, -0.197537, 0, -0.980299, -46.9213, -0.618783, 43.2945)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT24" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.0803746, 0, 0.996767, 0, 1, 0, -0.996767, 0, -0.0803746, -40.6055, -0.618783, 49.1988)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT37" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.70374, 0, -0.710459, 0, 1, 0, 0.710459, 0, -0.70374, 48.8408, -0.574839, -8.00551)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT25" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.00445212, 0, -0.999993, 0, 1, 0, 0.999993, 0, 0.00445212, -40.0295, -0.618783, 59.8349)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT26" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.882334, 0, 0.47063, 0, 1, 0, -0.47063, 0, 0.882334, -30.9368, -0.618783, 59.3317)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT27" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.18464, 0, -0.982808, 0, 1, 0, 0.982808, 0, 0.18464, -22.4139, 0.157898, 60.676)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT28" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.304431, 0, -0.952537, 0, 1, 0, 0.952537, 0, -0.304431, -17.5437, 0.44631, 68.5742)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT29" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.74212, 0, -0.670271, 0, 1, 0, 0.670271, 0, 0.74212, -9.1768, -0.212008, 64.2647)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT30" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.978695, 0, -0.205332, 0, 1, 0, 0.205332, 0, 0.978695, 15.5991, 0.60106, 74.2418)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT31" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.991724, 0, -0.128401, 0, 1, 0, 0.128401, 0, -0.991724, 22.809, 0.559464, 72.1838)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT32" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.845675, 0, 0.533701, 0, 1, 0, -0.533701, 0, -0.845675, 33.8451, 0.176789, 74.1474)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT33" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.902059, 0, 0.431617, 0, 1, 0, -0.431617, 0, 0.902059, 43.6671, -0.526276, 14.3543)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT34" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.136196, 0, 0.990683, 0, 1, 0, -0.990683, 0, 0.136196, 50.3531, -0.47377, 9.5181)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT35" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.994427, 0, -0.105445, 0, 1, 0, 0.105445, 0, 0.994427, 44.0432, -0.596698, 3.207)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT36" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.550848, 0, -0.834607, 0, 1, 0, 0.834607, 0, 0.550848, 52.5906, -0.494475, -2.56376)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT38" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.793207, 0, -0.608952, 0, 1, 0, 0.608952, 0, 0.793207, 44.5597, -0.574839, -13.6931)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT39" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.675516, 0, -0.737346, 0, 1, 0, 0.737346, 0, 0.675516, 39.0891, -0.574839, -17.8831)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT40" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.965713, 0, -0.259615, 0, 1, 0, 0.259615, 0, -0.965713, 59.8323, 0.67349, -34.5987)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT41" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.954855, 0, -0.297072, 0, 1, 0, 0.297072, 0, 0.954855, 51.9944, 0.0565913, -38.1972)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT42" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.463933, 0, 0.885869, 0, 1, 0, -0.885869, 0, -0.463933, 45.1457, -0.426221, -41.9105)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT43" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.109009, 0, -0.994039, 0, 1, 0, 0.994039, 0, 0.109009, 41.3824, -0.865382, -46.3425)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT44" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.159343, 0, 0.987221, 0, 1, 0, -0.987221, 0, 0.159343, 41.9648, -0.381196, -56.5888)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT45" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.41472, 0, 0.909947, 0, 1, 0, -0.909947, 0, 0.41472, 40.6342, 0.83962, -63.8331)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT46" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.347242, 0, -0.937772, 0, 1, 0, 0.937772, 0, -0.347242, 31.1321, -0.307444, -61.4769)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT47" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.48093, 0, -0.876756, 0, 1, 0, 0.876756, 0, 0.48093, 22.5885, -0.603312, -62.5104)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT48" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.789983, 0, 0.613123, 0, 1, 0, -0.613123, 0, -0.789983, 15.6985, -0.736795, -58.284)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT49" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.351673, 0, 0.936119, 0, 1, 0, -0.936119, 0, 0.351673, 9.30029, -0.736795, -59.4524)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT50" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.773209, 0, -0.634145, 0, 1, 0, 0.634145, 0, 0.773209, 3.0345, -0.736795, -61.8226)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT51" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.975826, 0, -0.21857, 0, 1, 0, 0.21857, 0, -0.975826, -59.1118, 4.32891, -52.0766)
+lod_bias = 0.348
 mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT52" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.651411, 0, 0.75873, 0, 1, 0, -0.75873, 0, 0.651411, -57.9995, 4.60411, -61.6224)
+lod_bias = 0.348
 mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT137" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.700415, 0, -0.713741, 0, 1, 0, 0.713741, 0, 0.700415, -54.4503, 5.80253, -74.9037)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT138" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.621453, 0, -0.783456, 0, 1, 0, 0.783456, 0, 0.621453, -38.7936, -0.0664947, -89.2565)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT139" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.975454, 0, -0.220219, 0, 1, 0, 0.220219, 0, 0.975454, -28.3164, -0.0664947, -85.7004)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT140" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.205114, 0, -0.978742, 0, 1, 0, 0.978742, 0, 0.205114, -11.8382, -0.0217597, -100.806)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT53" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.781221, 0, 0.624264, 0, 1, 0, -0.624264, 0, -0.781221, -63.3695, 4.92161, -45.3497)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT54" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.782484, 0, -0.62268, 0, 1, 0, 0.62268, 0, 0.782484, -87.5168, 7.61324, -53.8754)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT55" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.256693, 0, -0.966498, 0, 1, 0, 0.966498, 0, -0.256693, -65.6318, 3.16285, -32.5258)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT56" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.977521, 0, 0.210863, 0, 1, 0, -0.210863, 0, -0.977521, -95.7941, 11.1528, -53.3767)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT57" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.335878, 0, 0.94191, 0, 1, 0, -0.94191, 0, 0.335878, -61.3266, 1.65332, -21.3159)
+lod_bias = 0.348
 mesh = ExtResource("24_euuud")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT58" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.497974, 0, -0.867198, 0, 1, 0, 0.867198, 0, -0.497974, -95.4725, 5.56352, -23.3756)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT59" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.552043, 0, 0.83382, 0, 1, 0, -0.83382, 0, -0.552043, -74.3243, 1.2477, -7.02102)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT60" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.981397, 0, 0.192011, 0, 1, 0, -0.192011, 0, 0.981397, -104.239, 11.3564, -38.3359)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT61" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.968139, 0, 0.250429, 0, 1, 0, -0.250429, 0, -0.968139, -68.2216, 1.3202, 4.09434)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT62" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.43081, 0, -0.902447, 0, 1, 0, 0.902447, 0, -0.43081, -70.3851, 1.21002, 14.066)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT63" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.434193, 0, 0.900824, 0, 1, 0, -0.900824, 0, 0.434193, -81.8716, 4.14374, 31.7197)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT136" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.434193, 0, 0.900823, 0, 1, 0, -0.900823, 0, 0.434193, -101.569, 4.14374, 33.9924)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT64" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.428687, 0, 0.903458, 0, 1, 0, -0.903458, 0, -0.428687, -70.4514, 2.78755, 35.8898)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT65" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.967893, 0, 0.25138, 0, 1, 0, -0.25138, 0, 0.967893, -97.8386, 9.18259, -44.6038)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT66" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.967892, 0, 0.25138, 0, 1, 0, -0.25138, 0, 0.967892, -109.364, 11.8987, -21.5704)
+lod_bias = 0.348
 mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT67" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.967892, 0, 0.25138, 0, 1, 0, -0.25138, 0, 0.967892, -105.267, 8.40647, -5.79777)
+lod_bias = 0.348
 mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT84" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.941536, 0, 0.336918, 0, 1, 0, -0.336918, 0, 0.941536, -101.541, 6.66576, -13.3373)
+lod_bias = 0.348
 mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT68" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.771636, 0, 0.636069, 0, 1, 0, -0.636069, 0, 0.771636, -106.47, 6.85873, 18.2955)
+lod_bias = 0.348
 mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT69" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.771636, 0, 0.636069, 0, 1, 0, -0.636069, 0, 0.771636, -109.011, 9.11038, 2.98945)
+lod_bias = 0.348
 mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT70" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.675748, 0, -0.737139, 0, 1, 0, 0.737139, 0, 0.675748, 2.36622, 0.0126003, -71.8384)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT71" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.675749, 0, -0.737138, 0, 1, 0, 0.737138, 0, 0.675749, -16.585, 1.74576, -70.6549)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT72" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.451364, 0, 0.892345, 0, 1, 0, -0.892345, 0, -0.451364, -37.3587, 2.18221, -68.4044)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT73" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.782484, 0, -0.622679, 0, 1, 0, 0.622679, 0, 0.782484, -6.94322, -0.140733, -79.6285)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT74" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.256693, 0, -0.966497, 0, 1, 0, 0.966497, 0, -0.256693, 7.83811, -0.447149, -82.4751)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT75" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.977521, 0, 0.210863, 0, 1, 0, -0.210863, 0, -0.977521, 0.458596, 1.81475, -99.0416)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT76" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.335878, 0, 0.941909, 0, 1, 0, -0.941909, 0, 0.335878, 21.5479, 0.0214033, -78.9037)
+lod_bias = 0.348
 mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT77" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.675748, 0, -0.737139, 0, 1, 0, 0.737139, 0, 0.675748, 34.5448, 1.15505, -79.2507)
+lod_bias = 0.348
 mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT78" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.675749, 0, -0.737137, 0, 1, 0, 0.737137, 0, 0.675749, 22.9594, 2.34193, -109.456)
+lod_bias = 0.348
 mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT79" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.451364, 0, 0.892345, 0, 1, 0, -0.892345, 0, -0.451364, 48.499, 2.18221, -83.8656)
+lod_bias = 0.348
 mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT80" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.782483, 0, -0.622678, 0, 1, 0, 0.622678, 0, 0.782483, 40.0358, 3.36457, -101.895)
+lod_bias = 0.348
 mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT81" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.256693, 0, -0.966497, 0, 1, 0, 0.966497, 0, -0.256693, 28.5579, 1.56974, -89.4825)
+lod_bias = 0.348
 mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT82" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.977521, 0, 0.210863, 0, 1, 0, -0.210863, 0, -0.977521, 60.3516, 4.42735, -86.1219)
+lod_bias = 0.348
 mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT83" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.977819, 0, 0.209468, 0, 1, 0, -0.209468, 0, 0.977819, 53.998, 3.22856, -66.5779)
+lod_bias = 0.348
 mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT85" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.0892921, 0, -0.996008, 0, 1, 0, 0.996008, 0, -0.0892921, 56.1397, 3.17484, -56.5803)
+lod_bias = 0.348
 mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT86" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.0892921, 0, -0.996008, 0, 1, 0, 0.996008, 0, -0.0892921, 60.6706, 2.67516, -50.3348)
+lod_bias = 0.348
 mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT87" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.208337, 0, 0.978059, 0, 1, 0, -0.978059, 0, 0.208337, 67.8918, 2.96328, -44.621)
+lod_bias = 0.348
 mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT88" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.208337, 0, 0.978059, 0, 1, 0, -0.978059, 0, 0.208337, 73.1579, 1.33422, -27.8425)
+lod_bias = 0.348
 mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT89" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.345182, 0, -0.938538, 0, 1, 0, 0.938538, 0, -0.345182, 70.6555, 0.213452, -16.0948)
+lod_bias = 0.348
 mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT90" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.345182, 0, -0.938538, 0, 1, 0, 0.938538, 0, -0.345182, 97.8195, 1.38907, -10.4472)
+lod_bias = 0.348
 mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT91" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.424945, 0, 0.905221, 0, 1, 0, -0.905221, 0, -0.424945, 105.125, 0.188283, 26.7378)
+lod_bias = 0.348
 mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT92" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.657006, 0, 0.753887, 0, 1, 0, -0.753887, 0, 0.657006, 103.966, 0.561363, 43.4784)
+lod_bias = 0.348
 mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT93" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.657005, 0, 0.753887, 0, 1, 0, -0.753887, 0, 0.657005, 114.27, 2.08223, 56.1519)
+lod_bias = 0.348
 mesh = ExtResource("25_wyokc")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT94" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.657005, 0, 0.753886, 0, 1, 0, -0.753886, 0, 0.657005, 109.869, 1.65332, 61.2023)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT95" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.736205, 0, -0.676758, 0, 1, 0, 0.676758, 0, 0.736205, 110.074, 1.65332, 67.0301)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT96" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.327908, 0, -0.944709, 0, 1, 0, 0.944709, 0, -0.327908, 103.484, 0.98023, 69.79)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT97" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.989806, 0, 0.142419, 0, 1, 0, -0.142419, 0, -0.989806, 101.724, 0.98023, 76.5311)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT98" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.989806, 0, 0.142419, 0, 1, 0, -0.142419, 0, -0.989806, 110.348, 3.21384, 78.7499)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT99" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.989805, 0, 0.142419, 0, 1, 0, -0.142419, 0, -0.989805, 116.104, 3.29218, 73.8454)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT100" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.989805, 0, 0.142419, 0, 1, 0, -0.142419, 0, -0.989805, 123.473, 3.29218, 65.0902)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT101" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.657005, 0, 0.753886, 0, 1, 0, -0.753886, 0, 0.657005, 46.6808, 0.8029, 89.4623)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT112" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.991139, 0, -0.132825, 0, 1, 0, 0.132825, 0, 0.991139, 59.5193, 0.95959, 88.7136)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT102" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.657005, 0, 0.753886, 0, 1, 0, -0.753886, 0, 0.657005, 36.7294, 1.20193, 94.1195)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT103" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.736205, 0, -0.676758, 0, 1, 0, 0.676758, 0, 0.736205, 25.7123, 1.22206, 97.1911)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT104" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.327908, 0, -0.944709, 0, 1, 0, 0.944709, 0, -0.327908, 16.6998, 0.98023, 97.6398)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT105" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.989805, 0, 0.142419, 0, 1, 0, -0.142419, 0, -0.989805, 68.9008, 1.22336, 112.668)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT106" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.989805, 0, 0.142419, 0, 1, 0, -0.142419, 0, -0.989805, 67.2372, 5.63397, 118.043)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT107" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.989805, 0, 0.142419, 0, 1, 0, -0.142419, 0, -0.989805, 51.4238, 4.67654, 119.624)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT108" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.989805, 0, 0.142419, 0, 1, 0, -0.142419, 0, -0.989805, 41.9894, 4.60019, 119.715)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT109" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.989804, 0, 0.142419, 0, 1, 0, -0.142419, 0, -0.989804, 57.2448, 3.43849, 116.894)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT110" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.135453, 0, 0.990782, 0, 1, 0, -0.990782, 0, 0.135453, 29.7665, 5.88059, 126.305)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT111" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.135453, 0, 0.990782, 0, 1, 0, -0.990782, 0, 0.135453, 15.5517, 2.63682, 127.83)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT113" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.135453, 0, 0.990782, 0, 1, 0, -0.990782, 0, 0.135453, -26.6578, 2.24764, 126.363)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT114" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.135453, 0, 0.990782, 0, 1, 0, -0.990782, 0, 0.135453, -38.8984, -0.580019, 117.185)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT115" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.135453, 0, 0.990782, 0, 1, 0, -0.990782, 0, 0.135453, -41.0564, -0.0398827, 90.4407)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT116" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.135453, 0, 0.990782, 0, 1, 0, -0.990782, 0, 0.135453, -61.7199, 2.23164, 124.231)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT117" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.135453, 0, 0.990782, 0, 1, 0, -0.990782, 0, 0.135453, -47.191, 5.92861, 131.646)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT118" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.226784, 0, -0.973943, 0, 1, 0, 0.973943, 0, -0.226784, -41.3672, 7.08814, 136.816)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT119" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.135453, 0, 0.990782, 0, 1, 0, -0.990782, 0, 0.135453, -31.4416, 6.39176, 133.799)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT120" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.135453, 0, 0.990782, 0, 1, 0, -0.990782, 0, 0.135453, -66.7118, 4.42074, 117.824)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT121" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.894464, 0, 0.447136, 0, 1, 0, -0.447136, 0, 0.894464, -64.0423, 0.80183, 106.228)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT122" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.859442, 0, -0.51123, 0, 1, 0, 0.51123, 0, 0.859442, -71.2293, 0.385157, 94.2109)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT123" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.969733, 0, -0.244159, 0, 1, 0, 0.244159, 0, -0.969733, -69.6443, 0.65057, 77.8649)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT124" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.921155, 0, 0.38919, 0, 1, 0, -0.38919, 0, 0.921155, -67.1976, 0.65057, 68.3314)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT125" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.62463, 0, 0.780917, 0, 1, 0, -0.780917, 0, -0.62463, -68.5456, 1.95899, 56.8343)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT126" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.62201, 0, 0.783006, 0, 1, 0, -0.783006, 0, -0.62201, -74.6988, 3.70754, 49.3444)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT127" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.806235, 0, -0.591592, 0, 1, 0, 0.591592, 0, -0.806235, -73.9816, 9.60501, 116.83)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT128" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.440145, 0, 0.897925, 0, 1, 0, -0.897925, 0, -0.440145, -72.2939, 5.80853, 104.004)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT129" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.926047, 0, -0.377401, 0, 1, 0, 0.377401, 0, 0.926047, -86.4428, 10.0302, 102.376)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT130" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.747853, 0, 0.663855, 0, 1, 0, -0.663855, 0, -0.747853, -76.0246, 7.75596, 101.074)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT131" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.917876, 0, 0.396856, 0, 1, 0, -0.396856, 0, -0.917876, -94.1412, 9.23978, 101.652)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT132" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.816527, 0, -0.577297, 0, 1, 0, 0.577297, 0, 0.816527, -89.4252, 15.2897, 123.396)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT135" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(-0.848099, 0, 0.529826, 0, 1, 0, -0.529826, 0, -0.848099, -80.555, 13.4876, 119.07)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT134" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.899347, 0, -0.437222, 0, 1, 0, 0.437222, 0, 0.899347, -94.5915, 13.9279, 119.83)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
 [node name="SmEnvTreeT133" type="MeshInstance3D" parent="Trees"]
 transform = Transform3D(0.876394, 0, -0.481581, 0, 1, 0, 0.481581, 0, 0.876394, -74.6321, 10.3393, 129.815)
+lod_bias = 0.348
 mesh = ExtResource("23_uwbmu")
 skeleton = NodePath("../..")
 
@@ -1693,3 +1817,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.364659, 0.258738, 0.162598
 visible = false
 mesh = ExtResource("5_0e5ms")
 skeleton = NodePath("../..")
+
+[node name="FloatingMenu" parent="." instance=ExtResource("29_kdwo1")]
+transform = Transform3D(2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, -2.97418, 0.425558, 0.649729)
