@@ -17,7 +17,7 @@ var task_to_load
 func _ready() -> void:
 	level_data = LevelManager.get_level_data_by_id(level_id)
 	
-	#await get_tree().create_timer(10.0).timeout # TODO replace: wait for play button
+	#await get_tree().create_timer(10.0).timeout
 	
 	LevelManager.play_button_pressed.connect(_on_play_button_pressed)
 
