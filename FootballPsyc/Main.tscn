@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cqsr3sqdc4sgi" path="res://main_menu.tscn" id="3_544dk"]
 
-[node name="Main" type="Node"]
+[node name="MainUI" type="Node"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

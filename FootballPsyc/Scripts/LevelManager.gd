@@ -11,9 +11,9 @@ var keyboard: bool = false
 
 var subject_name : String = "Subject"
 
-const BDS_TASK_MANAGER = preload("res://SubScenes/BDS_Task_Manager.tscn")
-const SHIFTING_TASK_MANAGER = preload("res://SubScenes/Shifting_Task_Manager.tscn")
 const SST_TASK_MANAGER = preload("res://SubScenes/SST_Task_Manager.tscn")
+const SHIFTING_TASK_MANAGER = preload("res://SubScenes/Shifting_Task_Manager.tscn")
+const BDS_TASK_MANAGER = preload("res://SubScenes/BDS_Task_Manager.tscn")
 
 signal play_button_pressed
 
@@ -31,10 +31,10 @@ func _process(_delta):
 func set_task_to_load(task : int) -> void:
 	task_to_load = task
 	
-	set_level_task_to_load()
+	set_level_task_scene()
 
 
-func set_level_task_to_load() -> void:
+func set_level_task_scene() -> void:
 	match task_to_load:
 		1:
 			main_level.task_scene = SST_TASK_MANAGER
