@@ -1,6 +1,7 @@
-[gd_scene load_steps=109 format=3 uid="uid://di1uay3254iau"]
+[gd_scene load_steps=110 format=3 uid="uid://di1uay3254iau"]
 
 [ext_resource type="Texture2D" uid="uid://dehnjgtugk28s" path="res://kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="1_388w3"]
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_dtro2"]
 [ext_resource type="PackedScene" uid="uid://bndt6catsod58" path="res://Player.tscn" id="2_3vou3"]
 [ext_resource type="ArrayMesh" uid="uid://dclcgxblc5lmm" path="res://Assets/Assets_SM_Fencing.res" id="3_earvg"]
 [ext_resource type="ArrayMesh" uid="uid://dpyym3swarlva" path="res://Assets/Landscape/SM_ENV__HedgeS.res" id="4_ppqv3"]
@@ -564,6 +565,7 @@ animations = [{
 size = Vector3(1, 0.0682373, 1)
 
 [node name="SceneRoot" type="Node3D"]
+script = ExtResource("1_dtro2")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ciuxy")
@@ -1819,4 +1821,4 @@ mesh = ExtResource("5_0e5ms")
 skeleton = NodePath("../..")
 
 [node name="FloatingMenu" parent="." instance=ExtResource("29_kdwo1")]
-transform = Transform3D(2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, -2.97418, 0.425558, 0.649729)
+transform = Transform3D(2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, -2.974, 0.35, 0)
