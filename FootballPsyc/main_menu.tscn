@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cqsr3sqdc4sgi"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_2r8w3"]
-[ext_resource type="Texture2D" uid="uid://c5dnf6ri3rpps" path="res://UI/Background/Testing_Centre.jpg" id="2_mg6lu"]
+[ext_resource type="Texture2D" uid="uid://uu0082xxke2h" path="res://UI/Background/Testing_Centre.jpg" id="2_mg6lu"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -26,6 +26,7 @@ offset_bottom = 540.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_mg6lu")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="Button" type="Button" parent="TextureRect"]
