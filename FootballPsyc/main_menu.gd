@@ -11,22 +11,23 @@ func _process(_delta):
 	pass
 
 
-
-
 func _on_button_pressed():
 	deactivate()
 	LevelManager.load_level(1, 1)
 	LevelManager.keyboard = true
+
 
 func _on_button_2_pressed() -> void:
 	deactivate()
 	LevelManager.load_level(1, 2)
 	LevelManager.keyboard = true
 
+
 func _on_button_3_pressed() -> void:
 	deactivate()
 	LevelManager.load_level(1, 3)
 	LevelManager.keyboard = true
+
 
 func deactivate() -> void:
 	hide()
@@ -34,9 +35,4 @@ func deactivate() -> void:
 	#set_process_input(false)
 	#set_physics_process(false)
 	#set_process(false)
-
-
-
-
-
 
