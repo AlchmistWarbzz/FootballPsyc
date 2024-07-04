@@ -1,12 +1,19 @@
 extends Node
 
+
 var trial_length : int
-var main_scene : Node3D = null
-var loaded_level : Level = null
-var task_to_load_UI : int = 0
+
+var main_level : Level = null
+
+var task_to_load : int = 0
+
 var keyboard: bool = false
 
 var subject_name : String = "Subject"
+
+const BDS_TASK_MANAGER = preload("res://SubScenes/BDS_Task_Manager.tscn")
+const SHIFTING_TASK_MANAGER = preload("res://SubScenes/Shifting_Task_Manager.tscn")
+const SST_TASK_MANAGER = preload("res://SubScenes/SST_Task_Manager.tscn")
 
 signal play_button_pressed
 
@@ -21,17 +28,18 @@ func _process(_delta):
 	pass
 
 
-func load_task(task_to_load : int) -> void:
-	task_to_load_UI = task_to_load
-	#print(str(task_to_load_UI) + " from LevelManager.gd")
+func set_task_to_load(task : int) -> void:
+	task_to_load = task
 	
-	main_scene.add_child(loaded_level)
-	
+	set_level_task_to_load()
+
+
+func set_level_task_to_load() -> void:
 	match task_to_load:
 		1:
-			loaded_level.task_to_load = loaded_level.SST_TASK_MANAGER
+			main_level.task_scene = SST_TASK_MANAGER
 		2:
-			loaded_level.task_to_load = loaded_level.SHIFTING_TASK_MANAGER
+			main_level.task_scene = SHIFTING_TASK_MANAGER
 		3:
-			loaded_level.task_to_load = loaded_level.BDS_TASK_MANAGER
+			main_level.task_scene = BDS_TASK_MANAGER
 

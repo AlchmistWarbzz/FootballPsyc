@@ -9,9 +9,9 @@ extends Control
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready():	
+func _ready():
 	#var image_to_set
-	match LevelManager.task_to_load_UI:
+	match LevelManager.task_to_load:
 		1:
 			#image_to_set = sst_rules_image
 			$"Colour Shift".visible = false
