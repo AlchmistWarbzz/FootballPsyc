@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cqsr3sqdc4sgi"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_2r8w3"]
-[ext_resource type="Texture2D" uid="uid://c5dnf6ri3rpps" path="res://UI/Background/Testing_Centre.jpg" id="2_mg6lu"]
+[ext_resource type="Texture2D" uid="uid://dqph4qt3t6iie" path="res://Game Content/UI/Test Select.png" id="2_ler1j"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,6 +11,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2r8w3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8, 0.8, 0.8, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -25,7 +38,7 @@ offset_right = 960.0
 offset_bottom = 540.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_mg6lu")
+texture = ExtResource("2_ler1j")
 stretch_mode = 6
 
 [node name="Button" type="Button" parent="TextureRect"]
@@ -35,10 +48,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -748.0
-offset_top = -145.0
-offset_right = -284.0
-offset_bottom = 476.0
+offset_left = -917.0
+offset_top = -93.0
+offset_right = -429.0
+offset_bottom = 290.0
 grow_horizontal = 2
 grow_vertical = 2
 toggle_mode = true
@@ -50,10 +63,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -232.0
-offset_top = -145.0
-offset_right = 232.0
-offset_bottom = 476.0
+offset_left = -285.0
+offset_top = -83.0
+offset_right = 283.0
+offset_bottom = 271.0
 grow_horizontal = 2
 grow_vertical = 2
 toggle_mode = true
@@ -65,10 +78,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 286.0
-offset_top = -144.0
-offset_right = 750.0
-offset_bottom = 477.0
+offset_left = 441.0
+offset_top = -200.0
+offset_right = 905.0
+offset_bottom = 421.0
 grow_horizontal = 2
 grow_vertical = 2
 toggle_mode = true
