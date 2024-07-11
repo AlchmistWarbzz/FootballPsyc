@@ -11,19 +11,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#var image_to_set
-	match LevelManager.task_to_load:
-		1:
-			#image_to_set = sst_rules_image
-			$"Colour Shift".visible = false
-			$"Digit Span".visible = false
-		2:
-			#image_to_set = shifting_rules_image
-			$"Stop & Go".visible = false
-			$"Digit Span".visible = false
-		3:
-			#image_to_set = bds_rules_image
-			$"Stop & Go".visible = false
-			$"Colour Shift".visible = false
+	show_hide_task_rules()
 	
 	#print(str(LevelManager.task_to_load_UI) + " from go trial rules")
 	
@@ -52,3 +40,22 @@ func _on_play_button_pressed() -> void:
 	deactivate()
 	LevelManager.play_button_pressed.emit()
 
+
+func show_hide_task_rules() -> void:
+	match LevelManager.task_to_load:
+		1:
+			#image_to_set = sst_rules_image
+			$"Colour Shift".visible = false
+			$"Digit Span".visible = false
+		2:
+			#image_to_set = shifting_rules_image
+			$"Stop & Go".visible = false
+			$"Digit Span".visible = false
+		3:
+			#image_to_set = bds_rules_image
+			$"Stop & Go".visible = false
+			$"Colour Shift".visible = false
+
+
+func _on_visibility_changed() -> void:
+	show_hide_task_rules()

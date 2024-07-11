@@ -82,3 +82,4 @@ layout_mode = 1
 [connection signal="pressed" from="TextureRect/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="TextureRect/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="TextureRect/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="visibility_changed" from="TrialRules" to="TrialRules" method="_on_visibility_changed"]
