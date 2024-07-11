@@ -1,6 +1,6 @@
 [gd_scene load_steps=38 format=3 uid="uid://di1uay3254iau"]
 
-[ext_resource type="Texture2D" uid="uid://3wshn3x0ltuy" path="res://kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="1_388w3"]
+[ext_resource type="Texture2D" uid="uid://c6jhiid17kbd" path="res://kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="1_388w3"]
 [ext_resource type="PackedScene" uid="uid://bndt6catsod58" path="res://Player.tscn" id="2_3vou3"]
 [ext_resource type="ArrayMesh" uid="uid://dclcgxblc5lmm" path="res://Assets/Assets_SM_Fencing.res" id="3_earvg"]
 [ext_resource type="ArrayMesh" uid="uid://dpyym3swarlva" path="res://Assets/Landscape/SM_ENV__HedgeS.res" id="4_ppqv3"]
@@ -16,7 +16,7 @@
 [ext_resource type="ArrayMesh" uid="uid://7r7rtk85baks" path="res://Assets/Buildings/SM__House2.res" id="18_ba48g"]
 [ext_resource type="ArrayMesh" uid="uid://cleg55x62tpks" path="res://Assets/Assets_SM_FloodLight.res" id="19_kebkx"]
 [ext_resource type="ArrayMesh" uid="uid://cyqs6majjx1ux" path="res://Assets/Landscape/Landscape_Plane_001.res" id="20_x47fr"]
-[ext_resource type="Texture2D" uid="uid://vbm5vk1eks4o" path="res://UI/Sprites/Good_Bad.png" id="23_rfurd"]
+[ext_resource type="Texture2D" uid="uid://ob7ytgvs3mg2" path="res://UI/Sprites/Good_Bad.png" id="23_rfurd"]
 [ext_resource type="ArrayMesh" uid="uid://c2vfhjpfdms6g" path="res://Assets/trees/Trees_Tree1.res" id="23_uwbmu"]
 [ext_resource type="ArrayMesh" uid="uid://cfnp6mj7ict8t" path="res://Assets/trees/Trees_Tree2.res" id="24_euuud"]
 [ext_resource type="Script" path="res://Scripts/VisibleTest.gd" id="24_x8fa2"]
@@ -25,6 +25,7 @@
 [ext_resource type="ArrayMesh" uid="uid://d2bxg0vfo0qbk" path="res://Assets/Landscape/PitchMask_Plane_002.res" id="28_a10rg"]
 [ext_resource type="PackedScene" uid="uid://merxxgtbvkju" path="res://Game Content/UI/Countdown.tscn" id="28_oc0j3"]
 [ext_resource type="ArrayMesh" uid="uid://duta6fnh2k1df" path="res://Assets/Landscape/Trees_tree_004.res" id="29_0t6cl"]
+[ext_resource type="ArrayMesh" uid="uid://ga4j12f151jn" path="res://Assets/WhiteBoard_Cube_001.res" id="29_6sqb7"]
 [ext_resource type="PackedScene" uid="uid://0eikh5w6hthu" path="res://floating_menu.tscn" id="29_kdwo1"]
 [ext_resource type="ArrayMesh" uid="uid://c6i2vk4vswdlp" path="res://Assets/Landscape/Trees_tree_001.res" id="31_ap1ec"]
 [ext_resource type="ArrayMesh" uid="uid://dtfhkr2yxjouw" path="res://Assets/Landscape/Trees_tree_002.res" id="32_fo8wx"]
@@ -40,8 +41,6 @@ background_mode = 2
 sky = SubResource("Sky_velgi")
 
 [sub_resource type="BoxMesh" id="BoxMesh_qmp26"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_qg0hg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ag747"]
 size = Vector3(1, 0.0682373, 1)
@@ -163,30 +162,6 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.5, 0, 0)
 mesh = ExtResource("6_ijevc")
 skeleton = NodePath("../..")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="CloseUp"]
-transform = Transform3D(-2.90208, 0, 0.0253402, 0, 2, 0, -0.760207, 0, -0.0967361, -0.688725, 1.85812, 3.5806)
-mesh = SubResource("BoxMesh_qg0hg")
-
-[node name="CSGMesh3D2" type="CSGMesh3D" parent="CloseUp/CSGMesh3D"]
-transform = Transform3D(0.05, -1.42109e-14, 4.54747e-12, 0, 1, -2.64495e-21, -1.59162e-12, -4.76837e-07, 1, -0.519665, -0.264798, -1.52588e-05)
-mesh = SubResource("BoxMesh_qg0hg")
-
-[node name="CSGMesh3D4" type="CSGMesh3D" parent="CloseUp/CSGMesh3D"]
-transform = Transform3D(1.01029, 0, 4.54747e-12, -4.33637e-14, 0.0846398, -2.645e-21, -8.36735e-11, 0, 1.00002, 0.00961685, -0.57233, 1.90735e-06)
-mesh = SubResource("BoxMesh_qg0hg")
-
-[node name="CSGMesh3D5" type="CSGMesh3D" parent="CloseUp/CSGMesh3D"]
-transform = Transform3D(0.0399923, 0, 3.87104e-11, -1.71655e-15, 0.0758507, -2.24987e-20, -3.75167e-12, 0, 8.50627, -0.514932, -0.790995, -1.52588e-05)
-mesh = SubResource("BoxMesh_qg0hg")
-
-[node name="CSGMesh3D6" type="CSGMesh3D" parent="CloseUp/CSGMesh3D"]
-transform = Transform3D(0.0399923, 0, 3.87104e-11, -1.71655e-15, 0.0758507, -2.24987e-20, -3.75167e-12, 0, 8.50627, 0.533004, -0.790995, 2.09808e-05)
-mesh = SubResource("BoxMesh_qg0hg")
-
-[node name="CSGMesh3D3" type="CSGMesh3D" parent="CloseUp/CSGMesh3D"]
-transform = Transform3D(0.05, -1.37668e-14, 0, -1.77636e-15, 1, -2.64495e-21, 0, -4.76837e-07, 1, 0.526471, -0.262784, -0.029789)
-mesh = SubResource("BoxMesh_qg0hg")
 
 [node name="PitchSmPitch" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.865229, 0)
@@ -1332,7 +1307,7 @@ multimesh = SubResource("MultiMesh_8ertr")
 multimesh = SubResource("MultiMesh_1evjs")
 
 [node name="FloatingMenu" parent="." instance=ExtResource("29_kdwo1")]
-transform = Transform3D(-0.96736, 0, 0.253404, 0, 1, 0, -0.253404, 0, -0.96736, -0.658529, 0.273779, 3.53055)
+transform = Transform3D(-0.96736, 0, 0.253404, 0, 1, 0, -0.253404, 0, -0.96736, -0.762698, 0.467731, 3.51495)
 
 [node name="TreesTree001" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.22299, 0.200076, 42.0586)
@@ -1350,3 +1325,7 @@ mesh = ExtResource("29_0t6cl")
 transform = Transform3D(-4.2222e-08, 0.258819, 0.965926, 1.13133e-08, 0.965926, -0.258819, -1, 0, -4.37114e-08, -3.39099, 3.55007, 0.0306776)
 scene = ExtResource("28_oc0j3")
 viewport_size = Vector2(1280, 720)
+
+[node name="WhiteBoardCube001" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -0.754989, 0.232999, 3.54987)
+mesh = ExtResource("29_6sqb7")
