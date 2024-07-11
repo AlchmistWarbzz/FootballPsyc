@@ -11,32 +11,30 @@ func _process(_delta):
 	pass
 
 
-
-
 func _on_button_pressed():
 	deactivate()
-	LevelManager.load_level(1, 1)
+	LevelManager.set_task_to_load(1)
 	LevelManager.keyboard = true
+
 
 func _on_button_2_pressed() -> void:
 	deactivate()
-	LevelManager.load_level(1, 2)
+	LevelManager.set_task_to_load(2)
 	LevelManager.keyboard = true
+
 
 func _on_button_3_pressed() -> void:
 	deactivate()
-	LevelManager.load_level(1, 3)
+	LevelManager.set_task_to_load(3)
 	LevelManager.keyboard = true
 
+
 func deactivate() -> void:
-	hide()
+	$TextureRect.hide()
 	#set_process_unhandled_input(false)
 	#set_process_input(false)
 	#set_physics_process(false)
 	#set_process(false)
-
-
-
-
-
+	
+	$TrialRules.visible = true
 

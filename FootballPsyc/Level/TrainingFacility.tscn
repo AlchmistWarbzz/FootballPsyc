@@ -1,15 +1,16 @@
-[gd_scene load_steps=109 format=3 uid="uid://di1uay3254iau"]
+[gd_scene load_steps=110 format=3 uid="uid://di1uay3254iau"]
 
-[ext_resource type="Texture2D" uid="uid://c6jhiid17kbd" path="res://kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="1_388w3"]
+[ext_resource type="Texture2D" uid="uid://dehnjgtugk28s" path="res://kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="1_388w3"]
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_dtro2"]
 [ext_resource type="PackedScene" uid="uid://bndt6catsod58" path="res://Player.tscn" id="2_3vou3"]
 [ext_resource type="ArrayMesh" uid="uid://dclcgxblc5lmm" path="res://Assets/Assets_SM_Fencing.res" id="3_earvg"]
 [ext_resource type="ArrayMesh" uid="uid://dpyym3swarlva" path="res://Assets/Landscape/SM_ENV__HedgeS.res" id="4_ppqv3"]
 [ext_resource type="ArrayMesh" uid="uid://cer0t2d1oojn2" path="res://Assets/Assets_SM_Flag.res" id="5_0e5ms"]
 [ext_resource type="ArrayMesh" uid="uid://ccnxtus7ll3y5" path="res://Assets/Assets_SM_GoalPost.res" id="6_ijevc"]
-[ext_resource type="Texture2D" uid="uid://b2bjtkv2ae2km" path="res://Import GLTF/M_PitchDiffuse.png" id="7_un8np"]
-[ext_resource type="Texture2D" uid="uid://6es00n51d3wf" path="res://UI/Animations/Go_Trial Anim.png" id="9_i2ipb"]
+[ext_resource type="Texture2D" uid="uid://desyyno0fnugh" path="res://Import GLTF/M_PitchDiffuse.png" id="7_un8np"]
+[ext_resource type="Texture2D" uid="uid://oj3xumt4l7em" path="res://UI/Animations/Go_Trial Anim.png" id="9_i2ipb"]
 [ext_resource type="Script" path="res://UI/Go_Trial.gd" id="10_wqiqa"]
-[ext_resource type="Texture2D" uid="uid://dnxd4g4bqpc1d" path="res://UI/Animations/HowToPlay.jpg" id="11_5byhi"]
+[ext_resource type="Texture2D" uid="uid://b7agfki2nafvm" path="res://UI/Animations/HowToPlay.jpg" id="11_5byhi"]
 [ext_resource type="ArrayMesh" uid="uid://cbladmocsiyyp" path="res://Assets/Landscape/Pitch_SM_Pitch.res" id="11_nqp77"]
 [ext_resource type="ArrayMesh" uid="uid://cvu1dblv46k3f" path="res://Assets/Landscape/SM_ENV__Dirt MountT2.res" id="12_7wpfi"]
 [ext_resource type="Script" path="res://Level/HowToPlay.gd" id="12_h5r7r"]
@@ -21,8 +22,8 @@
 [ext_resource type="ArrayMesh" uid="uid://7r7rtk85baks" path="res://Assets/Buildings/SM__House2.res" id="18_ba48g"]
 [ext_resource type="ArrayMesh" uid="uid://cleg55x62tpks" path="res://Assets/Assets_SM_FloodLight.res" id="19_kebkx"]
 [ext_resource type="ArrayMesh" uid="uid://cyqs6majjx1ux" path="res://Assets/Landscape/Landscape_Plane_001.res" id="20_x47fr"]
-[ext_resource type="Texture2D" uid="uid://ifqi2usxlla6" path="res://UI/Sprites/Block.png" id="22_i508s"]
-[ext_resource type="Texture2D" uid="uid://ob7ytgvs3mg2" path="res://UI/Sprites/Good_Bad.png" id="23_rfurd"]
+[ext_resource type="Texture2D" uid="uid://cyx7v2xw22ptf" path="res://UI/Sprites/Block.png" id="22_i508s"]
+[ext_resource type="Texture2D" uid="uid://bejlx3o7i1lom" path="res://UI/Sprites/Good_Bad.png" id="23_rfurd"]
 [ext_resource type="ArrayMesh" uid="uid://c2vfhjpfdms6g" path="res://Assets/trees/Trees_Tree1.res" id="23_uwbmu"]
 [ext_resource type="ArrayMesh" uid="uid://cfnp6mj7ict8t" path="res://Assets/trees/Trees_Tree2.res" id="24_euuud"]
 [ext_resource type="Script" path="res://Scripts/VisibleTest.gd" id="24_x8fa2"]
@@ -563,7 +564,8 @@ animations = [{
 [sub_resource type="BoxShape3D" id="BoxShape3D_ag747"]
 size = Vector3(1, 0.0682373, 1)
 
-[node name="Node3D" type="Node3D"]
+[node name="SceneRoot" type="Node3D"]
+script = ExtResource("1_dtro2")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ciuxy")
@@ -1819,4 +1821,4 @@ mesh = ExtResource("5_0e5ms")
 skeleton = NodePath("../..")
 
 [node name="FloatingMenu" parent="." instance=ExtResource("29_kdwo1")]
-transform = Transform3D(2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, -2.97418, 0.425558, 0.649729)
+transform = Transform3D(2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, -2.974, 0.35, 0)

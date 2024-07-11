@@ -1,23 +1,17 @@
 extends Node
 
+
 class_name Level
 
-@export var level_id : int
-var level_data : LevelData
+var task_scene
 
-
-
-const BDS_TASK_MANAGER = preload("res://SubScenes/BDS_Task_Manager.tscn")
-const SHIFTING_TASK_MANAGER = preload("res://SubScenes/Shifting_Task_Manager.tscn")
-const SST_TASK_MANAGER = preload("res://SubScenes/SST_Task_Manager.tscn")
-
-var task_to_load
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	level_data = LevelManager.get_level_data_by_id(level_id)
-	
 	#await get_tree().create_timer(10.0).timeout
+	
+	# WARNING only works if exactly 1 level exists
+	LevelManager.main_level = self
 	
 	LevelManager.play_button_pressed.connect(_on_play_button_pressed)
 
@@ -29,5 +23,6 @@ func _process(_delta):
 
 func _on_play_button_pressed() -> void:
 	# task manager creation
-	var instance = task_to_load.instantiate()
+	var instance = task_scene.instantiate()
 	add_child(instance)
+

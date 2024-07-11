@@ -2,6 +2,7 @@ extends Node3D
 
 var xr_interface: XRInterface
 
+
 func _ready():
 	#$"/root/GameController".registerplayer(self)
 	xr_interface = XRServer.find_interface("OpenXR")
@@ -16,6 +17,7 @@ func _ready():
 		get_viewport().use_xr = true
 	else:
 		print("OpenXR not initialized, please check if your headset is connected")
-		
+
+
 #func getposition():
 		#return self.global.transform.origin
