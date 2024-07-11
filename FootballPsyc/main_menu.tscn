@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqsr3sqdc4sgi"]
+[gd_scene load_steps=4 format=3 uid="uid://cqsr3sqdc4sgi"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_2r8w3"]
 [ext_resource type="Texture2D" uid="uid://uu0082xxke2h" path="res://UI/Background/Testing_Centre.jpg" id="2_mg6lu"]
+[ext_resource type="PackedScene" uid="uid://dfi240ptdepwf" path="res://trial_rules.tscn" id="3_36qby"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -73,6 +74,10 @@ offset_bottom = 477.0
 grow_horizontal = 2
 grow_vertical = 2
 toggle_mode = true
+
+[node name="TrialRules" parent="." instance=ExtResource("3_36qby")]
+visible = false
+layout_mode = 1
 
 [connection signal="pressed" from="TextureRect/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="TextureRect/Button2" to="." method="_on_button_2_pressed"]
