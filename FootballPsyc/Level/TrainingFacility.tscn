@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://di1uay3254iau"]
+[gd_scene load_steps=38 format=3 uid="uid://di1uay3254iau"]
 
 [ext_resource type="Texture2D" uid="uid://3wshn3x0ltuy" path="res://kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="1_388w3"]
 [ext_resource type="PackedScene" uid="uid://bndt6catsod58" path="res://Player.tscn" id="2_3vou3"]
@@ -21,7 +21,9 @@
 [ext_resource type="ArrayMesh" uid="uid://cfnp6mj7ict8t" path="res://Assets/trees/Trees_Tree2.res" id="24_euuud"]
 [ext_resource type="Script" path="res://Scripts/VisibleTest.gd" id="24_x8fa2"]
 [ext_resource type="ArrayMesh" uid="uid://tu2r6ggg5ib4" path="res://Assets/trees/Trees_Tree3.res" id="25_wyokc"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="27_lmjnc"]
 [ext_resource type="ArrayMesh" uid="uid://d2bxg0vfo0qbk" path="res://Assets/Landscape/PitchMask_Plane_002.res" id="28_a10rg"]
+[ext_resource type="PackedScene" uid="uid://merxxgtbvkju" path="res://Game Content/UI/Countdown.tscn" id="28_oc0j3"]
 [ext_resource type="ArrayMesh" uid="uid://duta6fnh2k1df" path="res://Assets/Landscape/Trees_tree_004.res" id="29_0t6cl"]
 [ext_resource type="PackedScene" uid="uid://0eikh5w6hthu" path="res://floating_menu.tscn" id="29_kdwo1"]
 [ext_resource type="ArrayMesh" uid="uid://c6i2vk4vswdlp" path="res://Assets/Landscape/Trees_tree_001.res" id="31_ap1ec"]
@@ -1343,3 +1345,8 @@ mesh = ExtResource("32_fo8wx")
 [node name="TreesTree004" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3141, 0.200076, 42.0586)
 mesh = ExtResource("29_0t6cl")
+
+[node name="Viewport2Din3D" parent="." instance=ExtResource("27_lmjnc")]
+transform = Transform3D(-4.2222e-08, 0.258819, 0.965926, 1.13133e-08, 0.965926, -0.258819, -1, 0, -4.37114e-08, -3.39099, 3.55007, 0.0306776)
+scene = ExtResource("28_oc0j3")
+viewport_size = Vector2(1280, 720)
