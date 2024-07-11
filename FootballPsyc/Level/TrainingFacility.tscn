@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://di1uay3254iau"]
+[gd_scene load_steps=36 format=3 uid="uid://di1uay3254iau"]
 
 [ext_resource type="Texture2D" uid="uid://3wshn3x0ltuy" path="res://kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="1_388w3"]
 [ext_resource type="PackedScene" uid="uid://bndt6catsod58" path="res://Player.tscn" id="2_3vou3"]
@@ -6,8 +6,6 @@
 [ext_resource type="ArrayMesh" uid="uid://dpyym3swarlva" path="res://Assets/Landscape/SM_ENV__HedgeS.res" id="4_ppqv3"]
 [ext_resource type="ArrayMesh" uid="uid://cer0t2d1oojn2" path="res://Assets/Assets_SM_Flag.res" id="5_0e5ms"]
 [ext_resource type="ArrayMesh" uid="uid://ccnxtus7ll3y5" path="res://Assets/Assets_SM_GoalPost.res" id="6_ijevc"]
-[ext_resource type="Texture2D" uid="uid://cqlk8lxeteqtl" path="res://UI/Animations/Go_Trial Anim.png" id="9_i2ipb"]
-[ext_resource type="Script" path="res://UI/Go_Trial.gd" id="10_wqiqa"]
 [ext_resource type="ArrayMesh" uid="uid://sw0eniw14hvk" path="res://Assets/Pitch_SM_Pitch2.res" id="11_nqp77"]
 [ext_resource type="ArrayMesh" uid="uid://cvu1dblv46k3f" path="res://Assets/Landscape/SM_ENV__Dirt MountT2.res" id="12_7wpfi"]
 [ext_resource type="ArrayMesh" uid="uid://qs0qfm3bss4o" path="res://Assets/Landscape/SM_ENV__Dirt MountT3.res" id="13_b7utt"]
@@ -42,161 +40,6 @@ sky = SubResource("Sky_velgi")
 [sub_resource type="BoxMesh" id="BoxMesh_qmp26"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_qg0hg"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tykdn"]
-atlas = ExtResource("9_i2ipb")
-region = Rect2(274, 0, 274, 270)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mmx8k"]
-atlas = ExtResource("9_i2ipb")
-region = Rect2(548, 0, 274, 270)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_53ijo"]
-atlas = ExtResource("9_i2ipb")
-region = Rect2(822, 0, 274, 270)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jmbgf"]
-atlas = ExtResource("9_i2ipb")
-region = Rect2(1096, 0, 274, 270)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ufn1u"]
-atlas = ExtResource("9_i2ipb")
-region = Rect2(1370, 0, 274, 270)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_asquv"]
-atlas = ExtResource("9_i2ipb")
-region = Rect2(0, 270, 274, 270)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fy8bf"]
-atlas = ExtResource("9_i2ipb")
-region = Rect2(274, 270, 274, 270)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_53hg2"]
-atlas = ExtResource("9_i2ipb")
-region = Rect2(548, 270, 274, 270)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0emkh"]
-atlas = ExtResource("9_i2ipb")
-region = Rect2(822, 270, 274, 270)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7f3o8"]
-atlas = ExtResource("9_i2ipb")
-region = Rect2(1096, 270, 274, 270)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u7fil"]
-atlas = ExtResource("9_i2ipb")
-region = Rect2(1370, 270, 274, 270)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4h3m6"]
-atlas = ExtResource("9_i2ipb")
-region = Rect2(0, 540, 274, 270)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y2wc0"]
-atlas = ExtResource("9_i2ipb")
-region = Rect2(274, 540, 274, 270)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ji600"]
-atlas = ExtResource("9_i2ipb")
-region = Rect2(548, 540, 274, 270)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3r63o"]
-atlas = ExtResource("9_i2ipb")
-region = Rect2(822, 540, 274, 270)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6hq8m"]
-atlas = ExtResource("9_i2ipb")
-region = Rect2(1096, 540, 274, 270)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w12nd"]
-atlas = ExtResource("9_i2ipb")
-region = Rect2(1370, 540, 274, 270)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p2on1"]
-atlas = ExtResource("9_i2ipb")
-region = Rect2(0, 810, 274, 270)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jrl3i"]
-atlas = ExtResource("9_i2ipb")
-region = Rect2(274, 810, 274, 270)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3kd7i"]
-atlas = ExtResource("9_i2ipb")
-region = Rect2(548, 810, 274, 270)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3q3t3"]
-atlas = ExtResource("9_i2ipb")
-region = Rect2(822, 810, 274, 270)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_kgyg2"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tykdn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mmx8k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_53ijo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jmbgf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ufn1u")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_asquv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fy8bf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_53hg2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0emkh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7f3o8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u7fil")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4h3m6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y2wc0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ji600")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3r63o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6hq8m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_w12nd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p2on1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jrl3i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3kd7i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3q3t3")
-}],
-"loop": true,
-"name": &"GoTrial",
-"speed": 5.0
-}]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ag747"]
 size = Vector3(1, 0.0682373, 1)
@@ -320,16 +163,8 @@ mesh = ExtResource("6_ijevc")
 skeleton = NodePath("../..")
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="CloseUp"]
-transform = Transform3D(-2.94947, 0, 0.0182766, 0, 2, 0, -0.548299, 0, -0.0983156, -0.362564, 1.85812, 3.35781)
+transform = Transform3D(-2.90208, 0, 0.0253402, 0, 2, 0, -0.760207, 0, -0.0967361, -0.688725, 1.85812, 3.5806)
 mesh = SubResource("BoxMesh_qg0hg")
-
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CloseUp/CSGMesh3D"]
-transform = Transform3D(0.15, -3.44169e-15, 0, -3.55271e-15, 0.25, -2.64463e-20, 2.38419e-07, -1.19209e-07, 10, -0.893917, 0.019724, 4.56038)
-texture_filter = 0
-sprite_frames = SubResource("SpriteFrames_kgyg2")
-animation = &"GoTrial"
-frame_progress = 0.252762
-script = ExtResource("10_wqiqa")
 
 [node name="CSGMesh3D2" type="CSGMesh3D" parent="CloseUp/CSGMesh3D"]
 transform = Transform3D(0.05, -1.42109e-14, 4.54747e-12, 0, 1, -2.64495e-21, -1.59162e-12, -4.76837e-07, 1, -0.519665, -0.264798, -1.52588e-05)
@@ -348,7 +183,7 @@ transform = Transform3D(0.0399923, 0, 3.87104e-11, -1.71655e-15, 0.0758507, -2.2
 mesh = SubResource("BoxMesh_qg0hg")
 
 [node name="CSGMesh3D3" type="CSGMesh3D" parent="CloseUp/CSGMesh3D"]
-transform = Transform3D(0.05, -1.42109e-14, 4.54747e-12, -1.77636e-15, 1, -2.64495e-21, -2.27374e-12, -4.76837e-07, 1, 0.526471, -0.262784, -0.029789)
+transform = Transform3D(0.05, -1.37668e-14, 0, -1.77636e-15, 1, -2.64495e-21, 0, -4.76837e-07, 1, 0.526471, -0.262784, -0.029789)
 mesh = SubResource("BoxMesh_qg0hg")
 
 [node name="PitchSmPitch" type="MeshInstance3D" parent="."]
@@ -1495,7 +1330,7 @@ multimesh = SubResource("MultiMesh_8ertr")
 multimesh = SubResource("MultiMesh_1evjs")
 
 [node name="FloatingMenu" parent="." instance=ExtResource("29_kdwo1")]
-transform = Transform3D(-0.983156, 0, 0.182768, 0, 1, 0, -0.182768, 0, -0.983156, -0.336067, 0.273779, 3.30571)
+transform = Transform3D(-0.96736, 0, 0.253404, 0, 1, 0, -0.253404, 0, -0.96736, -0.658529, 0.273779, 3.53055)
 
 [node name="TreesTree001" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.22299, 0.200076, 42.0586)
