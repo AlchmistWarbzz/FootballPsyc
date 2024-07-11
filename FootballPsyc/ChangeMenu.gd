@@ -7,9 +7,9 @@ var show_menu:bool = true
 func _ready():
 	LevelManager.play_button_pressed.connect(hide_menu)
 	$VirtualKeyboard.visible = false
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-
-
 func _process(delta):
 	if LevelManager.keyboard == true:
 		show_keyboard()

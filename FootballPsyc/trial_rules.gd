@@ -51,3 +51,4 @@ func deactivate() -> void:
 func _on_play_button_pressed() -> void:
 	deactivate()
 	LevelManager.play_button_pressed.emit()
+
