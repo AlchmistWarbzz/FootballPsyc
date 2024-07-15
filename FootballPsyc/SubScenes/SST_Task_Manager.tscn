@@ -34,11 +34,13 @@ transform = Transform3D(-0.721953, 0, 0.691942, 0, 1, 0, -0.691942, 0, -0.721953
 transform = Transform3D(0.53227, 0, 0.846574, 0, 1, 0, -0.846574, 0, 0.53227, -10.88, 0, -4)
 
 [node name="Defender" parent="PlaceholderDefenderRight" instance=ExtResource("3_t0scl")]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0)
 
 [node name="PlaceholderFixation" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, 0)
 
 [node name="Teammate" parent="PlaceholderFixation" instance=ExtResource("4_pxf4c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0088706, 1.19209e-07, 0.00378418)
 
 [node name="DefenderCenter" parent="." instance=ExtResource("3_t0scl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)
