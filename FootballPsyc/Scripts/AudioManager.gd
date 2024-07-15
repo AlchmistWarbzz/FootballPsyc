@@ -8,7 +8,7 @@ signal football_kick
 signal football_touch
 signal footsteps
 signal ball_feeder_launch
-signal stop_all_signalled_audio
+signal trial_ended
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
