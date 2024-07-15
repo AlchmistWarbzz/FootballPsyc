@@ -133,7 +133,7 @@ func _process(_delta: float) -> void:
 				
 				scene_reset()
 			
-			elif Input.is_action_just_pressed("kick_left") and not has_responded:
+			elif Input.is_action_just_pressed("kick_left") and not has_responded:# INPUT
 				has_responded = true
 				if is_feeder_left:
 					ball_kicked.emit($PlaceholderFixation.global_position, ball_kick_magnitude)
@@ -145,7 +145,7 @@ func _process(_delta: float) -> void:
 					print("go_trial_failed")
 				append_new_metrics_entry(false, is_trial_passed, Time.get_ticks_msec() - ticks_msec_bookmark)
 			
-			elif Input.is_action_just_pressed("kick_right") and not has_responded:
+			elif Input.is_action_just_pressed("kick_right") and not has_responded:# INPUT
 				has_responded = true
 				if not is_feeder_left: # is feeder right
 					ball_kicked.emit($PlaceholderFixation.global_position, ball_kick_magnitude)
@@ -180,8 +180,8 @@ func _process(_delta: float) -> void:
 				stop_signal.emit()
 				#AudioManager.footsteps_sfx.play(0.0)
 				#AudioManager.footsteps_sfx.play(3.55)
-			
-			if (Input.is_action_just_pressed("trigger_click") or Input.is_action_just_pressed("kick_right")) and not has_responded:
+			# below, first input should be left, so it reads "if left or right pressed and not responded yet"
+			if (Input.is_action_just_pressed("trigger_click") or Input.is_action_just_pressed("kick_right")) and not has_responded:# INPUT
 				has_responded = true
 				is_trial_passed = false
 				#ball_kicked.emit($PlaceholderFixation.global_position, ball_kick_magnitude)
