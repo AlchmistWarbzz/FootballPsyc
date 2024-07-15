@@ -23,6 +23,7 @@ func _ready():
 			task_manager_node.stop_signal.connect(_on_task_manager_stop_signal)
 	
 	AudioManager.footsteps.connect(_on_footsteps)
+	AudioManager.stop_all_signalled_audio.connect(_on_stop_all_signalled_audio)
 
 #func _on_task_manager_trial_started(is_stop_trial: bool):
 	#if is_stop_trial:
@@ -67,3 +68,7 @@ func _physics_process(delta):
 
 func _on_footsteps() -> void:
 	footsteps_sfx.play()
+
+
+func _on_stop_all_signalled_audio() -> void:
+	footsteps_sfx.stop()

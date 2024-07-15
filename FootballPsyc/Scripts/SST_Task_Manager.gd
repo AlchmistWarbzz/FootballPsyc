@@ -197,6 +197,7 @@ func scene_reset():
 	print("scene_reset")
 	
 	##AudioManager.footsteps_sfx.stop()
+	AudioManager.stop_all_signalled_audio.emit()
 	
 	# enable ball feeders
 	#$PlaceholderBallFeederLeft/BallFeeder.process_mode = Node.PROCESS_MODE_ALWAYS
