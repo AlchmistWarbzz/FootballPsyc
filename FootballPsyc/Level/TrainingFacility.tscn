@@ -1822,3 +1822,7 @@ skeleton = NodePath("../..")
 
 [node name="FloatingMenu" parent="." instance=ExtResource("29_kdwo1")]
 transform = Transform3D(2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, -2.974, 0.35, 0)
+
+[node name="Ambience" type="AudioStreamPlayer" parent="."]
+volume_db = -6.0
+autoplay = true
