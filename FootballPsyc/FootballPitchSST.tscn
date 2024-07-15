@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_7q4w2"]
 [ext_resource type="Material" uid="uid://t05uv2wgginr" path="res://Materials/M_TempHill.tres" id="1_niqus"]
-[ext_resource type="Texture2D" uid="uid://5j7jnmub332o" path="res://Materials/HDR/kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="2_l2183"]
+[ext_resource type="Texture2D" uid="uid://bm3de6gohtq74" path="res://Materials/HDR/kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="2_l2183"]
 [ext_resource type="ArrayMesh" uid="uid://bstudu2gd55b3" path="res://Assets/Environment/SM_ENV__Dirt MountT2.tres" id="4_0mc3s"]
 [ext_resource type="ArrayMesh" uid="uid://dh0vvwbbfj12s" path="res://Assets/Environment/SM_ENV__Dirt MountT4.tres" id="5_yrs51"]
 [ext_resource type="ArrayMesh" uid="uid://dvbdty6p3w6n7" path="res://Assets/Environment/SM_ENV__Dirt MountT1.tres" id="6_23pls"]
@@ -21,11 +21,11 @@
 [ext_resource type="ArrayMesh" uid="uid://ck3sws4x5gu6a" path="res://Assets/Props/Assets_SM_Flag.res" id="21_scumy"]
 [ext_resource type="ArrayMesh" uid="uid://c47gbavrj88vk" path="res://Assets/Props/Assets_SM_FloodLight.res" id="22_b0xcb"]
 [ext_resource type="ArrayMesh" uid="uid://d3loukadqx6do" path="res://Assets/Props/Assets_SM_Football.res" id="23_h3jml"]
-[ext_resource type="Texture2D" uid="uid://b2bjtkv2ae2km" path="res://Import GLTF/M_PitchDiffuse.png" id="23_me20w"]
+[ext_resource type="Texture2D" uid="uid://desyyno0fnugh" path="res://Import GLTF/M_PitchDiffuse.png" id="23_me20w"]
 [ext_resource type="ArrayMesh" uid="uid://d0h82vnms1pg5" path="res://Assets/Props/Assets_SM_GoalPost.res" id="24_hyqpp"]
 [ext_resource type="ArrayMesh" uid="uid://bonv8lx6wjpvj" path="res://Assets/Environment/SM_ENV__TreeT1.res" id="26_lwsue"]
 [ext_resource type="ArrayMesh" uid="uid://byv3khafxpxdn" path="res://Assets/Pitch_SM_Pitch.res" id="26_o844s"]
-[ext_resource type="PackedScene" uid="uid://dpybpplj3xco1" path="res://Import GLTF/Townhall.gltf" id="27_lw8c4"]
+[ext_resource type="PackedScene" uid="uid://50pd5u78p8i8" path="res://Import GLTF/Townhall.gltf" id="27_lw8c4"]
 [ext_resource type="ArrayMesh" uid="uid://cxyqct7m8eupo" path="res://Assets/Environment/SM_ENV__TreeT2.res" id="27_sssm6"]
 [ext_resource type="PackedScene" uid="uid://diy4oxifvl3ya" path="res://Character/character.tscn" id="28_0rfv3"]
 [ext_resource type="PackedScene" uid="uid://dfi240ptdepwf" path="res://trial_rules.tscn" id="29_sloev"]
@@ -68,7 +68,6 @@ point_count = 2
 
 [node name="root" type="Node3D"]
 script = ExtResource("1_7q4w2")
-level_id = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

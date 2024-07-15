@@ -14,6 +14,7 @@ script = ExtResource("1_kyice")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.59676, 0)
 scene = ExtResource("2_d2gwl")
 viewport_size = Vector2(1920, 1080)
+update_mode = 2
 material = SubResource("StandardMaterial3D_q044d")
 
 [node name="VirtualKeyboard" parent="." instance=ExtResource("4_0kujw")]

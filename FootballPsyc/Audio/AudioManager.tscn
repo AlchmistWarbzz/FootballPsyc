@@ -1,14 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://6kcvycobwuri"]
+[gd_scene load_steps=6 format=3 uid="uid://6kcvycobwuri"]
 
-[ext_resource type="Script" path="res://Scripts/AudioManager.gd" id="1_rqxqj"]
-[ext_resource type="AudioStream" uid="uid://y65sgs65btbp" path="res://Audio/Ambience.mp3" id="2_8ja0w"]
-[ext_resource type="AudioStream" uid="uid://bm4fuiu4lmx3h" path="res://Audio/Football_Kick.mp3" id="3_uam6y"]
-[ext_resource type="AudioStream" uid="uid://gwnefpw3ek3i" path="res://Audio/Football_Touch.mp3" id="4_ifhti"]
-[ext_resource type="AudioStream" uid="uid://dfof6v74l5y6h" path="res://Audio/Footsteps.mp3" id="5_uigtx"]
-[ext_resource type="AudioStream" uid="uid://cyf0o7t0jkvle" path="res://Audio/Launcher.mp3" id="6_0utql"]
+[ext_resource type="AudioStream" uid="uid://chkifhwyl1p7r" path="res://Audio/Ambience.mp3" id="2_8ja0w"]
+[ext_resource type="AudioStream" uid="uid://d0bfqyqk7c61s" path="res://Audio/Football_Kick.mp3" id="3_uam6y"]
+[ext_resource type="AudioStream" uid="uid://bs7w00mrbqekw" path="res://Audio/Football_Touch.mp3" id="4_ifhti"]
+[ext_resource type="AudioStream" uid="uid://f4acbwg2p34c" path="res://Audio/Footsteps.mp3" id="5_uigtx"]
+[ext_resource type="AudioStream" uid="uid://bs63al0errk0d" path="res://Audio/Launcher.mp3" id="6_0utql"]
 
 [node name="AudioManager" type="Node"]
-script = ExtResource("1_rqxqj")
 
 [node name="Ambience_SFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_8ja0w")
