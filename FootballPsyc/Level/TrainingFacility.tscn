@@ -1,4 +1,4 @@
-[gd_scene load_steps=110 format=3 uid="uid://di1uay3254iau"]
+[gd_scene load_steps=111 format=3 uid="uid://di1uay3254iau"]
 
 [ext_resource type="Texture2D" uid="uid://dehnjgtugk28s" path="res://kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="1_388w3"]
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_dtro2"]
@@ -29,6 +29,7 @@
 [ext_resource type="Script" path="res://Scripts/VisibleTest.gd" id="24_x8fa2"]
 [ext_resource type="ArrayMesh" uid="uid://tu2r6ggg5ib4" path="res://Assets/trees/Trees_Tree3.res" id="25_wyokc"]
 [ext_resource type="PackedScene" uid="uid://0eikh5w6hthu" path="res://floating_menu.tscn" id="29_kdwo1"]
+[ext_resource type="AudioStream" uid="uid://chkifhwyl1p7r" path="res://Audio/Ambience.mp3" id="30_6wtan"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_e76qn"]
 panorama = ExtResource("1_388w3")
@@ -1824,5 +1825,6 @@ skeleton = NodePath("../..")
 transform = Transform3D(2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, -2.974, 0.35, 0)
 
 [node name="Ambience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("30_6wtan")
 volume_db = -6.0
 autoplay = true
