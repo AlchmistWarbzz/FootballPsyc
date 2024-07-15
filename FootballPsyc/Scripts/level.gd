@@ -4,7 +4,7 @@ extends Node
 class_name Level
 
 var task_scene
-
+@onready var football_kick_sfx: AudioStreamPlayer = $Football_Kick_SFX
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,6 +14,8 @@ func _ready() -> void:
 	LevelManager.main_level = self
 	
 	LevelManager.play_button_pressed.connect(_on_play_button_pressed)
+	
+	AudioManager.football_kick.connect(_on_football_kick)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,3 +28,6 @@ func _on_play_button_pressed() -> void:
 	var instance = task_scene.instantiate()
 	add_child(instance)
 
+
+func _on_football_kick() -> void:
+	football_kick_sfx.play()
