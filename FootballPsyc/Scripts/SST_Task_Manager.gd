@@ -248,6 +248,7 @@ func scene_trial_start(is_stop_trial: bool):
 	trial_counter += 1
 	if is_stop_trial:
 		stop_trial_counter += 1
+		AudioManager.footsteps.emit()
 	else:
 		go_trial_counter += 1
 	

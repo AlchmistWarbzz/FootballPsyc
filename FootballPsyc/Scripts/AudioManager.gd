@@ -1,7 +1,7 @@
 extends Node
 
 @onready var football_touch_sfx: AudioStreamPlayer = $Football_Touch_SFX
-@onready var footsteps_sfx: AudioStreamPlayer = $Footsteps_SFX
+
 @onready var ball_feeder_launch_sfx: AudioStreamPlayer = $Ball_Feeder_Launch_SFX
 
 signal football_kick

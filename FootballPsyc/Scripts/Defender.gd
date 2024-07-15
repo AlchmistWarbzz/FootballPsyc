@@ -4,6 +4,8 @@ extends CharacterBody3D
 const SPEED = 6.0
 const JUMP_VELOCITY = 4.5
 
+@onready var footsteps_sfx: AudioStreamPlayer3D = $Footsteps_SFX
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -19,6 +21,8 @@ func _ready():
 	if task_manager_node != null:
 		if task_manager_node.name == "SST_Task_Manager":
 			task_manager_node.stop_signal.connect(_on_task_manager_stop_signal)
+	
+	AudioManager.footsteps.connect(_on_footsteps)
 
 #func _on_task_manager_trial_started(is_stop_trial: bool):
 	#if is_stop_trial:
@@ -61,3 +65,5 @@ func _physics_process(delta):
 		velocity.z = 0
 
 
+func _on_footsteps() -> void:
+	footsteps_sfx.play()
