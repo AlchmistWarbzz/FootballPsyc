@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bndt6catsod58"]
+[gd_scene load_steps=6 format=3 uid="uid://bndt6catsod58"]
 
 [ext_resource type="Script" path="res://Scripts/VRStart.gd" id="1_nf6al"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="2_0y1ba"]
-[ext_resource type="Script" path="res://Debug.gd" id="2_vlmdj"]
 [ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="2_ww6ra"]
 [ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="3_a6y6g"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="5_g4d5a"]
@@ -24,8 +23,6 @@ tracker = &"left_hand"
 [node name="RightHand" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
 tracker = &"right_hand"
-script = ExtResource("2_vlmdj")
-trigger_action = "trigger_right"
 
 [node name="RightHand" parent="XROrigin3D/RightHand" instance=ExtResource("3_a6y6g")]
 
