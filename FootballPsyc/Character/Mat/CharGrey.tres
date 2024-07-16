@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dab4vvnijylu8"]
+
+[resource]
+resource_name = "CharGrey"
+cull_mode = 2
+albedo_color = Color(0.619317, 0.619317, 0.619317, 1)

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://21htv1jllpxa"]
+[gd_scene load_steps=7 format=3 uid="uid://21htv1jllpxa"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_npcwi"]
-[ext_resource type="Texture2D" uid="uid://5if7qp0hgtce" path="res://Materials/FEA27784-ED8F-452E-B173-D5317C1EA747.jpg" id="2_47ob5"]
-[ext_resource type="Texture2D" uid="uid://bbiqkh17heowr" path="res://Game Content/UI/Stop Signal.jpg" id="3_l0pb5"]
-[ext_resource type="Texture2D" uid="uid://ckraoelwc1j46" path="res://Game Content/UI/Colour Ball.jpg" id="4_4oenc"]
-[ext_resource type="Texture2D" uid="uid://5brvv8wotvv1" path="res://Game Content/UI/Backward Digit Span.jpg" id="5_hx7w7"]
+[ext_resource type="Texture2D" uid="uid://cgqcvhke1d7hq" path="res://Materials/FEA27784-ED8F-452E-B173-D5317C1EA747.jpg" id="2_47ob5"]
+[ext_resource type="Texture2D" uid="uid://cg1hwx3s0hrxg" path="res://Game Content/UI/Stop Signal.jpg" id="3_l0pb5"]
+[ext_resource type="Texture2D" uid="uid://de3wk8ewheble" path="res://Game Content/UI/Colour Ball.jpg" id="4_4oenc"]
+[ext_resource type="Texture2D" uid="uid://cta3opyuoyx33" path="res://Game Content/UI/Backward Digit Span.jpg" id="5_hx7w7"]
+[ext_resource type="PackedScene" uid="uid://dfi240ptdepwf" path="res://trial_rules.tscn" id="6_swpcx"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -76,6 +77,11 @@ toggle_mode = true
 icon = ExtResource("5_hx7w7")
 expand_icon = true
 
+[node name="TrialRules" parent="." instance=ExtResource("6_swpcx")]
+visible = false
+layout_mode = 1
+
 [connection signal="pressed" from="TextureRect/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="TextureRect/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="TextureRect/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="visibility_changed" from="TrialRules" to="TrialRules" method="_on_visibility_changed"]

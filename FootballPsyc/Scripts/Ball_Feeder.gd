@@ -5,6 +5,8 @@ const BLUE_BALL = preload("res://SubScenes/BlueBall.tscn")
 
 @export var _left_feeder: bool
 
+@onready var ball_feeder_launch_sfx: AudioStreamPlayer = $Ball_Feeder_Launch_SFX
+
 var _ball
 
 # Called when the node enters the scene tree for the first time.
@@ -47,3 +49,7 @@ func instantiate_ball(is_blue_ball: bool):
 	_ball.set_transform($BallSpawnPoint.transform)
 	add_child(_ball)
 	return _ball
+
+func _on_ball_launch():
+	AudioManager.ball_launch.connect(_on_ball_launch)
+	

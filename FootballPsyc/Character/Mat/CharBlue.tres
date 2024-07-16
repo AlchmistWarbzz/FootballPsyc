@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cfq2iti2lw118"]
+
+[resource]
+resource_name = "CharBlue"
+cull_mode = 2
+albedo_color = Color(0.179876, 0.173096, 0.906521, 1)
+roughness = 0.5

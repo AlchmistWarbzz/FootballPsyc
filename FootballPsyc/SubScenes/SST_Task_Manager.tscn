@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfwgvi5kn4ifi"]
+[gd_scene load_steps=8 format=3 uid="uid://dfwgvi5kn4ifi"]
 
 [ext_resource type="Script" path="res://Scripts/SST_Task_Manager.gd" id="1_hrvas"]
 [ext_resource type="PackedScene" uid="uid://n7shkduekcq2" path="res://SubScenes/Player.tscn" id="2_a7xoq"]
 [ext_resource type="PackedScene" uid="uid://cdt6315of2aeu" path="res://SubScenes/Ball_Feeder.tscn" id="2_rgtr6"]
 [ext_resource type="PackedScene" uid="uid://ca41om8xqbbts" path="res://SubScenes/Defender.tscn" id="3_t0scl"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="4_1fabr"]
 [ext_resource type="PackedScene" uid="uid://cm3ee373qph5v" path="res://SubScenes/Teammate.tscn" id="4_pxf4c"]
+[ext_resource type="PackedScene" uid="uid://bhwwjgij64yjj" path="res://SubScenes/vr_panel.tscn" id="5_dhp5p"]
 
 [node name="SST_Task_Manager" type="Node3D"]
 script = ExtResource("1_hrvas")
@@ -20,10 +22,19 @@ transform = Transform3D(-0.630744, 0, 0.775991, 0, 1, 0, -0.775991, 0, -0.630744
 [node name="BallFeeder" parent="PlaceholderBallFeederLeft" instance=ExtResource("2_rgtr6")]
 _left_feeder = true
 
+[node name="Viewport2Din3D" parent="PlaceholderBallFeederLeft/BallFeeder" instance=ExtResource("4_1fabr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.51088, 0)
+screen_size = Vector2(10, 5)
+
 [node name="PlaceholderBallFeederRight" type="Node3D" parent="."]
 transform = Transform3D(0.644257, 0, 0.764809, 0, 1, 0, -0.764809, 0, 0.644257, -8.015, 0, -5.535)
 
 [node name="BallFeeder" parent="PlaceholderBallFeederRight" instance=ExtResource("2_rgtr6")]
+
+[node name="Viewport2Din3D" parent="PlaceholderBallFeederRight/BallFeeder" instance=ExtResource("4_1fabr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.51088, 0)
+screen_size = Vector2(10, 5)
+scene = ExtResource("5_dhp5p")
 
 [node name="PlaceholderDefenderLeft" type="Node3D" parent="."]
 transform = Transform3D(-0.721953, 0, 0.691942, 0, 1, 0, -0.691942, 0, -0.721953, -10.88, 0, 4)

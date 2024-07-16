@@ -74,7 +74,7 @@ albedo_texture = ExtResource("13_nbpje")
 albedo_texture = ExtResource("13_nbpje")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ag747"]
-size = Vector3(1, 0.0682373, 1)
+size = Vector3(500, 0.068, 500)
 
 [node name="SceneRoot" type="Node3D"]
 script = ExtResource("1_dtro2")
@@ -90,6 +90,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.1
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-16.5254, 0, 0, 0, -0.0211296, 0, 0, 0, -22.2605, 0, 0, 0)
+visible = false
 mesh = SubResource("BoxMesh_qmp26")
 skeleton = NodePath("")
 
@@ -313,7 +314,7 @@ mesh = ExtResource("20_x47fr")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(500, 0, 0, 0, 1, 0, 0, 0, 500, 0, 0.165957, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.165957, 0)
 shape = SubResource("BoxShape3D_ag747")
 
 [node name="FencingBack" type="Node3D" parent="."]
@@ -466,7 +467,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 0)
 mesh = ExtResource("3_earvg")
 
 [node name="Sprite3D2" type="Sprite3D" parent="."]
-transform = Transform3D(1.09698e-09, 0.087385, -0.0441112, -6.3334e-10, 0.0504518, 0.076403, 0.104099, -6.13898e-10, 9.29666e-10, 3.78785, 0.398298, 0.0168233)
+transform = Transform3D(8.00364e-09, -0.087385, 0.0441112, -6.3334e-10, 0.0504518, 0.076403, -0.104099, -7.02554e-09, 2.92666e-09, -4.4665, 0.398298, 0.853666)
 texture_filter = 0
 texture = ExtResource("22_i508s")
 

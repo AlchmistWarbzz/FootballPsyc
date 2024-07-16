@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://coj4ust3qwm5v"]
+
+[resource]
+resource_name = "CharEyeColor"
+cull_mode = 2
+albedo_color = Color(0.172521, 0.17386, 0.281811, 1)
