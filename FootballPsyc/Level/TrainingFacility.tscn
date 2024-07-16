@@ -733,7 +733,7 @@ transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 
 mesh = ExtResource("15_1pq5m")
 
 [node name="FloatingMenu" parent="Node3D2/WhiteBoardCube001" instance=ExtResource("29_kdwo1")]
-transform = Transform3D(-0.999999, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, -0.999999, 0.00557774, 0.262027, -0.0268326)
+transform = Transform3D(-0.999999, 0, 0, 0, 1, 0, 0, 0, -0.999999, 0.00557774, 0.262027, -0.0268326)
 
 [node name="Environment" type="Node3D" parent="."]
 
