@@ -19,3 +19,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
+	
+func  _on_ball_launch():
+	pass

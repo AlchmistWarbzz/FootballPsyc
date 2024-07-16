@@ -5,7 +5,7 @@ const BLUE_BALL = preload("res://SubScenes/BlueBall.tscn")
 
 @export var _left_feeder: bool
 
-@onready var ball_feeder_launch_sfx: AudioStreamPlayer = $Ball_Feeder_Launch_SFX
+@onready var ball_feeder_launch_sfx: AudioStreamPlayer3D = $Ball_Launch_SFX
 
 var _ball
 
@@ -22,6 +22,8 @@ func _ready():
 	
 	if task_manager_node != null:
 		task_manager_node.trial_ended.connect(_on_task_manager_trial_ended)
+		
+	AudioManager.ball_feeder_launch.connect(_on_ball_launch)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -51,5 +53,5 @@ func instantiate_ball(is_blue_ball: bool):
 	return _ball
 
 func _on_ball_launch():
-	AudioManager.ball_launch.connect(_on_ball_launch)
+	ball_feeder_launch_sfx.play()
 	

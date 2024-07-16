@@ -272,9 +272,11 @@ func scene_trial_start(is_stop_trial: bool):
 	#var new_ball_feeder = ball_feeder_scene.instantiate()
 	if randf() > 0.5:
 		is_feeder_left = true
+		AudioManager.ball_feeder_launch.emit()
 		#$PlaceholderBallFeederRight/BallFeeder.process_mode = Node.PROCESS_MODE_DISABLED
 	else:
 		is_feeder_left = false
+		AudioManager.ball_feeder_launch.emit()
 		#$PlaceholderBallFeederLeft/BallFeeder.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	# spawn teammate

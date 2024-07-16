@@ -57,7 +57,7 @@ var has_responded: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	AudioManager.ambience_sfx.play()
+	#AudioManager.ambience_sfx.play()
 	
 	reset_counters()
 	
@@ -209,9 +209,11 @@ func scene_trial_start():
 	if randf() > 0.5:
 		is_feeder_left = true
 		trial_started.emit(is_blue_ball, is_feeder_left)
+		AudioManager.ball_feeder_launch.emit()
 	else:
 		is_feeder_left = false
 		trial_started.emit(is_blue_ball, is_feeder_left)
+		AudioManager.ball_feeder_launch.emit()
 	
 	current_state = scene_state.TRIAL
 	ticks_msec_bookmark = Time.get_ticks_msec()

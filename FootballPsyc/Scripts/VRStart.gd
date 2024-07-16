@@ -3,6 +3,7 @@ extends Node3D
 var xr_interface: XRInterface
 
 
+
 func _ready():
 	#$"/root/GameController".registerplayer(self)
 	xr_interface = XRServer.find_interface("OpenXR")
