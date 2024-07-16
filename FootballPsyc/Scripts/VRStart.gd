@@ -21,3 +21,11 @@ func _ready():
 
 #func getposition():
 		#return self.global.transform.origin
+
+
+func _on_left_hand_button_pressed(name):
+	print("PRESSED LEFT TRIGGER")
+
+
+func _on_right_hand_button_pressed(name):
+	print("PRESSED RIGHT TRIGGER")
