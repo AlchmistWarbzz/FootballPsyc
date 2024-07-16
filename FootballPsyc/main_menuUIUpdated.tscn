@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://21htv1jllpxa"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_npcwi"]
-[ext_resource type="Texture2D" uid="uid://vrivcks3lpgt" path="res://Game Content/UI/Training Centre.jpg" id="2_crjp4"]
-[ext_resource type="Texture2D" uid="uid://cg1hwx3s0hrxg" path="res://Game Content/UI/Stop Signal.jpg" id="3_l0pb5"]
-[ext_resource type="Texture2D" uid="uid://de3wk8ewheble" path="res://Game Content/UI/Colour Ball.jpg" id="4_4oenc"]
-[ext_resource type="Texture2D" uid="uid://cta3opyuoyx33" path="res://Game Content/UI/Backward Digit Span.jpg" id="5_hx7w7"]
+[ext_resource type="Texture2D" uid="uid://5if7qp0hgtce" path="res://Materials/FEA27784-ED8F-452E-B173-D5317C1EA747.jpg" id="2_47ob5"]
+[ext_resource type="Texture2D" uid="uid://bbiqkh17heowr" path="res://Game Content/UI/Stop Signal.jpg" id="3_l0pb5"]
+[ext_resource type="Texture2D" uid="uid://ckraoelwc1j46" path="res://Game Content/UI/Colour Ball.jpg" id="4_4oenc"]
+[ext_resource type="Texture2D" uid="uid://5brvv8wotvv1" path="res://Game Content/UI/Backward Digit Span.jpg" id="5_hx7w7"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -22,7 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_crjp4")
+texture = ExtResource("2_47ob5")
 expand_mode = 3
 
 [node name="Button" type="Button" parent="TextureRect"]
@@ -33,9 +33,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -917.0
-offset_top = -29.0
+offset_top = 6.0
 offset_right = -393.0
-offset_bottom = 301.0
+offset_bottom = 336.0
 grow_horizontal = 2
 grow_vertical = 2
 toggle_mode = true
@@ -49,10 +49,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -279.0
-offset_top = -68.0
-offset_right = 254.0
-offset_bottom = 270.0
+offset_left = -284.0
+offset_top = 104.0
+offset_right = 279.0
+offset_bottom = 462.0
 grow_horizontal = 2
 grow_vertical = 2
 toggle_mode = true
@@ -67,9 +67,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 380.0
-offset_top = -89.0
+offset_top = -32.0
 offset_right = 924.0
-offset_bottom = 255.0
+offset_bottom = 312.0
 grow_horizontal = 2
 grow_vertical = 2
 toggle_mode = true
