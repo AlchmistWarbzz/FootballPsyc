@@ -50,10 +50,10 @@ signal ball_kicked
 var is_trial_passed: bool = false
 
 # spans
-@onready var targets = [$"0/MeshInstance3D", $"1/MeshInstance3D"
-		, $"2/MeshInstance3D", $"3/MeshInstance3D"
-		, $"4/MeshInstance3D", $"5/MeshInstance3D"
-		, $"6/MeshInstance3D"]
+@onready var targets = [$"0/Viewport2Din3D", $"1/Viewport2Din3D"
+		, $"2/Viewport2Din3D", $"3/Viewport2Din3D"
+		, $"4/Viewport2Din3D", $"5/Viewport2Din3D"
+		, $"6/Viewport2Din3D"]
 @onready var random_span = Array()
 @onready var random_span_numbers = Array()
 @onready var player_input_span = Array()
