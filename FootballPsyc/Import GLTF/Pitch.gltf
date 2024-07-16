@@ -23,9 +23,6 @@
 			"doubleSided":true,
 			"name":"GrassSeamless",
 			"pbrMetallicRoughness":{
-				"baseColorTexture":{
-					"index":0
-				},
 				"metallicFactor":0,
 				"roughnessFactor":0.5
 			}
@@ -64,24 +61,11 @@
 			]
 		}
 	],
-	"textures":[
-		{
-			"sampler":0,
-			"source":0
-		}
-	],
-	"images":[
-		{
-			"mimeType":"image/png",
-			"name":"M_PitchDiffuse",
-			"uri":"M_PitchDiffuse.png"
-		}
-	],
 	"accessors":[
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":529,
+			"count":513,
 			"max":[
 				50,
 				1.0576896667480469,
@@ -97,13 +81,13 @@
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":529,
+			"count":513,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":529,
+			"count":513,
 			"type":"VEC2"
 		},
 		{
@@ -150,62 +134,56 @@
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":6348,
+			"byteLength":6156,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":6348,
-			"byteOffset":6348,
+			"byteLength":6156,
+			"byteOffset":6156,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":4232,
-			"byteOffset":12696,
+			"byteLength":4104,
+			"byteOffset":12312,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":3096,
-			"byteOffset":16928,
+			"byteOffset":16416,
 			"target":34963
 		},
 		{
 			"buffer":0,
 			"byteLength":5292,
-			"byteOffset":20024,
+			"byteOffset":19512,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":5292,
-			"byteOffset":25316,
+			"byteOffset":24804,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":3528,
-			"byteOffset":30608,
+			"byteOffset":30096,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":2832,
-			"byteOffset":34136,
+			"byteOffset":33624,
 			"target":34963
-		}
-	],
-	"samplers":[
-		{
-			"magFilter":9729,
-			"minFilter":9987
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":36968,
+			"byteLength":36456,
 			"uri":"Pitch.bin"
 		}
 	]
