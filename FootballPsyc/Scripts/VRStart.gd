@@ -34,13 +34,14 @@ func _on_right_hand_button_pressed(name):
 	target = $XROrigin3D/RightHand/FunctionPointer/RayCast.get_collider()
 	LevelManager.right_trigger.emit()
 	if target:
-		print("This is ", target.name)
+		#print("This is ", target.name)
+		LevelManager.current_target.emit(target)
 	else:
 		print("No target hit")
 
 
 #func _on_function_pointer_pointing_event(event):
-	target = $XROrigin3D/RightHand/FunctionPointer/RayCast.get_collider()
+	#target = $XROrigin3D/RightHand/FunctionPointer/RayCast.get_collider()
 	#if target:
 		#print("This is ", target.name)
 	#else:
