@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://mxf3myqk4311"]
+
+[ext_resource type="Texture2D" uid="uid://f5jrptgafs54" path="res://UI/Sprites/Block.png" id="1_1r7k7"]
+[ext_resource type="Texture2D" uid="uid://b53klrcdvholk" path="res://UI/Sprites/Good_Bad.png" id="2_7oawo"]
+[ext_resource type="Script" path="res://Scripts/VisibleTest.gd" id="3_d72db"]
+
+[node name="FeedbackUI" type="Sprite3D"]
+transform = Transform3D(8.00364e-09, -0.087385, 0.0441112, -6.3334e-10, 0.0504518, 0.076403, -0.104099, -7.02554e-09, 2.92666e-09, 0, 0, 0)
+texture_filter = 0
+texture = ExtResource("1_1r7k7")
+
+[node name="Correct" type="Sprite3D" parent="."]
+transform = Transform3D(0.960624, 7.61275e-09, -4.39512e-09, -7.85388e-09, 0.991045, -1.19209e-06, 5.18622e-09, -8.9407e-08, 1.1335, 0, 0, 0)
+modulate = Color(0, 1, 0, 1)
+texture_filter = 0
+texture = ExtResource("2_7oawo")
+script = ExtResource("3_d72db")
+
+[node name="Wrong" type="Sprite3D" parent="."]
+transform = Transform3D(0.960624, 7.61275e-09, -4.39512e-09, -7.85388e-09, 0.991045, -1.19209e-06, 5.18622e-09, -8.9407e-08, 1.1335, 0, 0, 0)
+modulate = Color(1, 0, 0, 1)
+texture_filter = 0
+texture = ExtResource("2_7oawo")
+script = ExtResource("3_d72db")

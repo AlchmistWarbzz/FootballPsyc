@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://di1uay3254iau"]
+[gd_scene load_steps=41 format=3 uid="uid://di1uay3254iau"]
 
 [ext_resource type="Texture2D" uid="uid://pp888buy70s0" path="res://kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="1_388w3"]
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_dtro2"]
@@ -21,9 +21,7 @@
 [ext_resource type="ArrayMesh" uid="uid://7r7rtk85baks" path="res://Assets/Buildings/SM__House2.res" id="18_ba48g"]
 [ext_resource type="ArrayMesh" uid="uid://cleg55x62tpks" path="res://Assets/Assets_SM_FloodLight.res" id="19_kebkx"]
 [ext_resource type="ArrayMesh" uid="uid://cyqs6majjx1ux" path="res://Assets/Landscape/Landscape_Plane_001.res" id="20_x47fr"]
-[ext_resource type="Texture2D" uid="uid://f5jrptgafs54" path="res://UI/Sprites/Block.png" id="22_i508s"]
-[ext_resource type="Texture2D" uid="uid://b53klrcdvholk" path="res://UI/Sprites/Good_Bad.png" id="23_rfurd"]
-[ext_resource type="Script" path="res://Scripts/VisibleTest.gd" id="24_x8fa2"]
+[ext_resource type="PackedScene" uid="uid://mxf3myqk4311" path="res://SubScenes/feedback_ui.tscn" id="23_igne0"]
 [ext_resource type="PackedScene" uid="uid://0eikh5w6hthu" path="res://floating_menu.tscn" id="29_kdwo1"]
 [ext_resource type="AudioStream" uid="uid://qsftk7c2kcq3" path="res://Audio/Ambience.mp3" id="30_6wtan"]
 [ext_resource type="AudioStream" uid="uid://15wcog6fh3su" path="res://Audio/Football_Kick.mp3" id="31_3p4oj"]
@@ -466,24 +464,8 @@ mesh = ExtResource("3_earvg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 0)
 mesh = ExtResource("3_earvg")
 
-[node name="FeedbackUI" type="Sprite3D" parent="."]
+[node name="FeedbackUI" parent="." instance=ExtResource("23_igne0")]
 transform = Transform3D(8.00364e-09, -0.087385, 0.0441112, -6.3334e-10, 0.0504518, 0.076403, -0.104099, -7.02554e-09, 2.92666e-09, -4.4665, 0.398298, 0.853666)
-texture_filter = 0
-texture = ExtResource("22_i508s")
-
-[node name="Correct" type="Sprite3D" parent="FeedbackUI"]
-transform = Transform3D(0.960624, 7.61275e-09, -4.39512e-09, -7.85388e-09, 0.991045, -1.19209e-06, 5.18622e-09, -8.9407e-08, 1.1335, 0, 0, 0)
-modulate = Color(0, 1, 0, 1)
-texture_filter = 0
-texture = ExtResource("23_rfurd")
-script = ExtResource("24_x8fa2")
-
-[node name="Wrong" type="Sprite3D" parent="FeedbackUI"]
-transform = Transform3D(0.960624, 7.61275e-09, -4.39512e-09, -7.85388e-09, 0.991045, -1.19209e-06, 5.18622e-09, -8.9407e-08, 1.1335, 0, 0, 0)
-modulate = Color(1, 0, 0, 1)
-texture_filter = 0
-texture = ExtResource("23_rfurd")
-script = ExtResource("24_x8fa2")
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0264266, 0.72512, -34.9257)
