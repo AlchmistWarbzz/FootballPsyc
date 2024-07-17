@@ -15,19 +15,21 @@ func _on_button_pressed():
 	deactivate()
 	LevelManager.set_task_to_load(1)
 	LevelManager.keyboard = true
+	
 
 
 func _on_button_2_pressed() -> void:
 	deactivate()
 	LevelManager.set_task_to_load(2)
 	LevelManager.keyboard = true
+	
 
 
 func _on_button_3_pressed() -> void:
 	deactivate()
 	LevelManager.set_task_to_load(3)
 	LevelManager.keyboard = true
-
+	
 
 func deactivate() -> void:
 	$TextureRect.hide()
