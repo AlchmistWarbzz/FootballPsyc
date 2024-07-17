@@ -25,8 +25,9 @@ func _ready():
 
 
 func _on_left_hand_button_pressed(name):
-	print("PRESSED LEFT TRIGGER")
-
+	#print("PRESSED LEFT TRIGGER")
+	LevelManager.left_trigger.emit()
 
 func _on_right_hand_button_pressed(name):
-	print("PRESSED RIGHT TRIGGER")
+	#print("PRESSED RIGHT TRIGGER")
+	LevelManager.right_trigger.emit()
