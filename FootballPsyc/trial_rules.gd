@@ -29,7 +29,9 @@ func _process(_delta):
 
 
 func deactivate() -> void:
-	hide()
+	#hide()
+	$LineEdit.queue_free()
+	$PlayButton.queue_free()
 	#set_process_unhandled_input(false)
 	#set_process_input(false)
 	#set_physics_process(false)
@@ -45,17 +47,27 @@ func show_hide_task_rules() -> void:
 	match LevelManager.task_to_load:
 		1:
 			#image_to_set = sst_rules_image
-			$"Colour Shift".visible = false
-			$"Digit Span".visible = false
+			$stop_go.visible = true
+			$colour_shift.visible = false
+			$digit_span.visible = false
 		2:
 			#image_to_set = shifting_rules_image
-			$"Stop & Go".visible = false
-			$"Digit Span".visible = false
+			$stop_go.visible = false
+			#$colour_shift.visible = true
+			$digit_span.visible = false
 		3:
 			#image_to_set = bds_rules_image
-			$"Stop & Go".visible = false
-			$"Colour Shift".visible = false
+			$stop_go.visible = false
+			$colour_shift.visible = false
+			#$digit_span.visible = true
 
 
 func _on_visibility_changed() -> void:
 	show_hide_task_rules()
+
+
+func _on_button_pressed():
+	LevelManager.return_button_pressed.emit()
+	$stop_go.visible = false
+	$colour_shift.visible = false
+	$digit_span.visible = false

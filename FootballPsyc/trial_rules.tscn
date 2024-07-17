@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://dfi240ptdepwf"]
 
 [ext_resource type="Script" path="res://trial_rules.gd" id="1_0iudw"]
-[ext_resource type="Texture2D" uid="uid://w250y5ferke6" path="res://UI/StopSignal.jpg" id="2_0bcgp"]
-[ext_resource type="Texture2D" uid="uid://cas8d2nmgplfn" path="res://UI/ColourBall.jpg" id="3_i1dh3"]
+[ext_resource type="Texture2D" uid="uid://s25i3glvvy3o" path="res://UI/StopSignal.jpg" id="2_0bcgp"]
+[ext_resource type="Texture2D" uid="uid://beuuq7jnnu0fs" path="res://UI/ColourBall.jpg" id="3_i1dh3"]
 [ext_resource type="Script" path="res://Scripts/Text_edit.gd" id="4_gqbb3"]
-[ext_resource type="Texture2D" uid="uid://c8ep47uwrn07a" path="res://UI/BackwardsDigitTest.jpg" id="4_tjqt8"]
-[ext_resource type="Texture2D" uid="uid://0tbieyadp52m" path="res://UI/8CEDC372-E332-4EFD-A5E7-4144967F7770.jpg" id="6_c0v0m"]
+[ext_resource type="Texture2D" uid="uid://dcf0jcgkw8s5v" path="res://UI/BackwardsDigitTest.jpg" id="4_tjqt8"]
+[ext_resource type="Texture2D" uid="uid://cm61s3nbbbgep" path="res://UI/8CEDC372-E332-4EFD-A5E7-4144967F7770.jpg" id="6_c0v0m"]
 
 [node name="TrialRules" type="Control"]
 layout_mode = 3
@@ -18,7 +18,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0iudw")
 
-[node name="Stop & Go" type="TextureRect" parent="."]
+[node name="stop_go" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,7 +28,7 @@ grow_vertical = 2
 texture = ExtResource("2_0bcgp")
 expand_mode = 3
 
-[node name="Colour Shift" type="TextureRect" parent="."]
+[node name="colour_shift" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,7 +38,7 @@ grow_vertical = 2
 texture = ExtResource("3_i1dh3")
 expand_mode = 3
 
-[node name="Digit Span" type="TextureRect" parent="."]
+[node name="digit_span" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -99,3 +99,4 @@ expand_icon = true
 [connection signal="text_changed" from="LineEdit" to="LineEdit" method="_on_text_changed"]
 [connection signal="text_submitted" from="LineEdit" to="LineEdit" method="_on_text_submitted"]
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="LeaveTestButton" to="." method="_on_button_pressed"]
