@@ -49,6 +49,9 @@ signal ball_kicked
 # flags
 var is_trial_passed: bool = false
 
+
+
+
 # spans
 @onready var targets = [$"0/MeshInstance3D", $"1/MeshInstance3D"
 		, $"2/MeshInstance3D", $"3/MeshInstance3D"
@@ -57,6 +60,7 @@ var is_trial_passed: bool = false
 @onready var random_span = Array()
 @onready var random_span_numbers = Array()
 @onready var player_input_span = Array()
+@onready var required_input_span = Array()
 
 # span pointers
 var current_target_show_index: int = -1
@@ -134,10 +138,10 @@ func _process(_delta: float) -> void:
 		
 		
 		scene_state.TRIAL:
-			var required_input_span = random_span_numbers.duplicate()
+			#var 
+			required_input_span = random_span_numbers.duplicate()
 			required_input_span.reverse() # ensure backward digits
 			#print(required_input_span)
-			
 			if (Time.get_ticks_msec() - ticks_msec_bookmark) > trial_ticks_msec:
 				# trial time is up
 				
@@ -148,65 +152,101 @@ func _process(_delta: float) -> void:
 				append_new_metrics_entry(required_input_span, [])
 				
 				scene_reset()
-			
-			if Input.is_action_just_pressed("select"):
-				var raycast_length = 1000
-				var space_state = get_world_3d().get_direct_space_state()
-				var mouse_position = get_viewport().get_mouse_position()
-				var params = PhysicsRayQueryParameters3D.new()
-				params.from = get_viewport().get_camera_3d().project_ray_origin(mouse_position)
-				params.to = params.from + get_viewport().get_camera_3d().project_ray_normal(mouse_position) * raycast_length
-				params.collision_mask = 2
-				var result = space_state.intersect_ray(params)
-				if result: #if mouse clicked target
-					#print("mouse ray hit target " + result.collider.name)
-					##player_input_span.append(result.collider.name)
-					## destroy previous ball if found
-					#var old_ball = $Player/PlaceholderBall.get_child(0)
-					#if old_ball != null:
-						#old_ball.queue_free()
+#Old input targeting
+			#if Input.is_action_just_pressed("select"):
+				#var raycast_length = 1000
+				#var space_state = get_world_3d().get_direct_space_state()
+				#var mouse_position = get_viewport().get_mouse_position()
+				#var params = PhysicsRayQueryParameters3D.new()
+				#params.from = get_viewport().get_camera_3d().project_ray_origin(mouse_position)
+				#params.to = params.from + get_viewport().get_camera_3d().project_ray_normal(mouse_position) * raycast_length
+				#params.collision_mask = 2
+				#var result = space_state.intersect_ray(params)
+				#if result: #if mouse clicked target
+					##print("mouse ray hit target " + result.collider.name)
+					###player_input_span.append(result.collider.name)
+					### destroy previous ball if found
+					##var old_ball = $Player/PlaceholderBall.get_child(0)
+					##if old_ball != null:
+						##old_ball.queue_free()
+					##
+					### create new ball
+					##var instance
+					##instance = BLUE_BALL.instantiate()
+					##$Player/PlaceholderBall.add_child(instance)
+					##ball_kicked.emit(result.collider.get_global_position() + (Vector3.UP * ball_kick_height_offset)
+					##, ball_kick_magnitude)
+				#
+					#if player_input_span == required_input_span:
+					## trial passed
+						#print("trial passed")
+					#is_trial_passed = true
+					#trials_passed += 1
 					#
+					#append_new_metrics_entry(required_input_span, player_input_span)
+					#
+					#span_length += 1
+					#print("span length increased to " + str(span_length))
+					#
+					#scene_reset()
+				#
+				#elif player_input_span.size() >= random_span.size():
+					#print("trial failed")
+					#
+					#append_new_metrics_entry(required_input_span, player_input_span)
+					#
+					#scene_reset()
+#
+#func _current_target(target):
+	#print("VR Target Hit ", target)
+	#target 
+	#player_input_span.append(target)
+	## destroy previous ball if found
+	#var old_ball = $Player/PlaceholderBall.get_child(0)
+	#if old_ball != null:
+		#old_ball.queue_free()
 					## create new ball
-					#var instance
-					#instance = BLUE_BALL.instantiate()
-					#$Player/PlaceholderBall.add_child(instance)
-					#ball_kicked.emit(result.collider.get_global_position() + (Vector3.UP * ball_kick_height_offset)
-					#, ball_kick_magnitude)
-				
-					if player_input_span == required_input_span:
-					# trial passed
-						print("trial passed")
-					is_trial_passed = true
-					trials_passed += 1
-					
-					append_new_metrics_entry(required_input_span, player_input_span)
-					
-					span_length += 1
-					print("span length increased to " + str(span_length))
-					
-					scene_reset()
-				
-				elif player_input_span.size() >= random_span.size():
-					print("trial failed")
-					
-					append_new_metrics_entry(required_input_span, player_input_span)
-					
-					scene_reset()
+	#var instance
+	#instance = BLUE_BALL.instantiate()
+	#$Player/PlaceholderBall.add_child(instance)
+	#ball_kicked.emit(target.get_global_position() + (Vector3.UP * ball_kick_height_offset)
+	#, ball_kick_magnitude)
+	
 
+
+
+# New code refactored
+# Define the new _current_target function to handle the target hit logic
 func _current_target(target):
 	print("VR Target Hit ", target)
 	player_input_span.append(target)
-	# destroy previous ball if found
+	
+	# Destroy previous ball if found
 	var old_ball = $Player/PlaceholderBall.get_child(0)
 	if old_ball != null:
 		old_ball.queue_free()
-					# create new ball
-	var instance
-	instance = BLUE_BALL.instantiate()
+
+	# Create new ball
+	var instance = BLUE_BALL.instantiate()
 	$Player/PlaceholderBall.add_child(instance)
-	ball_kicked.emit(target.get_global_position() + (Vector3.UP * ball_kick_height_offset)
-	, ball_kick_magnitude)
+	ball_kicked.emit(target.get_global_position() + (Vector3.UP * ball_kick_height_offset), ball_kick_magnitude)
 	
+	if player_input_span == required_input_span:
+		# Trial passed
+		print("trial passed")
+		is_trial_passed = true
+		trials_passed += 1
+		append_new_metrics_entry(required_input_span, player_input_span)
+		span_length += 1
+		print("span length increased to " + str(span_length))
+		scene_reset()
+	elif player_input_span.size() >= random_span.size():
+		print("trial failed")
+		print("HELPPPPP")
+		append_new_metrics_entry(required_input_span, player_input_span)
+		scene_reset()
+
+
 
 func scene_reset():
 	print("scene_reset")
