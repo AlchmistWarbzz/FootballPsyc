@@ -68,7 +68,8 @@ var stop_signal_shown: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#AudioManager.ambience_sfx.play()
-	
+	LevelManager.left_trigger.connect(_left_trigger)
+	LevelManager.right_trigger.connect(_right_trigger)
 	reset_counters()
 	
 	scene_reset() # ensure scene and scene_state are in agreement
@@ -192,6 +193,12 @@ func _process(_delta: float) -> void:
 				if stop_signal_delay >= MIN_STOP_SIGNAL_DELAY + STOP_SIGNAL_DELAY_ADJUST_STEP:
 					stop_signal_delay -= STOP_SIGNAL_DELAY_ADJUST_STEP
 					print("ssd adjusted down to " + str(stop_signal_delay))
+
+func _left_trigger():
+	print("PRESSED LEFT TRIGGER")
+	
+func _right_trigger():
+	print("PRESSED RIGHT TRIGGER")
 
 func scene_reset():
 	print("scene_reset")
