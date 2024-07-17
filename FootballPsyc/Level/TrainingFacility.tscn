@@ -471,17 +471,15 @@ transform = Transform3D(8.00364e-09, -0.087385, 0.0441112, -6.3334e-10, 0.050451
 texture_filter = 0
 texture = ExtResource("22_i508s")
 
-[node name="Correct" type="Sprite3D" parent="."]
-transform = Transform3D(8.60357e-09, -0.0866025, 0.05, -6.08402e-10, 0.05, 0.0866025, -0.1, -7.75511e-09, 3.7749e-09, -4.4665, 0.398298, 0.853666)
-visible = false
+[node name="Correct" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D(0.960624, 7.61275e-09, -4.39512e-09, -7.85388e-09, 0.991045, -1.19209e-06, 5.18622e-09, -8.9407e-08, 1.1335, 0, 0, 0)
 modulate = Color(0, 1, 0, 1)
 texture_filter = 0
 texture = ExtResource("23_rfurd")
 script = ExtResource("24_x8fa2")
 
-[node name="Wrong" type="Sprite3D" parent="."]
-transform = Transform3D(8.60357e-09, -0.0866025, 0.05, -6.08402e-10, 0.05, 0.0866025, -0.1, -7.75511e-09, 3.7749e-09, -4.4665, 0.398298, 0.853666)
-visible = false
+[node name="Wrong" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D(0.960624, 7.61275e-09, -4.39512e-09, -7.85388e-09, 0.991045, -1.19209e-06, 5.18622e-09, -8.9407e-08, 1.1335, 0, 0, 0)
 modulate = Color(1, 0, 0, 1)
 texture_filter = 0
 texture = ExtResource("23_rfurd")
