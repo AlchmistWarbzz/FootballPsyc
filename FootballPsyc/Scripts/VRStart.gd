@@ -31,3 +31,12 @@ func _on_left_hand_button_pressed(name):
 func _on_right_hand_button_pressed(name):
 	#print("PRESSED RIGHT TRIGGER")
 	LevelManager.right_trigger.emit()
+
+
+func _on_function_pointer_pointing_event(event):
+	var target = $XROrigin3D/RightHand/FunctionPointer/RayCast.get_collider()
+	if target:
+		print("This is ", target.name)
+	else:
+		print("No target hit")
+	
