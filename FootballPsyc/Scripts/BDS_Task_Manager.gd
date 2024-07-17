@@ -65,7 +65,7 @@ var current_target_show_index: int = -1
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#AudioManager.ambience_sfx.play()
-	
+	LevelManager.current_target.connect(_current_target)
 	reset_counters()
 	
 	scene_reset() # ensure scene and scene_state are in agreement
@@ -159,24 +159,23 @@ func _process(_delta: float) -> void:
 				params.collision_mask = 2
 				var result = space_state.intersect_ray(params)
 				if result: #if mouse clicked target
-					print("mouse ray hit target " + result.collider.name)
-					player_input_span.append(result.collider.name)
-					
-					# destroy previous ball if found
-					var old_ball = $Player/PlaceholderBall.get_child(0)
-					if old_ball != null:
-						old_ball.queue_free()
-					
-					# create new ball
-					var instance
-					instance = BLUE_BALL.instantiate()
-					$Player/PlaceholderBall.add_child(instance)
-					ball_kicked.emit(result.collider.get_global_position() + (Vector3.UP * ball_kick_height_offset)
-					, ball_kick_magnitude)
+					#print("mouse ray hit target " + result.collider.name)
+					##player_input_span.append(result.collider.name)
+					## destroy previous ball if found
+					#var old_ball = $Player/PlaceholderBall.get_child(0)
+					#if old_ball != null:
+						#old_ball.queue_free()
+					#
+					## create new ball
+					#var instance
+					#instance = BLUE_BALL.instantiate()
+					#$Player/PlaceholderBall.add_child(instance)
+					#ball_kicked.emit(result.collider.get_global_position() + (Vector3.UP * ball_kick_height_offset)
+					#, ball_kick_magnitude)
 				
-				if player_input_span == required_input_span:
+					if player_input_span == required_input_span:
 					# trial passed
-					print("trial passed")
+						print("trial passed")
 					is_trial_passed = true
 					trials_passed += 1
 					
@@ -194,6 +193,20 @@ func _process(_delta: float) -> void:
 					
 					scene_reset()
 
+func _current_target(target):
+	print("VR Target Hit ", target)
+	player_input_span.append(target)
+	# destroy previous ball if found
+	var old_ball = $Player/PlaceholderBall.get_child(0)
+	if old_ball != null:
+		old_ball.queue_free()
+					# create new ball
+	var instance
+	instance = BLUE_BALL.instantiate()
+	$Player/PlaceholderBall.add_child(instance)
+	ball_kicked.emit(target.get_global_position() + (Vector3.UP * ball_kick_height_offset)
+	, ball_kick_magnitude)
+	
 
 func scene_reset():
 	print("scene_reset")
