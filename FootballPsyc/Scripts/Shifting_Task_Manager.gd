@@ -53,12 +53,14 @@ var is_trial_passed: bool = false
 var is_blue_ball: bool = false
 var is_shift_trial: bool = false
 var has_responded: bool = false
-
+var left_trigger_pressed:bool = false
+var right_trigger_pressed:bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#AudioManager.ambience_sfx.play()
-	
+	LevelManager.left_trigger.connect(_left_trigger)
+	LevelManager.right_trigger.connect(_right_trigger)
 	reset_counters()
 	
 	scene_reset() # ensure scene and scene_state are in agreement
@@ -128,7 +130,8 @@ func _process(_delta: float) -> void:
 				current_state = scene_state.WAIT
 				ticks_msec_bookmark = Time.get_ticks_msec()
 			
-			elif Input.is_action_just_pressed("kick_left") and not has_responded:# INPUT
+			elif left_trigger_pressed == true or Input.is_action_just_pressed("kick_left") and not has_responded:# INPUT
+				left_trigger_pressed = false
 				has_responded = true
 				if check_correct_kick(true): # is kick left
 					ball_kicked.emit($MiniGoalLeft.global_position, ball_kick_magnitude)
@@ -145,7 +148,8 @@ func _process(_delta: float) -> void:
 					print("non_shift_trial_failed")
 				append_new_metrics_entry(Time.get_ticks_msec() - ticks_msec_bookmark)
 			
-			elif Input.is_action_just_pressed("kick_right") and not has_responded:# INPUT
+			elif right_trigger_pressed == true or Input.is_action_just_pressed("kick_right") and not has_responded:# INPUT
+				right_trigger_pressed = false 
 				has_responded = true
 				if check_correct_kick(false): # is kick right
 					ball_kicked.emit($MiniGoalRight.global_position, ball_kick_magnitude)
@@ -165,17 +169,28 @@ func _process(_delta: float) -> void:
 						print("non_shift_trial_failed")
 				append_new_metrics_entry(Time.get_ticks_msec() - ticks_msec_bookmark)
 
+func _left_trigger():
+	left_trigger_pressed = true 
+	print("PRESSED LEFT TRIGGER")
+	
+func _right_trigger():
+	right_trigger_pressed = true
+	print("PRESSED RIGHT TRIGGER")
+
+
 func scene_reset():
 	print("scene_reset")
 	
 	trial_ended.emit()
-	
+	LevelManager.in_task = false
+	right_trigger_pressed = false
+	left_trigger_pressed = false
 	current_state = scene_state.WAIT
 	ticks_msec_bookmark = Time.get_ticks_msec()
 
 func scene_ready():
 	print("scene_ready")
-	
+	LevelManager.in_task = true
 	# spawn fixation cone
 	var new_fixation_cone = FIXATION_CONE.instantiate()
 	$PlaceholderFixation.add_child(new_fixation_cone)
