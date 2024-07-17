@@ -63,7 +63,8 @@ var is_feeder_left: bool = false
 var is_trial_passed: bool = false
 var has_responded: bool = false
 var stop_signal_shown: bool = false
-
+var left_trigger_pressed:bool = false
+var right_trigger_pressed:bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -134,8 +135,9 @@ func _process(_delta: float) -> void:
 				
 				scene_reset()
 			
-			elif Input.is_action_just_pressed("kick_left") and not has_responded:# INPUT
+			elif left_trigger_pressed == true or Input.is_action_just_pressed("kick_left") and not has_responded:# INPUT
 				has_responded = true
+				left_trigger_pressed = false
 				if is_feeder_left:
 					ball_kicked.emit($PlaceholderFixation.global_position, ball_kick_magnitude)
 					is_trial_passed = true
@@ -146,8 +148,9 @@ func _process(_delta: float) -> void:
 					print("go_trial_failed")
 				append_new_metrics_entry(false, is_trial_passed, Time.get_ticks_msec() - ticks_msec_bookmark)
 			
-			elif Input.is_action_just_pressed("kick_right") and not has_responded:# INPUT
+			elif right_trigger_pressed == true or Input.is_action_just_pressed("kick_right") and not has_responded:# INPUT
 				has_responded = true
+				right_trigger_pressed = false
 				if not is_feeder_left: # is feeder right
 					ball_kicked.emit($PlaceholderFixation.global_position, ball_kick_magnitude)
 					is_trial_passed = true
@@ -182,9 +185,10 @@ func _process(_delta: float) -> void:
 				#AudioManager.footsteps_sfx.play(0.0)
 				#AudioManager.footsteps_sfx.play(3.55)
 			# below, first input should be left, so it reads "if left or right pressed and not responded yet"
-			if (Input.is_action_just_pressed("trigger_click") or Input.is_action_just_pressed("kick_right")) and not has_responded:# INPUT
+			if (right_trigger_pressed == true or Input.is_action_just_pressed("kick_right")) and not has_responded:# INPUT
 				has_responded = true
 				is_trial_passed = false
+				right_trigger_pressed = false
 				#ball_kicked.emit($PlaceholderFixation.global_position, ball_kick_magnitude)
 				stop_trial_failed.emit()
 				print("stop_trial_failed")
@@ -195,14 +199,18 @@ func _process(_delta: float) -> void:
 					print("ssd adjusted down to " + str(stop_signal_delay))
 
 func _left_trigger():
+	left_trigger_pressed = true 
 	print("PRESSED LEFT TRIGGER")
 	
 func _right_trigger():
+	right_trigger_pressed = true
 	print("PRESSED RIGHT TRIGGER")
 
 func scene_reset():
 	print("scene_reset")
-	
+	LevelManager.in_task = false
+	right_trigger_pressed = false
+	left_trigger_pressed = false
 	##AudioManager.footsteps_sfx.stop()
 	AudioManager.trial_ended.emit()
 	
@@ -243,7 +251,7 @@ func scene_reset():
 
 func scene_ready():
 	print("scene_ready")
-	
+	LevelManager.in_task = true
 	# spawn fixation cone
 	var new_fixation_cone = fixation_cone_scene.instantiate()
 	$PlaceholderFixation.add_child(new_fixation_cone)
