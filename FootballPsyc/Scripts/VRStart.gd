@@ -2,8 +2,8 @@ extends Node3D
 
 var xr_interface: XRInterface
 var target #= $XROrigin3D/RightHand/FunctionPointer/RayCast.get_collider()
-
-
+var left_trigger_pressed = false
+var right_trigger_pressed = false
 func _ready():
 	#$"/root/GameController".registerplayer(self)
 	xr_interface = XRServer.find_interface("OpenXR")
@@ -20,24 +20,23 @@ func _ready():
 		print("OpenXR not initialized, please check if your headset is connected")
 
 
-#func getposition():
-		#return self.global.transform.origin
+
 
 
 func _on_left_hand_button_pressed(name):
 	#print("PRESSED LEFT TRIGGER")
 	LevelManager.left_trigger.emit()
-
-
-func _on_right_hand_button_pressed(name):
+#
+#
+#func _on_right_hand_button_pressed(name):
 	#print("PRESSED RIGHT TRIGGER")
-	target = $XROrigin3D/RightHand/FunctionPointer/RayCast.get_collider()
-	LevelManager.right_trigger.emit()
-	if target:
-		#print("This is ", target.name)
-		LevelManager.current_target.emit(target)
-	else:
-		print("No target hit")
+	#target = $XROrigin3D/RightHand/FunctionPointer/RayCast.get_collider()
+	#LevelManager.right_trigger.emit()
+	#if target:
+		##print("This is ", target.name)
+		#LevelManager.current_target.emit(target)
+	#else:
+		#print("No target hit")
 
 
 #func _on_function_pointer_pointing_event(event):
@@ -46,4 +45,33 @@ func _on_right_hand_button_pressed(name):
 		#print("This is ", target.name)
 	#else:
 		#print("No target hit")
-	#
+	
+
+
+func _on_right_hand_input_float_changed(name, value):
+	if LevelManager.in_task == true:
+		if value == 1 and not left_trigger_pressed:
+			#print("PRESSED RIGHT TRIGGER")
+			right_trigger_pressed = true
+			print("Right is", name)
+			target = $XROrigin3D/RightHand/FunctionPointer/RayCast.get_collider()
+			LevelManager.right_trigger.emit()
+			if target:
+				#print("This is ", target.name)
+				LevelManager.current_target.emit(target)
+			else:
+				print("No target hit")
+		elif value != 1:
+			right_trigger_pressed = false
+
+
+func _on_left_hand_input_float_changed(name, value):
+	#rint("This is the float", value)
+	if LevelManager.in_task == true:
+		# Check if the value equals 1 and the trigger has not been pressed yet
+		if value == 1 and not right_trigger_pressed:
+			print("left is", name)
+			left_trigger_pressed = true
+			LevelManager.left_trigger.emit()
+		elif value != 1:
+			left_trigger_pressed = false
