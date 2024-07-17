@@ -16,7 +16,8 @@ const SHIFTING_TASK_MANAGER = preload("res://SubScenes/Shifting_Task_Manager.tsc
 const BDS_TASK_MANAGER = preload("res://SubScenes/BDS_Task_Manager.tscn")
 
 signal play_button_pressed
-
+signal left_trigger
+signal right_trigger
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -43,3 +44,8 @@ func set_level_task_scene() -> void:
 		3:
 			main_level.task_scene = BDS_TASK_MANAGER
 
+func _left_trigger():
+	pass
+	
+func _right_trigger():
+	pass
