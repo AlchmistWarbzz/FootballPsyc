@@ -9,6 +9,8 @@ var task_to_load : int = 0
 
 var keyboard: bool = false
 
+var in_task: bool = false
+
 var subject_name : String = "Subject"
 
 const SST_TASK_MANAGER = preload("res://SubScenes/SST_Task_Manager.tscn")
