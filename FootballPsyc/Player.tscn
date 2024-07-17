@@ -35,5 +35,7 @@ collision_mask = 5242882
 enabled = false
 
 [connection signal="button_pressed" from="XROrigin3D/LeftHand" to="." method="_on_left_hand_button_pressed"]
+[connection signal="input_float_changed" from="XROrigin3D/LeftHand" to="." method="_on_left_hand_input_float_changed"]
 [connection signal="button_pressed" from="XROrigin3D/RightHand" to="." method="_on_right_hand_button_pressed"]
+[connection signal="input_float_changed" from="XROrigin3D/RightHand" to="." method="_on_right_hand_input_float_changed"]
 [connection signal="pointing_event" from="XROrigin3D/RightHand/FunctionPointer" to="." method="_on_function_pointer_pointing_event"]
