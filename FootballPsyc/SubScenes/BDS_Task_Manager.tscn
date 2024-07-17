@@ -1,8 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://djhbuwvyk2pkx"]
+[gd_scene load_steps=12 format=3 uid="uid://djhbuwvyk2pkx"]
 
 [ext_resource type="Script" path="res://Scripts/BDS_Task_Manager.gd" id="1_5jgw8"]
 [ext_resource type="PackedScene" uid="uid://n7shkduekcq2" path="res://SubScenes/Player.tscn" id="2_uoig7"]
-[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="4_q6kac"]
 [ext_resource type="ArrayMesh" uid="uid://ds6nfyb0la4uu" path="res://Assets/Props/Assets_SM_Target.res" id="4_s7jg4"]
 [ext_resource type="Script" path="res://SubScenes/BDSTargets.gd" id="5_ge3hh"]
 
@@ -53,9 +52,6 @@ collision_mask = 2
 [node name="MeshInstance3D" type="MeshInstance3D" parent="0"]
 mesh = ExtResource("4_s7jg4")
 
-[node name="Viewport2Din3D" parent="0/MeshInstance3D" instance=ExtResource("4_q6kac")]
-transform = Transform3D(0.547743, 0, 0, 0, 0.780389, 0, 0, 0, 0.686001, 0.0377889, 1.19834, 0.497568)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="0"]
 shape = SubResource("ConvexPolygonShape3D_xabmy")
 
@@ -70,9 +66,6 @@ mesh = ExtResource("4_s7jg4")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="1"]
 shape = SubResource("ConvexPolygonShape3D_mn3hp")
 
-[node name="Viewport2Din3D" parent="1" instance=ExtResource("4_q6kac")]
-transform = Transform3D(0.547743, 0, 0, 0, 0.780389, 0, 0, 0, 0.686001, 0.0377889, 1.19834, 0.497568)
-
 [node name="2" type="StaticBody3D" parent="."]
 transform = Transform3D(-0.19509, 0, 0.980785, 0, 1, 0, -0.980785, 0, -0.19509, -15, 0, 3)
 collision_layer = 2
@@ -85,9 +78,6 @@ mesh = ExtResource("4_s7jg4")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="2"]
 shape = SubResource("ConvexPolygonShape3D_srolx")
 
-[node name="Viewport2Din3D" parent="2" instance=ExtResource("4_q6kac")]
-transform = Transform3D(0.547743, 0, 0, 0, 0.780389, 0, 0, 0, 0.686001, 0.0377889, 1.19834, 0.497568)
-
 [node name="3" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12, 0, 0)
 collision_layer = 2
@@ -98,9 +88,6 @@ mesh = ExtResource("4_s7jg4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="3"]
 shape = SubResource("ConvexPolygonShape3D_t388o")
-
-[node name="Viewport2Din3D" parent="3" instance=ExtResource("4_q6kac")]
-transform = Transform3D(0.547743, 0, 0, 0, 0.780389, 0, 0, 0, 0.686001, 0.0377889, 1.19834, 0.497568)
 
 [node name="4" type="StaticBody3D" parent="."]
 transform = Transform3D(0.19509, 0, 0.980785, 0, 1, 0, -0.980785, 0, 0.19509, -15, 0, -3)
@@ -113,9 +100,6 @@ mesh = ExtResource("4_s7jg4")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="4"]
 shape = SubResource("ConvexPolygonShape3D_06rtq")
 
-[node name="Viewport2Din3D" parent="4" instance=ExtResource("4_q6kac")]
-transform = Transform3D(0.547743, 0, 0, 0, 0.780389, 0, 0, 0, 0.686001, 0.0377889, 1.19834, 0.497568)
-
 [node name="5" type="StaticBody3D" parent="."]
 transform = Transform3D(0.399101, 0, 0.916907, 0, 1, 0, -0.916907, 0, 0.399101, -12, 0, -5)
 collision_layer = 2
@@ -127,9 +111,6 @@ mesh = ExtResource("4_s7jg4")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="5"]
 shape = SubResource("ConvexPolygonShape3D_nefls")
 
-[node name="Viewport2Din3D" parent="5" instance=ExtResource("4_q6kac")]
-transform = Transform3D(0.547743, 0, 0, 0, 0.780389, 0, 0, 0, 0.686001, 0.0377889, 1.19834, 0.497568)
-
 [node name="6" type="StaticBody3D" parent="."]
 transform = Transform3D(0.584873, 0, 0.811125, 0, 1, 0, -0.811125, 0, 0.584873, -10, 0, -7)
 collision_layer = 2
@@ -140,6 +121,3 @@ mesh = ExtResource("4_s7jg4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="6"]
 shape = SubResource("ConvexPolygonShape3D_88xic")
-
-[node name="Viewport2Din3D" parent="6" instance=ExtResource("4_q6kac")]
-transform = Transform3D(0.547743, 0, 0, 0, 0.780389, 0, 0, 0, 0.686001, 0.0377893, 1.19834, 0.497568)
