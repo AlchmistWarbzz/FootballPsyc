@@ -466,19 +466,19 @@ mesh = ExtResource("3_earvg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 0)
 mesh = ExtResource("3_earvg")
 
-[node name="Sprite3D2" type="Sprite3D" parent="."]
+[node name="FeedbackUI" type="Sprite3D" parent="."]
 transform = Transform3D(8.00364e-09, -0.087385, 0.0441112, -6.3334e-10, 0.0504518, 0.076403, -0.104099, -7.02554e-09, 2.92666e-09, -4.4665, 0.398298, 0.853666)
 texture_filter = 0
 texture = ExtResource("22_i508s")
 
-[node name="Correct" type="Sprite3D" parent="Sprite3D2"]
+[node name="Correct" type="Sprite3D" parent="FeedbackUI"]
 transform = Transform3D(0.960624, 7.61275e-09, -4.39512e-09, -7.85388e-09, 0.991045, -1.19209e-06, 5.18622e-09, -8.9407e-08, 1.1335, 0, 0, 0)
 modulate = Color(0, 1, 0, 1)
 texture_filter = 0
 texture = ExtResource("23_rfurd")
 script = ExtResource("24_x8fa2")
 
-[node name="Wrong" type="Sprite3D" parent="Sprite3D2"]
+[node name="Wrong" type="Sprite3D" parent="FeedbackUI"]
 transform = Transform3D(0.960624, 7.61275e-09, -4.39512e-09, -7.85388e-09, 0.991045, -1.19209e-06, 5.18622e-09, -8.9407e-08, 1.1335, 0, 0, 0)
 modulate = Color(1, 0, 0, 1)
 texture_filter = 0
