@@ -131,6 +131,7 @@ func _process(_delta: float) -> void:
 		
 		
 		scene_state.SHOW_TARGET:
+
 			if (Time.get_ticks_msec() - ticks_msec_bookmark) > target_show_ticks_msec:
 				# show time is up
 				scene_hide_target()
@@ -218,8 +219,8 @@ func _process(_delta: float) -> void:
 # New code refactored
 # Define the new _current_target function to handle the target hit logic
 func _current_target(target):
-	print("VR Target Hit ", target)
-	player_input_span.append(target)
+	#print("VR Target Hit ", target)
+	player_input_span.append(target.name)
 	
 	# Destroy previous ball if found
 	var old_ball = $Player/PlaceholderBall.get_child(0)
@@ -230,7 +231,7 @@ func _current_target(target):
 	var instance = BLUE_BALL.instantiate()
 	$Player/PlaceholderBall.add_child(instance)
 	ball_kicked.emit(target.get_global_position() + (Vector3.UP * ball_kick_height_offset), ball_kick_magnitude)
-	
+	print("HIT", target.name)
 	if player_input_span == required_input_span:
 		# Trial passed
 		print("trial passed")
@@ -250,7 +251,7 @@ func _current_target(target):
 
 func scene_reset():
 	print("scene_reset")
-	
+	#LevelManager.in_task = false
 	# reset span stuff
 	current_target_show_index = -1
 	player_input_span = Array()
@@ -285,7 +286,7 @@ func scene_show_target():
 	#random_span[next_target_to_show_index].set_surface_override_material(0, M_TEMP_GOAL)
 	random_span[current_target_show_index].set_surface_override_material(0, M_TEMP_GOAL)
 	print("scene_show_target " + str(random_span_numbers[current_target_show_index]))
-	
+	LevelManager.in_task = false
 	current_state = scene_state.SHOW_TARGET
 	ticks_msec_bookmark = Time.get_ticks_msec()
 
@@ -295,7 +296,7 @@ func scene_hide_target():
 func scene_trial_start():
 	# update trial counters
 	trial_counter += 1
-	
+	LevelManager.in_task = true
 	print("scene_trial_start " + str(trial_counter))
 	
 	# remove fixation cone

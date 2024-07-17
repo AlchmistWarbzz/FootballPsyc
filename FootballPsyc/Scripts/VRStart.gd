@@ -70,8 +70,15 @@ func _on_left_hand_input_float_changed(name, value):
 	if LevelManager.in_task == true:
 		# Check if the value equals 1 and the trigger has not been pressed yet
 		if value == 1 and not right_trigger_pressed:
-			print("left is", name)
+			print("LEFT TRIGGER")
 			left_trigger_pressed = true
 			LevelManager.left_trigger.emit()
+			target = $XROrigin3D/LeftHand/FunctionPointer/RayCast.get_collider()
+			if target:
+				#print("This is ", target.name)
+				LevelManager.current_target.emit(target)
+			else:
+				print("No target hit")
+
 		elif value != 1:
 			left_trigger_pressed = false
