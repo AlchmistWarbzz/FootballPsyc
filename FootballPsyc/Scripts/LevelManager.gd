@@ -18,6 +18,7 @@ const SHIFTING_TASK_MANAGER = preload("res://SubScenes/Shifting_Task_Manager.tsc
 const BDS_TASK_MANAGER = preload("res://SubScenes/BDS_Task_Manager.tscn")
 
 signal play_button_pressed
+signal return_button_pressed
 signal left_trigger
 signal right_trigger
 signal current_target
