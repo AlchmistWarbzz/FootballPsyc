@@ -10,7 +10,8 @@ var red_team_mat2 = preload("res://Character/Mat/CharDRed.tres")
 func _ready():
 	if is_friendly:
 		#$metarig/Skeleton3D/Mesh.set_material_override(blue_team_mat)
-		pass
+		var time = randf_range(-0.7, -0.4)
+		$AnimationTree.set("parameters/Idle&Jog/blend_position", time)
 	else:
 		#$metarig/Skeleton3D/Mesh.set_material_override(red_team_mat)
 		$metarig/Skeleton3D/Mesh.set_surface_override_material(5, red_team_mat)
