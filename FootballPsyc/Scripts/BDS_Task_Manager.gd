@@ -323,6 +323,7 @@ func reset_counters():
 
 func append_new_metrics_entry(required_input_array: Array, player_input_array: Array):
 	metrics_array.append([block_counter, trial_counter, span_length, is_trial_passed, required_input_array, player_input_array])
+	LevelManager.trial_ended.emit(is_trial_passed)# feedback UI
 
 func write_sst_raw_log(datetime_dict):
 	# open/create file

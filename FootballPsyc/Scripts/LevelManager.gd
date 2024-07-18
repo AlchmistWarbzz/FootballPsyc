@@ -22,6 +22,7 @@ signal return_button_pressed
 signal left_trigger
 signal right_trigger
 signal current_target
+signal trial_ended
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

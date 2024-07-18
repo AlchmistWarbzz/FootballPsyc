@@ -1,32 +1,30 @@
-[gd_scene load_steps=43 format=3 uid="uid://di1uay3254iau"]
+[gd_scene load_steps=41 format=3 uid="uid://di1uay3254iau"]
 
-[ext_resource type="Texture2D" uid="uid://c6jhiid17kbd" path="res://kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="1_388w3"]
+[ext_resource type="Texture2D" uid="uid://pp888buy70s0" path="res://kloofendal_48d_partly_cloudy_puresky_1k.hdr" id="1_388w3"]
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_dtro2"]
 [ext_resource type="PackedScene" uid="uid://bndt6catsod58" path="res://Player.tscn" id="2_3vou3"]
 [ext_resource type="ArrayMesh" uid="uid://dclcgxblc5lmm" path="res://Assets/Assets_SM_Fencing.res" id="3_earvg"]
 [ext_resource type="ArrayMesh" uid="uid://dpyym3swarlva" path="res://Assets/Landscape/SM_ENV__HedgeS.res" id="4_ppqv3"]
 [ext_resource type="ArrayMesh" uid="uid://cer0t2d1oojn2" path="res://Assets/Assets_SM_Flag.res" id="5_0e5ms"]
 [ext_resource type="ArrayMesh" uid="uid://ccnxtus7ll3y5" path="res://Assets/Assets_SM_GoalPost.res" id="6_ijevc"]
-[ext_resource type="ArrayMesh" uid="uid://d2bxg0vfo0qbk" path="res://Assets/Landscape/PitchMask_Plane_002.res" id="12_0qwwl"]
+[ext_resource type="ArrayMesh" path="res://Assets/Landscape/PitchMask_Plane_002.res" id="12_0qwwl"]
 [ext_resource type="ArrayMesh" uid="uid://cvu1dblv46k3f" path="res://Assets/Landscape/SM_ENV__Dirt MountT2.res" id="12_7wpfi"]
 [ext_resource type="ArrayMesh" uid="uid://qs0qfm3bss4o" path="res://Assets/Landscape/SM_ENV__Dirt MountT3.res" id="13_b7utt"]
-[ext_resource type="ArrayMesh" uid="uid://sw0eniw14hvk" path="res://Assets/Pitch_SM_Pitch2.res" id="13_bxjhv"]
-[ext_resource type="Texture2D" uid="uid://fkkh0cbv84f5" path="res://Import GLTF/M_PitchDiffuseLow.png" id="13_nbpje"]
+[ext_resource type="ArrayMesh" path="res://Assets/Pitch_SM_Pitch2.res" id="13_bxjhv"]
+[ext_resource type="Texture2D" uid="uid://ddk4u1fiksmm4" path="res://Import GLTF/M_PitchDiffuseLow.png" id="13_nbpje"]
 [ext_resource type="ArrayMesh" uid="uid://cn0a1x6nnkfbv" path="res://Assets/Landscape/SM_ENV__Dirt MountT4.res" id="14_cc1q4"]
-[ext_resource type="ArrayMesh" uid="uid://duta6fnh2k1df" path="res://Assets/Landscape/Trees_tree_004.res" id="14_m2y2d"]
-[ext_resource type="ArrayMesh" uid="uid://ga4j12f151jn" path="res://Assets/WhiteBoard_Cube_001.res" id="15_1pq5m"]
+[ext_resource type="ArrayMesh" path="res://Assets/Landscape/Trees_tree_004.res" id="14_m2y2d"]
+[ext_resource type="ArrayMesh" path="res://Assets/WhiteBoard_Cube_001.res" id="15_1pq5m"]
 [ext_resource type="ArrayMesh" uid="uid://boju5f3jtrpwk" path="res://Assets/Landscape/SM_ENV__Dirt MountT6.res" id="15_64yek"]
 [ext_resource type="ArrayMesh" uid="uid://fbvufohk7pno" path="res://Assets/Buildings/SM__House4.res" id="16_1xauv"]
 [ext_resource type="ArrayMesh" uid="uid://lg5ug5rurxvx" path="res://Assets/Buildings/SM__House3.res" id="17_jo0c2"]
 [ext_resource type="ArrayMesh" uid="uid://7r7rtk85baks" path="res://Assets/Buildings/SM__House2.res" id="18_ba48g"]
 [ext_resource type="ArrayMesh" uid="uid://cleg55x62tpks" path="res://Assets/Assets_SM_FloodLight.res" id="19_kebkx"]
 [ext_resource type="ArrayMesh" uid="uid://cyqs6majjx1ux" path="res://Assets/Landscape/Landscape_Plane_001.res" id="20_x47fr"]
-[ext_resource type="Texture2D" uid="uid://ifqi2usxlla6" path="res://UI/Sprites/Block.png" id="22_i508s"]
-[ext_resource type="Texture2D" uid="uid://ob7ytgvs3mg2" path="res://UI/Sprites/Good_Bad.png" id="23_rfurd"]
-[ext_resource type="Script" path="res://Scripts/VisibleTest.gd" id="24_x8fa2"]
+[ext_resource type="PackedScene" uid="uid://mxf3myqk4311" path="res://SubScenes/feedback_ui.tscn" id="23_igne0"]
 [ext_resource type="PackedScene" uid="uid://0eikh5w6hthu" path="res://floating_menu.tscn" id="29_kdwo1"]
-[ext_resource type="AudioStream" uid="uid://y65sgs65btbp" path="res://Audio/Ambience.mp3" id="30_6wtan"]
-[ext_resource type="AudioStream" uid="uid://bm4fuiu4lmx3h" path="res://Audio/Football_Kick.mp3" id="31_3p4oj"]
+[ext_resource type="AudioStream" uid="uid://qsftk7c2kcq3" path="res://Audio/Ambience.mp3" id="30_6wtan"]
+[ext_resource type="AudioStream" uid="uid://15wcog6fh3su" path="res://Audio/Football_Kick.mp3" id="31_3p4oj"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_e76qn"]
 panorama = ExtResource("1_388w3")
@@ -466,26 +464,8 @@ mesh = ExtResource("3_earvg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 0)
 mesh = ExtResource("3_earvg")
 
-[node name="Sprite3D2" type="Sprite3D" parent="."]
+[node name="FeedbackUI" parent="." instance=ExtResource("23_igne0")]
 transform = Transform3D(8.00364e-09, -0.087385, 0.0441112, -6.3334e-10, 0.0504518, 0.076403, -0.104099, -7.02554e-09, 2.92666e-09, -4.4665, 0.398298, 0.853666)
-texture_filter = 0
-texture = ExtResource("22_i508s")
-
-[node name="Correct" type="Sprite3D" parent="."]
-transform = Transform3D(1.05378e-09, 0.0866025, -0.05, -6.084e-10, 0.05, 0.0866025, 0.1, -6.08401e-10, 1.05377e-09, 3.78061, 0.408518, 0.0168233)
-visible = false
-modulate = Color(0, 1, 0, 1)
-texture_filter = 0
-texture = ExtResource("23_rfurd")
-script = ExtResource("24_x8fa2")
-
-[node name="Wrong" type="Sprite3D" parent="."]
-transform = Transform3D(1.05378e-09, 0.0866025, -0.05, -6.084e-10, 0.05, 0.0866025, 0.1, -6.08401e-10, 1.05377e-09, 3.78061, 0.408518, 0.0168233)
-visible = false
-modulate = Color(1, 0, 0, 1)
-texture_filter = 0
-texture = ExtResource("23_rfurd")
-script = ExtResource("24_x8fa2")
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0264266, 0.72512, -34.9257)

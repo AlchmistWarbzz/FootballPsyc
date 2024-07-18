@@ -325,7 +325,9 @@ func reset_counters():
 	stop_trials_passed = 0
 
 func append_new_metrics_entry(stop_trial: bool, correct_response: bool, response_time: int):
-		metrics_array.append([block_counter, trial_counter, is_feeder_left, stop_trial, correct_response, response_time, stop_signal_delay])
+	metrics_array.append([block_counter, trial_counter, is_feeder_left, stop_trial, correct_response, response_time, stop_signal_delay])
+	LevelManager.trial_ended.emit(is_trial_passed)# feedback UI
+
 
 func write_sst_raw_log(datetime_dict):
 	# open/create file
