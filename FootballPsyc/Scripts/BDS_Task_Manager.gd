@@ -70,6 +70,8 @@ var current_target_show_index: int = -1
 func _ready() -> void:
 	#AudioManager.ambience_sfx.play()
 	LevelManager.current_target.connect(_current_target)
+	LevelManager.bds_task = true
+	LevelManager.show_laser.emit()
 	reset_counters()
 	
 	scene_reset() # ensure scene and scene_state are in agreement
@@ -231,11 +233,12 @@ func _current_target(target):
 	var instance = BLUE_BALL.instantiate()
 	$Player/PlaceholderBall.add_child(instance)
 	ball_kicked.emit(target.get_global_position() + (Vector3.UP * ball_kick_height_offset), ball_kick_magnitude)
-	print("HIT", target.name)
+	#print("HIT ", target.name)
 	if player_input_span == required_input_span:
 		# Trial passed
 		print("trial passed")
 		is_trial_passed = true
+		LevelManager.in_task = false
 		trials_passed += 1
 		append_new_metrics_entry(required_input_span, player_input_span)
 		span_length += 1
@@ -243,7 +246,8 @@ func _current_target(target):
 		scene_reset()
 	elif player_input_span.size() >= random_span.size():
 		print("trial failed")
-		print("HELPPPPP")
+		LevelManager.in_task = false
+		#print("HELPPPPP")
 		append_new_metrics_entry(required_input_span, player_input_span)
 		scene_reset()
 
@@ -311,7 +315,7 @@ func scene_trial_start():
 
 func reset_counters():
 	print("start TARGET DIGIT TEST block " + str(blocks_index + 1) + ". is_practice_block: " + str(blocks[blocks_index] == block_type.PRACTICE))
-	
+	LevelManager.in_task = false
 	if blocks[blocks_index] == block_type.PRACTICE:
 		trials_per_block = trials_per_practice_block
 	else:

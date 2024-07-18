@@ -11,6 +11,8 @@ var keyboard: bool = false
 
 var in_task: bool = false
 
+var bds_task: bool = false
+
 var subject_name : String = "Subject"
 
 const SST_TASK_MANAGER = preload("res://SubScenes/SST_Task_Manager.tscn")
@@ -23,6 +25,8 @@ signal left_trigger
 signal right_trigger
 signal current_target
 signal trial_ended
+signal leave_trial
+signal show_laser
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -48,3 +52,4 @@ func set_level_task_scene() -> void:
 			main_level.task_scene = SHIFTING_TASK_MANAGER
 		3:
 			main_level.task_scene = BDS_TASK_MANAGER
+

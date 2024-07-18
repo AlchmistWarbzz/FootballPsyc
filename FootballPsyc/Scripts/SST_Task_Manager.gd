@@ -138,6 +138,7 @@ func _process(_delta: float) -> void:
 			elif left_trigger_pressed == true or Input.is_action_just_pressed("kick_left") and not has_responded:# INPUT
 				has_responded = true
 				left_trigger_pressed = false
+				LevelManager.in_task = false
 				if is_feeder_left:
 					ball_kicked.emit($PlaceholderFixation.global_position, ball_kick_magnitude)
 					is_trial_passed = true
@@ -151,6 +152,7 @@ func _process(_delta: float) -> void:
 			elif right_trigger_pressed == true or Input.is_action_just_pressed("kick_right") and not has_responded:# INPUT
 				has_responded = true
 				right_trigger_pressed = false
+				LevelManager.in_task = false
 				if not is_feeder_left: # is feeder right
 					ball_kicked.emit($PlaceholderFixation.global_position, ball_kick_magnitude)
 					is_trial_passed = true
@@ -208,9 +210,9 @@ func _right_trigger():
 
 func scene_reset():
 	print("scene_reset")
-	LevelManager.in_task = false
 	right_trigger_pressed = false
 	left_trigger_pressed = false
+	LevelManager.in_task = false
 	##AudioManager.footsteps_sfx.stop()
 	AudioManager.trial_ended.emit()
 	
@@ -251,7 +253,6 @@ func scene_reset():
 
 func scene_ready():
 	print("scene_ready")
-	LevelManager.in_task = true
 	# spawn fixation cone
 	var new_fixation_cone = fixation_cone_scene.instantiate()
 	$PlaceholderFixation.add_child(new_fixation_cone)
@@ -288,10 +289,12 @@ func scene_trial_start(is_stop_trial: bool):
 	if randf() > 0.5:
 		is_feeder_left = true
 		AudioManager.ball_feeder_launch.emit()
+		LevelManager.in_task = true
 		#$PlaceholderBallFeederRight/BallFeeder.process_mode = Node.PROCESS_MODE_DISABLED
 	else:
 		is_feeder_left = false
 		AudioManager.ball_feeder_launch.emit()
+		LevelManager.in_task = true
 		#$PlaceholderBallFeederLeft/BallFeeder.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	# spawn teammate

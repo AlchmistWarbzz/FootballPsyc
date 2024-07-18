@@ -133,6 +133,7 @@ func _process(_delta: float) -> void:
 			elif left_trigger_pressed == true or Input.is_action_just_pressed("kick_left") and not has_responded:# INPUT
 				left_trigger_pressed = false
 				has_responded = true
+				LevelManager.in_task = false
 				if check_correct_kick(true): # is kick left
 					ball_kicked.emit($MiniGoalLeft.global_position, ball_kick_magnitude)
 					is_trial_passed = true
@@ -151,6 +152,7 @@ func _process(_delta: float) -> void:
 			elif right_trigger_pressed == true or Input.is_action_just_pressed("kick_right") and not has_responded:# INPUT
 				right_trigger_pressed = false 
 				has_responded = true
+				LevelManager.in_task = false
 				if check_correct_kick(false): # is kick right
 					ball_kicked.emit($MiniGoalRight.global_position, ball_kick_magnitude)
 					is_trial_passed = true
@@ -190,7 +192,6 @@ func scene_reset():
 
 func scene_ready():
 	print("scene_ready")
-	LevelManager.in_task = true
 	# spawn fixation cone
 	var new_fixation_cone = FIXATION_CONE.instantiate()
 	$PlaceholderFixation.add_child(new_fixation_cone)
@@ -225,10 +226,12 @@ func scene_trial_start():
 		is_feeder_left = true
 		trial_started.emit(is_blue_ball, is_feeder_left)
 		AudioManager.ball_feeder_launch.emit()
+		LevelManager.in_task = true
 	else:
 		is_feeder_left = false
 		trial_started.emit(is_blue_ball, is_feeder_left)
 		AudioManager.ball_feeder_launch.emit()
+		LevelManager.in_task = true
 	
 	current_state = scene_state.TRIAL
 	ticks_msec_bookmark = Time.get_ticks_msec()
