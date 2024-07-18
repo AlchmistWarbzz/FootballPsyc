@@ -16,8 +16,7 @@ enum feedback_state {NEUTRAL, CORRECT, WRONG}
 func _ready():
 	hide_sprites()
 	
-	LevelManager.trial_passed.connect(_on_trial_passed)
-	LevelManager.trial_failed.connect(_on_trial_failed)
+	LevelManager.trial_ended.connect(_on_trial_ended)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -52,12 +51,8 @@ func _process(delta):
 				wrong_sprite.visible = true
 
 
-func _on_trial_passed() -> void:
-	show_sprite(true)
-
-
-func _on_trial_failed() -> void:
-	show_sprite(false)
+func _on_trial_ended(correct: bool) -> void:
+	show_sprite(correct)
 
 
 func hide_sprites() -> void:
