@@ -59,7 +59,7 @@ func _on_left_hand_input_float_changed(name, value):
 			left_trigger_pressed = true
 			LevelManager.left_trigger.emit()
 			target = $XROrigin3D/LeftHand/FunctionPointer/RayCast.get_collider()
-			print("This is ", target.name)
+			#print("This is ", target.name)
 			if target:
 				print("This is ", target.name)
 				LevelManager.current_target.emit(target)

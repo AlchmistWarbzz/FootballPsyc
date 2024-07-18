@@ -124,6 +124,7 @@ func _process(_delta: float) -> void:
 					#go_trial_failed.emit()
 					print("non_shift_trial_failed")
 					append_new_metrics_entry(0)
+					LevelManager.in_task = false
 				
 				scene_reset()
 				
@@ -137,16 +138,23 @@ func _process(_delta: float) -> void:
 				if check_correct_kick(true): # is kick left
 					ball_kicked.emit($MiniGoalLeft.global_position, ball_kick_magnitude)
 					is_trial_passed = true
-					
+					LevelManager.in_task = false
+
 					if is_shift_trial:
 						shift_trials_passed += 1
 						print("shift_trial_passed")
+						LevelManager.in_task = false
+
 					else:
 						non_shift_trials_passed += 1
 						print("non_shift_trial_passed")
+						LevelManager.in_task = false
+
 				else:
 					#go_trial_failed.emit()
 					print("non_shift_trial_failed")
+					LevelManager.in_task = false
+
 				append_new_metrics_entry(Time.get_ticks_msec() - ticks_msec_bookmark)
 			
 			elif right_trigger_pressed == true or Input.is_action_just_pressed("kick_right") and not has_responded:# INPUT
@@ -156,19 +164,26 @@ func _process(_delta: float) -> void:
 				if check_correct_kick(false): # is kick right
 					ball_kicked.emit($MiniGoalRight.global_position, ball_kick_magnitude)
 					is_trial_passed = true
-					
+					LevelManager.in_task = false
+
 					if is_shift_trial:
 						shift_trials_passed += 1
 						print("shift_trial_passed")
+						LevelManager.in_task = false
+
 					else:
 						non_shift_trials_passed += 1
 						print("non_shift_trial_passed")
+						LevelManager.in_task = false
+
 				else:
 					#go_trial_failed.emit()
 					if is_shift_trial:
 						print("shift_trial_failed")
+						LevelManager.in_task = false
 					else:
 						print("non_shift_trial_failed")
+						LevelManager.in_task = false
 				append_new_metrics_entry(Time.get_ticks_msec() - ticks_msec_bookmark)
 
 func _left_trigger():
