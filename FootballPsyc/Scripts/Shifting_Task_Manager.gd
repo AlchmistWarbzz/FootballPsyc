@@ -263,6 +263,7 @@ func check_correct_kick(is_kick_left: bool) -> bool:
 
 func append_new_metrics_entry(response_time: int):
 	metrics_array.append([block_counter, trial_counter, is_feeder_left, is_blue_ball, is_shift_trial, is_trial_passed, response_time])
+	LevelManager.trial_ended.emit(is_trial_passed)# feedback UI
 
 func write_sst_raw_log(datetime_dict):
 	# open/create file
