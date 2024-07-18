@@ -56,6 +56,7 @@ func _on_trial_ended(correct: bool) -> void:
 
 
 func hide_sprites() -> void:
+	self.visible = false
 	correct_sprite.visible = false
 	wrong_sprite.visible = false
 	
@@ -67,6 +68,8 @@ func start_show_timer() -> void:
 
 
 func show_sprite(correct: bool) -> void:
+	self.visible = true
+	
 	if (correct):
 		current_state = feedback_state.CORRECT
 	else:
