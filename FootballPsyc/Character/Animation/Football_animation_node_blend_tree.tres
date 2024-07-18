@@ -1,16 +1,21 @@
-[gd_resource type="AnimationNodeBlendTree" load_steps=9 format=3 uid="uid://mnd3n2powvib"]
+[gd_resource type="AnimationNodeBlendTree" load_steps=10 format=3 uid="uid://mnd3n2powvib"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j0s30"]
 animation = &"Idle2"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sylo5"]
-animation = &"JogCycle"
+animation = &"RunCycle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6t3bc"]
+animation = &"Idle"
 
 [sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_vx815"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_j0s30")
 blend_point_0/pos = -1.0
 blend_point_1/node = SubResource("AnimationNodeAnimation_sylo5")
 blend_point_1/pos = 1.0
+blend_point_2/node = SubResource("AnimationNodeAnimation_6t3bc")
+blend_point_2/pos = -0.5
 
 [sub_resource type="Curve" id="Curve_ua0g7"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.413793, 1), -0.206553, 0.0, 0, 1, Vector2(1, 1), 0.0, 0.0, 1, 0]
@@ -37,7 +42,7 @@ blend_point_1/pos = 1.0
 
 [resource]
 resource_local_to_scene = true
-graph_offset = Vector2(-514.535, -6.34097)
+graph_offset = Vector2(-259, -6)
 nodes/Idle&Jog/node = SubResource("AnimationNodeBlendSpace1D_vx815")
 nodes/Idle&Jog/position = Vector2(-80, 40)
 nodes/OneShot/node = SubResource("AnimationNodeOneShot_p5s75")
