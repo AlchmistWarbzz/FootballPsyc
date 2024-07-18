@@ -19,6 +19,7 @@ grow_vertical = 2
 script = ExtResource("1_0iudw")
 
 [node name="stop_go" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,7 +29,17 @@ grow_vertical = 2
 texture = ExtResource("2_0bcgp")
 expand_mode = 3
 
+[node name="Rules" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 3
+
 [node name="colour_shift" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -39,6 +50,7 @@ texture = ExtResource("3_i1dh3")
 expand_mode = 3
 
 [node name="digit_span" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

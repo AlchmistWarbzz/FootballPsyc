@@ -47,19 +47,22 @@ func show_hide_task_rules() -> void:
 	match LevelManager.task_to_load:
 		1:
 			#image_to_set = sst_rules_image
-			$stop_go.visible = true
-			$colour_shift.visible = false
-			$digit_span.visible = false
+			#$stop_go.visible = true
+			#$colour_shift.visible = false
+			#$digit_span.visible = false
+			$Rules.texture = load("res://.godot/imported/StopSignal.jpg-de2ee8ac209c696c89e6c36678b2b421.ctex")
 		2:
 			#image_to_set = shifting_rules_image
-			$stop_go.visible = false
+			#$stop_go.visible = false
 			#$colour_shift.visible = true
-			$digit_span.visible = false
+			#$digit_span.visible = false
+			$Rules.texture = load("res://.godot/imported/ColourBall.jpg-23e4eed9f8eb7b34f193245e93a5a803.ctex")
 		3:
 			#image_to_set = bds_rules_image
-			$stop_go.visible = false
-			$colour_shift.visible = false
+			#$stop_go.visible = false
+			#$colour_shift.visible = false
 			#$digit_span.visible = true
+			$Rules.texture =load("res://.godot/imported/BackwardsDigitTest.jpg-79e1d376a575b6167f85a45c66a06f0e.ctex")
 
 
 func _on_visibility_changed() -> void:
@@ -68,6 +71,6 @@ func _on_visibility_changed() -> void:
 
 func _on_button_pressed():
 	LevelManager.return_button_pressed.emit()
-	$stop_go.visible = false
-	$colour_shift.visible = false
-	$digit_span.visible = false
+	LevelManager.leave_trial.emit()
+	LevelManager.bds_task = false
+	LevelManager.show_laser.emit()
