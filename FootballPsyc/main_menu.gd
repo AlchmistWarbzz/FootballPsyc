@@ -3,7 +3,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -15,21 +15,21 @@ func _on_button_pressed():
 	deactivate()
 	LevelManager.set_task_to_load(1)
 	LevelManager.keyboard = true
-	
+	$TrialRules.show_hide_task_rules()
 
 
 func _on_button_2_pressed() -> void:
 	deactivate()
 	LevelManager.set_task_to_load(2)
 	LevelManager.keyboard = true
-	
+	$TrialRules.show_hide_task_rules()
 
 
 func _on_button_3_pressed() -> void:
 	deactivate()
 	LevelManager.set_task_to_load(3)
 	LevelManager.keyboard = true
-	
+	$TrialRules.show_hide_task_rules()
 
 func deactivate() -> void:
 	$TextureRect.hide()
