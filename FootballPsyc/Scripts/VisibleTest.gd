@@ -1,5 +1,7 @@
 extends Sprite3D
 
+@export var correct_sprite : Sprite3D
+@export var wrong_sprite : Sprite3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
