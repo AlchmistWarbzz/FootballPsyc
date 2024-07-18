@@ -27,10 +27,10 @@ func _process(delta):
 	#else:
 		#if Input.is_action_just_pressed("Enter") && correct_sprite.visible == false:
 			#correct_sprite.visible = true
-	if Input.is_action_just_pressed("ui_left"):
-		show_sprite(true)
-	elif Input.is_action_just_pressed("ui_right"):
-		show_sprite(false)
+	#if Input.is_action_just_pressed("ui_left"):
+		#show_sprite(true)
+	#elif Input.is_action_just_pressed("ui_right"):
+		#show_sprite(false)
 	
 	match current_state:
 		feedback_state.NEUTRAL:
