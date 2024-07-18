@@ -10,9 +10,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("Enter") && self.visible == true:
-		self.visible = false
+	if Input.is_action_just_pressed("Enter") && correct_sprite.visible == true:
+		correct_sprite.visible = false
 	else:
-		if Input.is_action_just_pressed("Enter") && self.visible == false:
-			self.visible = true
+		if Input.is_action_just_pressed("Enter") && correct_sprite.visible == false:
+			correct_sprite.visible = true
 		
