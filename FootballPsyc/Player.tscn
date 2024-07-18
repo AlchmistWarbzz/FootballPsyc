@@ -21,8 +21,9 @@ tracker = &"left_hand"
 [node name="LeftHand" parent="XROrigin3D/LeftHand" instance=ExtResource("2_ww6ra")]
 
 [node name="FunctionPointer" parent="XROrigin3D/LeftHand" instance=ExtResource("5_g4d5a")]
-distance = 30.0
+distance = 50.0
 show_laser = 2
+show_target = true
 collision_mask = 5242882
 
 [node name="RightHand" type="XRController3D" parent="XROrigin3D"]
@@ -34,6 +35,8 @@ tracker = &"right_hand"
 [node name="FunctionPointer" parent="XROrigin3D/RightHand" instance=ExtResource("5_g4d5a")]
 distance = 30.0
 show_laser = 2
+show_target = true
+target_radius = 0.1
 collision_mask = 5242882
 
 [node name="player_body" parent="XROrigin3D" instance=ExtResource("2_0y1ba")]
