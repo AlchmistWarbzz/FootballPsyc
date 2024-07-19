@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://mxf3myqk4311"]
 
-[ext_resource type="Texture2D" uid="uid://f5jrptgafs54" path="res://UI/Sprites/Block.png" id="1_1r7k7"]
+[ext_resource type="Texture2D" uid="uid://ifqi2usxlla6" path="res://UI/Sprites/Block.png" id="1_1r7k7"]
 [ext_resource type="Script" path="res://Scripts/feedback_ui.gd" id="2_3j1xb"]
-[ext_resource type="Texture2D" uid="uid://b53klrcdvholk" path="res://UI/Sprites/Good_Bad.png" id="2_7oawo"]
+[ext_resource type="Texture2D" uid="uid://ob7ytgvs3mg2" path="res://UI/Sprites/Good_Bad.png" id="2_7oawo"]
 
 [node name="FeedbackUI" type="Sprite3D" node_paths=PackedStringArray("correct_sprite", "wrong_sprite")]
 transform = Transform3D(8.00364e-09, -0.087385, 0.0441112, -6.3334e-10, 0.0504518, 0.076403, -0.104099, -7.02554e-09, 2.92666e-09, 0, 0, 0)
