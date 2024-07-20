@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Scripts/BDS_Task_Manager.gd" id="1_5jgw8"]
 [ext_resource type="PackedScene" uid="uid://n7shkduekcq2" path="res://SubScenes/Player.tscn" id="2_uoig7"]
-[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="4_q6kac"]
 [ext_resource type="ArrayMesh" uid="uid://ds6nfyb0la4uu" path="res://Assets/Props/Assets_SM_Target.res" id="4_s7jg4"]
+[ext_resource type="Script" path="res://SubScenes/BDSTargets.gd" id="5_ge3hh"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xabmy"]
 points = PackedVector3Array(-0.641527, 1.08286, 0.0256777, -0.637885, 1.07822, 0.0127907, -0.322282, -1.30385e-08, -0.302866, -0.592799, 0.852193, 0.109671, -0.592799, 0.921118, 0.299262, -0.641527, 1.15196, 0.215269, -0.592799, 1.38262, 0.131276, -0.592799, 1.31353, -0.0582397, -0.589283, 1.30751, -0.0706719, -0.317133, -1.30385e-08, -0.317042, -0.322282, -1.30385e-08, 0.302749, -0.589283, 0.927134, 0.311619, -0.637885, 1.1566, 0.228156, -0.317133, -1.30385e-08, 0.316925, -0.589283, 1.38589, 0.144693, -0.45101, 1.58029, 0.0738905, -0.453647, 1.57805, 0.0600938, -0.453647, 1.50913, -0.129422, -0.45101, 1.50191, -0.141399, -0.443851, 1.49177, -0.148373, -0.579863, 1.30046, -0.0787074, -0.302941, -1.30385e-08, -0.322197, -0.579863, 0.934353, 0.31973, -0.45101, 0.732735, 0.382346, -0.443851, 0.743048, 0.38932, -0.627587, 1.16003, 0.237556, -0.579863, 1.38572, 0.155458, -0.302941, -1.30385e-08, 0.322156, -0.443851, 1.57702, 0.085792, -0.244166, 1.71023, 0.0265874, -0.245547, 1.70885, 0.0125633, -0.245547, 1.63976, -0.177028, -0.244166, 1.63185, -0.188702, -0.240272, 1.61965, -0.194918, 0.302772, -1.30385e-08, -0.322197, -0.000147402, 1.66451, -0.211217, -0.566928, 0.94054, 0.321322, -0.613647, 1.16124, 0.241043, -0.43393, 0.753532, 0.389396, -0.240272, 0.615167, 0.435865, -0.566928, 1.38193, 0.160689, -0.43393, 1.56894, 0.0926146, 0.302772, -1.30385e-08, 0.322156, -0.000147402, 0.570306, 0.452239, -0.234872, 1.6939, 0.0471309, -0.240272, 1.70473, 0.0392471, -0.000147402, 1.75595, 0.00998586, -0.000147402, 1.75475, -0.00411409, -0.000147402, 1.68565, -0.193705, -0.000147402, 1.67757, -0.205304, 0.316963, -1.30385e-08, -0.317042, 0.240103, 1.61965, -0.194918, 0.443682, 1.49177, -0.148373, -0.13729, 1.47269, 0.127713, -0.343883, 0.83827, 0.358618, -0.234872, 0.628574, 0.43488, 0.316963, -1.30385e-08, 0.316925, 0.443682, 0.743048, 0.38932, 0.240103, 0.615167, 0.435865, 0.234703, 0.628574, 0.43488, -0.000147402, 0.584744, 0.450875, 0.234703, 1.6939, 0.0471309, -0.000147402, 1.73773, 0.0311358, -0.000147402, 1.74959, 0.0229487, 0.240103, 1.70473, 0.0392471, 0.243996, 1.71023, 0.0265874, 0.245378, 1.70885, 0.0125633, 0.245378, 1.63976, -0.177028, 0.243996, 1.63185, -0.188702, 0.322112, -1.30385e-08, -0.302866, 0.579694, 1.30046, -0.0787074, 0.589113, 1.30751, -0.0706719, 0.637716, 1.07822, 0.0127907, 0.450841, 1.50191, -0.141399, 0.137121, 1.47269, 0.127713, 0.343588, 0.83827, 0.358618, 0.322112, -1.30385e-08, 0.302749, 0.59263, 0.921118, 0.299262, 0.589113, 0.927134, 0.311619, 0.450841, 0.732735, 0.382346, 0.43376, 0.753532, 0.389396, 0.579694, 0.934353, 0.31973, 0.443682, 1.57702, 0.085792, 0.43376, 1.56894, 0.0926146, 0.450841, 1.58029, 0.0738905, 0.453478, 1.57805, 0.0600938, 0.453478, 1.50913, -0.129422, 0.641358, 1.08286, 0.0256777, 0.59263, 0.852193, 0.109671, 0.59263, 1.31353, -0.0582397, 0.613478, 1.16124, 0.241043, 0.566759, 1.38193, 0.160689, 0.641358, 1.15196, 0.215269, 0.637716, 1.1566, 0.228156, 0.566759, 0.94054, 0.321322, 0.627418, 1.16003, 0.237556, 0.579694, 1.38572, 0.155458, 0.589113, 1.38589, 0.144693, 0.59263, 1.38262, 0.131276)
@@ -52,9 +52,6 @@ collision_mask = 2
 [node name="MeshInstance3D" type="MeshInstance3D" parent="0"]
 mesh = ExtResource("4_s7jg4")
 
-[node name="Viewport2Din3D" parent="0/MeshInstance3D" instance=ExtResource("4_q6kac")]
-transform = Transform3D(0.547743, 0, 0, 0, 0.780389, 0, 0, 0, 0.686001, 0.0377889, 1.19834, 0.497568)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="0"]
 shape = SubResource("ConvexPolygonShape3D_xabmy")
 
@@ -69,22 +66,17 @@ mesh = ExtResource("4_s7jg4")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="1"]
 shape = SubResource("ConvexPolygonShape3D_mn3hp")
 
-[node name="Viewport2Din3D" parent="1" instance=ExtResource("4_q6kac")]
-transform = Transform3D(0.547743, 0, 0, 0, 0.780389, 0, 0, 0, 0.686001, 0.0377889, 1.19834, 0.497568)
-
 [node name="2" type="StaticBody3D" parent="."]
 transform = Transform3D(-0.19509, 0, 0.980785, 0, 1, 0, -0.980785, 0, -0.19509, -15, 0, 3)
 collision_layer = 2
 collision_mask = 2
+script = ExtResource("5_ge3hh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="2"]
 mesh = ExtResource("4_s7jg4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="2"]
 shape = SubResource("ConvexPolygonShape3D_srolx")
-
-[node name="Viewport2Din3D" parent="2" instance=ExtResource("4_q6kac")]
-transform = Transform3D(0.547743, 0, 0, 0, 0.780389, 0, 0, 0, 0.686001, 0.0377889, 1.19834, 0.497568)
 
 [node name="3" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12, 0, 0)
@@ -97,9 +89,6 @@ mesh = ExtResource("4_s7jg4")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="3"]
 shape = SubResource("ConvexPolygonShape3D_t388o")
 
-[node name="Viewport2Din3D" parent="3" instance=ExtResource("4_q6kac")]
-transform = Transform3D(0.547743, 0, 0, 0, 0.780389, 0, 0, 0, 0.686001, 0.0377889, 1.19834, 0.497568)
-
 [node name="4" type="StaticBody3D" parent="."]
 transform = Transform3D(0.19509, 0, 0.980785, 0, 1, 0, -0.980785, 0, 0.19509, -15, 0, -3)
 collision_layer = 2
@@ -110,9 +99,6 @@ mesh = ExtResource("4_s7jg4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="4"]
 shape = SubResource("ConvexPolygonShape3D_06rtq")
-
-[node name="Viewport2Din3D" parent="4" instance=ExtResource("4_q6kac")]
-transform = Transform3D(0.547743, 0, 0, 0, 0.780389, 0, 0, 0, 0.686001, 0.0377889, 1.19834, 0.497568)
 
 [node name="5" type="StaticBody3D" parent="."]
 transform = Transform3D(0.399101, 0, 0.916907, 0, 1, 0, -0.916907, 0, 0.399101, -12, 0, -5)
@@ -125,9 +111,6 @@ mesh = ExtResource("4_s7jg4")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="5"]
 shape = SubResource("ConvexPolygonShape3D_nefls")
 
-[node name="Viewport2Din3D" parent="5" instance=ExtResource("4_q6kac")]
-transform = Transform3D(0.547743, 0, 0, 0, 0.780389, 0, 0, 0, 0.686001, 0.0377889, 1.19834, 0.497568)
-
 [node name="6" type="StaticBody3D" parent="."]
 transform = Transform3D(0.584873, 0, 0.811125, 0, 1, 0, -0.811125, 0, 0.584873, -10, 0, -7)
 collision_layer = 2
@@ -138,6 +121,3 @@ mesh = ExtResource("4_s7jg4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="6"]
 shape = SubResource("ConvexPolygonShape3D_88xic")
-
-[node name="Viewport2Din3D" parent="6" instance=ExtResource("4_q6kac")]
-transform = Transform3D(0.547743, 0, 0, 0, 0.780389, 0, 0, 0, 0.686001, 0.0377893, 1.19834, 0.497568)

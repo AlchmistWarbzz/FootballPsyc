@@ -63,12 +63,14 @@ var is_feeder_left: bool = false
 var is_trial_passed: bool = false
 var has_responded: bool = false
 var stop_signal_shown: bool = false
-
+var left_trigger_pressed:bool = false
+var right_trigger_pressed:bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#AudioManager.ambience_sfx.play()
-	
+	LevelManager.left_trigger.connect(_left_trigger)
+	LevelManager.right_trigger.connect(_right_trigger)
 	reset_counters()
 	
 	scene_reset() # ensure scene and scene_state are in agreement
@@ -133,8 +135,10 @@ func _process(_delta: float) -> void:
 				
 				scene_reset()
 			
-			elif Input.is_action_just_pressed("kick_left") and not has_responded:# INPUT
+			elif left_trigger_pressed == true or Input.is_action_just_pressed("kick_left") and not has_responded:# INPUT
 				has_responded = true
+				left_trigger_pressed = false
+				LevelManager.in_task = false
 				if is_feeder_left:
 					ball_kicked.emit($PlaceholderFixation.global_position, ball_kick_magnitude)
 					is_trial_passed = true
@@ -145,8 +149,10 @@ func _process(_delta: float) -> void:
 					print("go_trial_failed")
 				append_new_metrics_entry(false, is_trial_passed, Time.get_ticks_msec() - ticks_msec_bookmark)
 			
-			elif Input.is_action_just_pressed("kick_right") and not has_responded:# INPUT
+			elif right_trigger_pressed == true or Input.is_action_just_pressed("kick_right") and not has_responded:# INPUT
 				has_responded = true
+				right_trigger_pressed = false
+				LevelManager.in_task = false
 				if not is_feeder_left: # is feeder right
 					ball_kicked.emit($PlaceholderFixation.global_position, ball_kick_magnitude)
 					is_trial_passed = true
@@ -181,9 +187,10 @@ func _process(_delta: float) -> void:
 				#AudioManager.footsteps_sfx.play(0.0)
 				#AudioManager.footsteps_sfx.play(3.55)
 			# below, first input should be left, so it reads "if left or right pressed and not responded yet"
-			if (Input.is_action_just_pressed("trigger_click") or Input.is_action_just_pressed("kick_right")) and not has_responded:# INPUT
+			if (right_trigger_pressed == true or Input.is_action_just_pressed("kick_right")) and not has_responded:# INPUT
 				has_responded = true
 				is_trial_passed = false
+				right_trigger_pressed = false
 				#ball_kicked.emit($PlaceholderFixation.global_position, ball_kick_magnitude)
 				stop_trial_failed.emit()
 				print("stop_trial_failed")
@@ -193,9 +200,19 @@ func _process(_delta: float) -> void:
 					stop_signal_delay -= STOP_SIGNAL_DELAY_ADJUST_STEP
 					print("ssd adjusted down to " + str(stop_signal_delay))
 
+func _left_trigger():
+	left_trigger_pressed = true 
+	print("PRESSED LEFT TRIGGER")
+	
+func _right_trigger():
+	right_trigger_pressed = true
+	print("PRESSED RIGHT TRIGGER")
+
 func scene_reset():
 	print("scene_reset")
-	
+	right_trigger_pressed = false
+	left_trigger_pressed = false
+	LevelManager.in_task = false
 	##AudioManager.footsteps_sfx.stop()
 	AudioManager.trial_ended.emit()
 	
@@ -236,7 +253,6 @@ func scene_reset():
 
 func scene_ready():
 	print("scene_ready")
-	
 	# spawn fixation cone
 	var new_fixation_cone = fixation_cone_scene.instantiate()
 	$PlaceholderFixation.add_child(new_fixation_cone)
@@ -272,9 +288,13 @@ func scene_trial_start(is_stop_trial: bool):
 	#var new_ball_feeder = ball_feeder_scene.instantiate()
 	if randf() > 0.5:
 		is_feeder_left = true
+		AudioManager.ball_feeder_launch.emit()
+		LevelManager.in_task = true
 		#$PlaceholderBallFeederRight/BallFeeder.process_mode = Node.PROCESS_MODE_DISABLED
 	else:
 		is_feeder_left = false
+		AudioManager.ball_feeder_launch.emit()
+		LevelManager.in_task = true
 		#$PlaceholderBallFeederLeft/BallFeeder.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	# spawn teammate
@@ -308,7 +328,9 @@ func reset_counters():
 	stop_trials_passed = 0
 
 func append_new_metrics_entry(stop_trial: bool, correct_response: bool, response_time: int):
-		metrics_array.append([block_counter, trial_counter, is_feeder_left, stop_trial, correct_response, response_time, stop_signal_delay])
+	metrics_array.append([block_counter, trial_counter, is_feeder_left, stop_trial, correct_response, response_time, stop_signal_delay])
+	LevelManager.trial_ended.emit(is_trial_passed)# feedback UI
+
 
 func write_sst_raw_log(datetime_dict):
 	# open/create file

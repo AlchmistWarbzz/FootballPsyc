@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfi240ptdepwf"]
+[gd_scene load_steps=7 format=3 uid="uid://dfi240ptdepwf"]
 
 [ext_resource type="Script" path="res://trial_rules.gd" id="1_0iudw"]
-[ext_resource type="Texture2D" uid="uid://btih0klgnh1s" path="res://UI/How To Play/stop_signal_instructions.png" id="2_kirou"]
-[ext_resource type="Texture2D" uid="uid://3cvkqwb56o2b" path="res://UI/How To Play/colour_ball_instructions.png" id="3_38lel"]
-[ext_resource type="Texture2D" uid="uid://cbnn8sglkgdly" path="res://UI/How To Play/target_digit_instructions.png" id="4_bvmi8"]
+[ext_resource type="Texture2D" uid="uid://s25i3glvvy3o" path="res://UI/StopSignal.jpg" id="2_0bcgp"]
+[ext_resource type="Texture2D" uid="uid://beuuq7jnnu0fs" path="res://UI/ColourBall.jpg" id="3_i1dh3"]
 [ext_resource type="Script" path="res://Scripts/Text_edit.gd" id="4_gqbb3"]
+[ext_resource type="Texture2D" uid="uid://dcf0jcgkw8s5v" path="res://UI/BackwardsDigitTest.jpg" id="4_tjqt8"]
+[ext_resource type="Texture2D" uid="uid://cm61s3nbbbgep" path="res://UI/8CEDC372-E332-4EFD-A5E7-4144967F7770.jpg" id="6_c0v0m"]
 
 [node name="TrialRules" type="Control"]
 layout_mode = 3
@@ -17,59 +18,62 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0iudw")
 
-[node name="Stop & Go" type="TextureRect" parent="."]
+[node name="stop_go" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -576.0
-offset_right = 576.0
-offset_bottom = 422.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
-texture = ExtResource("2_kirou")
-expand_mode = 1
-stretch_mode = 5
+grow_vertical = 2
+texture = ExtResource("2_0bcgp")
+expand_mode = 3
 
-[node name="Colour Shift" type="TextureRect" parent="."]
+[node name="Rules" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -576.0
-offset_right = 576.0
-offset_bottom = 422.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
-texture = ExtResource("3_38lel")
-expand_mode = 1
-stretch_mode = 5
+grow_vertical = 2
+expand_mode = 3
 
-[node name="Digit Span" type="TextureRect" parent="."]
+[node name="colour_shift" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -576.0
-offset_right = 576.0
-offset_bottom = 422.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
-texture = ExtResource("4_bvmi8")
-expand_mode = 1
-stretch_mode = 5
+grow_vertical = 2
+texture = ExtResource("3_i1dh3")
+expand_mode = 3
+
+[node name="digit_span" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_tjqt8")
+expand_mode = 3
 
 [node name="LineEdit" type="LineEdit" parent="."]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -72.0
-offset_top = -185.0
-offset_right = 72.0
-offset_bottom = -113.0
+anchor_bottom = 0.5
+offset_left = -251.0
+offset_top = -339.0
+offset_right = 252.0
+offset_bottom = -268.0
 grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 20
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
 placeholder_text = "Type Subject Name"
 alignment = 1
 expand_to_text_length = true
@@ -77,19 +81,34 @@ script = ExtResource("4_gqbb3")
 
 [node name="PlayButton" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -44.0
-offset_top = -85.0
-offset_right = 45.0
-offset_bottom = -34.0
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -246.0
+offset_right = 66.0
+offset_bottom = -174.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
 text = "Play"
+
+[node name="LeaveTestButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 67.0
+offset_top = -203.0
+offset_right = 399.0
+offset_bottom = -46.0
+grow_vertical = 0
+icon = ExtResource("6_c0v0m")
+expand_icon = true
 
 [connection signal="text_changed" from="LineEdit" to="LineEdit" method="_on_text_changed"]
 [connection signal="text_submitted" from="LineEdit" to="LineEdit" method="_on_text_submitted"]
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="LeaveTestButton" to="." method="_on_button_pressed"]

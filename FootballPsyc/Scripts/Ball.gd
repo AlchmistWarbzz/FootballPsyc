@@ -41,5 +41,5 @@ func kick(target: Vector3, impulse_magnitude: float) -> void:
 	
 	apply_central_impulse(get_global_transform().basis.z * -1 * impulse_magnitude)
 	
-	AudioManager.football_kick_sfx.set_pitch_scale(1.0 + (randf() / 20.0))
-	AudioManager.football_kick_sfx.play()
+	#AudioManager.football_kick_sfx.set_pitch_scale(1.0 + (randf() / 20.0))
+	#AudioManager.football_kick_sfx.play()

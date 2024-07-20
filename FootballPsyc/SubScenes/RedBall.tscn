@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bgm5hjfsjckpk"]
 
 [ext_resource type="Script" path="res://Scripts/Ball.gd" id="1_rjyym"]
-[ext_resource type="ArrayMesh" uid="uid://d3loukadqx6do" path="res://Assets/Props/Assets_SM_Football.res" id="2_fj0se"]
+[ext_resource type="ArrayMesh" uid="uid://duv82nnp82vdd" path="res://Assets/Assets_SM_Football.res" id="2_rgrro"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_epb4n"]
 albedo_color = Color(1, 0, 0, 1)
@@ -14,8 +14,8 @@ mass = 0.45
 script = ExtResource("1_rjyym")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = ExtResource("2_fj0se")
-surface_material_override/0 = SubResource("StandardMaterial3D_epb4n")
+mesh = ExtResource("2_rgrro")
+surface_material_override/1 = SubResource("StandardMaterial3D_epb4n")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_w2ntl")

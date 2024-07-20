@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=3 uid="uid://b4xhc46i1dges"]
+
+[ext_resource type="Script" path="res://ChangeMenu.gd" id="1_n32gj"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="2_5q7qp"]
+[ext_resource type="PackedScene" uid="uid://dau65bt1t1qp3" path="res://Main.tscn" id="3_niico"]
+[ext_resource type="PackedScene" uid="uid://dgdb1texynduw" path="res://addons/godot-xr-tools/objects/virtual_keyboard.tscn" id="4_cdh8t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q044d"]
+
+[node name="FloatingMenu" type="Node3D"]
+script = ExtResource("1_n32gj")
+
+[node name="Viewport2Din3D" parent="." instance=ExtResource("2_5q7qp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.59676, 0)
+scene = ExtResource("3_niico")
+viewport_size = Vector2(1920, 1080)
+material = SubResource("StandardMaterial3D_q044d")
+
+[node name="VirtualKeyboard" parent="." instance=ExtResource("4_cdh8t")]
+transform = Transform3D(0.539, 0, 0, 0, 0.381131, 0.381131, 0, -0.381131, 0.381131, -0.0283302, 0.406991, 0.745617)

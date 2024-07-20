@@ -53,12 +53,14 @@ var is_trial_passed: bool = false
 var is_blue_ball: bool = false
 var is_shift_trial: bool = false
 var has_responded: bool = false
-
+var left_trigger_pressed:bool = false
+var right_trigger_pressed:bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	AudioManager.ambience_sfx.play()
-	
+	#AudioManager.ambience_sfx.play()
+	LevelManager.left_trigger.connect(_left_trigger)
+	LevelManager.right_trigger.connect(_right_trigger)
 	reset_counters()
 	
 	scene_reset() # ensure scene and scene_state are in agreement
@@ -122,60 +124,86 @@ func _process(_delta: float) -> void:
 					#go_trial_failed.emit()
 					print("non_shift_trial_failed")
 					append_new_metrics_entry(0)
+
 				
 				scene_reset()
 				
 				current_state = scene_state.WAIT
 				ticks_msec_bookmark = Time.get_ticks_msec()
 			
-			elif Input.is_action_just_pressed("kick_left") and not has_responded:# INPUT
+			elif left_trigger_pressed == true or Input.is_action_just_pressed("kick_left") and not has_responded:# INPUT
+				left_trigger_pressed = false
 				has_responded = true
+
 				if check_correct_kick(true): # is kick left
 					ball_kicked.emit($MiniGoalLeft.global_position, ball_kick_magnitude)
 					is_trial_passed = true
-					
+
+
 					if is_shift_trial:
 						shift_trials_passed += 1
 						print("shift_trial_passed")
+
+
 					else:
 						non_shift_trials_passed += 1
 						print("non_shift_trial_passed")
+
 				else:
 					#go_trial_failed.emit()
 					print("non_shift_trial_failed")
+
+
 				append_new_metrics_entry(Time.get_ticks_msec() - ticks_msec_bookmark)
 			
-			elif Input.is_action_just_pressed("kick_right") and not has_responded:# INPUT
+			elif right_trigger_pressed == true or Input.is_action_just_pressed("kick_right") and not has_responded:# INPUT
+				right_trigger_pressed = false 
 				has_responded = true
 				if check_correct_kick(false): # is kick right
 					ball_kicked.emit($MiniGoalRight.global_position, ball_kick_magnitude)
 					is_trial_passed = true
-					
+
 					if is_shift_trial:
 						shift_trials_passed += 1
 						print("shift_trial_passed")
+
 					else:
 						non_shift_trials_passed += 1
 						print("non_shift_trial_passed")
+
 				else:
 					#go_trial_failed.emit()
 					if is_shift_trial:
 						print("shift_trial_failed")
+
 					else:
 						print("non_shift_trial_failed")
+
 				append_new_metrics_entry(Time.get_ticks_msec() - ticks_msec_bookmark)
+
+func _left_trigger():
+	left_trigger_pressed = true 
+	print("PRESSED LEFT TRIGGER")
+	LevelManager.in_task = false 
+	
+func _right_trigger():
+	right_trigger_pressed = true
+	LevelManager.in_task = false 
+	print("PRESSED RIGHT TRIGGER")
+
 
 func scene_reset():
 	print("scene_reset")
 	
 	trial_ended.emit()
-	
+	LevelManager.in_task = false
+	right_trigger_pressed = false
+	left_trigger_pressed = false
 	current_state = scene_state.WAIT
 	ticks_msec_bookmark = Time.get_ticks_msec()
 
 func scene_ready():
 	print("scene_ready")
-	
 	# spawn fixation cone
 	var new_fixation_cone = FIXATION_CONE.instantiate()
 	$PlaceholderFixation.add_child(new_fixation_cone)
@@ -209,9 +237,13 @@ func scene_trial_start():
 	if randf() > 0.5:
 		is_feeder_left = true
 		trial_started.emit(is_blue_ball, is_feeder_left)
+		AudioManager.ball_feeder_launch.emit()
+		LevelManager.in_task = true
 	else:
 		is_feeder_left = false
 		trial_started.emit(is_blue_ball, is_feeder_left)
+		AudioManager.ball_feeder_launch.emit()
+		LevelManager.in_task = true
 	
 	current_state = scene_state.TRIAL
 	ticks_msec_bookmark = Time.get_ticks_msec()
@@ -246,6 +278,7 @@ func check_correct_kick(is_kick_left: bool) -> bool:
 
 func append_new_metrics_entry(response_time: int):
 	metrics_array.append([block_counter, trial_counter, is_feeder_left, is_blue_ball, is_shift_trial, is_trial_passed, response_time])
+	LevelManager.trial_ended.emit(is_trial_passed)# feedback UI
 
 func write_sst_raw_log(datetime_dict):
 	# open/create file
