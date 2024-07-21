@@ -11,5 +11,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_7kh3b")
 
 [node name="Character" parent="." instance=ExtResource("1_mp1hf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.182335, 0)
 is_friendly = true
