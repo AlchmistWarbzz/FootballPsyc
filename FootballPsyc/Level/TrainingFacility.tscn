@@ -36,7 +36,8 @@ sky_material = SubResource("PanoramaSkyMaterial_e76qn")
 background_mode = 2
 sky = SubResource("Sky_velgi")
 sdfgi_enabled = true
-sdfgi_min_cell_size = 5.0
+sdfgi_min_cell_size = 1.0
+sdfgi_y_scale = 0
 
 [sub_resource type="BoxMesh" id="BoxMesh_qmp26"]
 
