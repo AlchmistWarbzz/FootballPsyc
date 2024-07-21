@@ -412,16 +412,15 @@ mesh = ExtResource("19_kebkx")
 skeleton = NodePath("../AssetsSmFloodLight7")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.696813, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.174542, 0)
 
 [node name="LandscapePlane001" type="MeshInstance3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.814808, 0)
 material_override = SubResource("StandardMaterial3D_cl003")
 mesh = ExtResource("20_x47fr")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.165957, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.181708, 0)
 shape = SubResource("BoxShape3D_ag747")
 
 [node name="FencingBack" type="Node3D" parent="."]
