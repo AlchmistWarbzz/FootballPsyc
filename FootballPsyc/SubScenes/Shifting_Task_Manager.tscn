@@ -27,7 +27,7 @@ transform = Transform3D(0.600671, 0, 0.799496, 0, 1, 0, -0.799496, 0, 0.600671, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
 
 [node name="MiniGoalLeft" parent="." instance=ExtResource("5_5brbs")]
-transform = Transform3D(0.970296, 0, 0.241922, 0, 1, 0, -0.241922, 0, 0.970296, -10.5, 0, 2)
+transform = Transform3D(0.970296, 0, 0.241922, 0, 1, 0, -0.241922, 0, 0.970296, -10.5, 0.158733, 2)
 
 [node name="MiniGoalRight" parent="." instance=ExtResource("5_5brbs")]
-transform = Transform3D(0.970296, 0, -0.241922, 0, 1, 0, 0.241922, 0, 0.970296, -10.5, 0, -2)
+transform = Transform3D(0.970296, 0, -0.241922, 0, 1, 0, 0.241922, 0, 0.970296, -10.5, 0.158733, -2)
