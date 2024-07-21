@@ -66,6 +66,7 @@ var stop_signal_shown: bool = false
 var left_trigger_pressed:bool = false
 var right_trigger_pressed:bool = false
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#AudioManager.ambience_sfx.play()
@@ -186,10 +187,13 @@ func _process(_delta: float) -> void:
 				stop_signal.emit()
 				#AudioManager.footsteps_sfx.play(0.0)
 				#AudioManager.footsteps_sfx.play(3.55)
+			
 			# below, first input should be left, so it reads "if left or right pressed and not responded yet"
-			if (right_trigger_pressed == true or Input.is_action_just_pressed("kick_right")) and not has_responded:# INPUT
+			if ((left_trigger_pressed == true or Input.is_action_just_pressed("kick_left")) or
+			(right_trigger_pressed == true or Input.is_action_just_pressed("kick_right"))) and not has_responded:# INPUT
 				has_responded = true
 				is_trial_passed = false
+				left_trigger_pressed == false
 				right_trigger_pressed = false
 				#ball_kicked.emit($PlaceholderFixation.global_position, ball_kick_magnitude)
 				stop_trial_failed.emit()
@@ -200,13 +204,16 @@ func _process(_delta: float) -> void:
 					stop_signal_delay -= STOP_SIGNAL_DELAY_ADJUST_STEP
 					print("ssd adjusted down to " + str(stop_signal_delay))
 
+
 func _left_trigger():
 	left_trigger_pressed = true 
 	print("PRESSED LEFT TRIGGER")
-	
+
+
 func _right_trigger():
 	right_trigger_pressed = true
 	print("PRESSED RIGHT TRIGGER")
+
 
 func scene_reset():
 	print("scene_reset")
@@ -251,6 +258,7 @@ func scene_reset():
 	current_state = scene_state.WAIT
 	ticks_msec_bookmark = Time.get_ticks_msec()
 
+
 func scene_ready():
 	print("scene_ready")
 	# spawn fixation cone
@@ -259,6 +267,7 @@ func scene_ready():
 	
 	current_state = scene_state.READY
 	ticks_msec_bookmark = Time.get_ticks_msec()
+
 
 func scene_trial_start(is_stop_trial: bool):
 	# update trial counters
@@ -306,10 +315,12 @@ func scene_trial_start(is_stop_trial: bool):
 	
 	ticks_msec_bookmark = Time.get_ticks_msec()
 
+
 #func stop_trial_start():
 	## remove fixation cone
 	#if $PlaceholderFixation.get_child_count() != 0:
 		#$PlaceholderFixation/FixationCone.free()
+
 
 func reset_counters():
 	print("start STOP SIGNAL TASK block " + str(blocks_index + 1) + ". is_practice_block: " + str(blocks[blocks_index] == block_type.PRACTICE))
@@ -326,6 +337,7 @@ func reset_counters():
 	go_trials_passed = 0
 	stop_trial_counter = 0
 	stop_trials_passed = 0
+
 
 func append_new_metrics_entry(stop_trial: bool, correct_response: bool, response_time: int):
 	metrics_array.append([block_counter, trial_counter, is_feeder_left, stop_trial, correct_response, response_time, stop_signal_delay])
@@ -362,6 +374,7 @@ func write_sst_raw_log(datetime_dict):
 			raw_log_file.store_line(line.format(sub_array))
 		
 		raw_log_file.close()
+
 
 func write_sst_summary_log(datetime_dict):
 	# open/create file
@@ -421,5 +434,4 @@ func write_sst_summary_log(datetime_dict):
 		summary_log_file.store_line("mean reaction time (in ms) in Stop Signal trials (response times of incorrectly hitting a response key), sr_rt: " + str(sr_rt))
 		
 		summary_log_file.close()
-
 
