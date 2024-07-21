@@ -4,7 +4,7 @@
 animation = &"Idle2"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sylo5"]
-animation = &"RunCycle"
+animation = &"JogCycle"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6t3bc"]
 animation = &"Idle"
@@ -42,7 +42,7 @@ blend_point_1/pos = 1.0
 
 [resource]
 resource_local_to_scene = true
-graph_offset = Vector2(-259, -6)
+graph_offset = Vector2(-366, -21)
 nodes/Idle&Jog/node = SubResource("AnimationNodeBlendSpace1D_vx815")
 nodes/Idle&Jog/position = Vector2(-80, 40)
 nodes/OneShot/node = SubResource("AnimationNodeOneShot_p5s75")

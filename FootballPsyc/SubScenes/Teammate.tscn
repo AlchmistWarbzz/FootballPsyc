@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cm3ee373qph5v"]
 
-[ext_resource type="PackedScene" uid="uid://diy4oxifvl3ya" path="res://Character/character.tscn" id="1_njiwk"]
+[ext_resource type="PackedScene" uid="uid://diy4oxifvl3ya" path="res://Character/character.tscn" id="1_mp1hf"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7kh3b"]
 
@@ -10,5 +10,6 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_7kh3b")
 
-[node name="Character" parent="." instance=ExtResource("1_njiwk")]
+[node name="Character" parent="." instance=ExtResource("1_mp1hf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.182335, 0)
 is_friendly = true

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ca41om8xqbbts"]
 
 [ext_resource type="Script" path="res://Scripts/Defender.gd" id="1_5mqex"]
-[ext_resource type="PackedScene" uid="uid://diy4oxifvl3ya" path="res://Character/character.tscn" id="2_kud7w"]
+[ext_resource type="PackedScene" uid="uid://diy4oxifvl3ya" path="res://Character/character.tscn" id="2_iihku"]
 [ext_resource type="AudioStream" uid="uid://dfof6v74l5y6h" path="res://Audio/Footsteps.mp3" id="3_qeik1"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1dp2u"]
@@ -16,7 +16,7 @@ script = ExtResource("1_5mqex")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("ConvexPolygonShape3D_1dp2u")
 
-[node name="Character" parent="." instance=ExtResource("2_kud7w")]
+[node name="Character" parent="." instance=ExtResource("2_iihku")]
 
 [node name="Footsteps_SFX" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_qeik1")
