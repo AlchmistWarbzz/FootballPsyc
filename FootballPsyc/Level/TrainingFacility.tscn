@@ -268,7 +268,7 @@ mesh = ExtResource("6_ijevc")
 skeleton = NodePath("../..")
 
 [node name="AssetsSmGoalPost2" type="MeshInstance3D" parent="CloseUp"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.5, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.3531, 0, 0)
 mesh = ExtResource("6_ijevc")
 skeleton = NodePath("../..")
 
