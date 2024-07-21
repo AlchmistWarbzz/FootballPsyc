@@ -135,7 +135,7 @@ func _process(_delta: float) -> void:
 				
 				scene_reset()
 			
-			elif left_trigger_pressed == true or Input.is_action_just_pressed("kick_left") and not has_responded:# INPUT
+			elif (left_trigger_pressed == true or Input.is_action_just_pressed("kick_left")) and not has_responded:# INPUT
 				has_responded = true
 				left_trigger_pressed = false
 				LevelManager.in_task = false
@@ -149,7 +149,7 @@ func _process(_delta: float) -> void:
 					print("go_trial_failed")
 				append_new_metrics_entry(false, is_trial_passed, Time.get_ticks_msec() - ticks_msec_bookmark)
 			
-			elif right_trigger_pressed == true or Input.is_action_just_pressed("kick_right") and not has_responded:# INPUT
+			elif (right_trigger_pressed == true or Input.is_action_just_pressed("kick_right")) and not has_responded:# INPUT
 				has_responded = true
 				right_trigger_pressed = false
 				LevelManager.in_task = false
