@@ -13,8 +13,6 @@ var moveTriggerFlag = false;
 
 func _ready():
 	var task_manager_node
-	var time = randf_range(-1, -0.3)
-	$Character/AnimationTree.set("parameters/Idle&Jog/blend_position", time)
 	var placeholder_node = get_parent()
 	if placeholder_node != null:
 		task_manager_node = placeholder_node.get_parent()
@@ -39,8 +37,8 @@ func _on_task_manager_stop_signal():
 	$Character/AnimationTree.set("parameters/Idle&Jog/blend_position", 1)
 func _physics_process(delta):
 	# Add the gravity.
-	if not is_on_floor():
-		velocity.y -= gravity * delta
+	#if not is_on_floor():
+		#velocity.y -= gravity * delta
 	
 	# manual keypress sequencing
 	#if Input.is_action_just_pressed("s"):

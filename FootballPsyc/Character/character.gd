@@ -16,6 +16,8 @@ func _ready():
 		#$metarig/Skeleton3D/Mesh.set_material_override(red_team_mat)
 		$metarig/Skeleton3D/Mesh.set_surface_override_material(5, red_team_mat)
 		$metarig/Skeleton3D/Mesh.set_surface_override_material(6, red_team_mat2)
+		var time = randf_range(-1, -0.4)
+		$AnimationTree.set("parameters/Idle&Jog/blend_position", time)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
