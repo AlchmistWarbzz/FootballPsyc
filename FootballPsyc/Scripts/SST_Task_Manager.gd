@@ -207,17 +207,15 @@ func _process(_delta: float) -> void:
 
 
 func _left_trigger():
-	if current_state == scene_state.GO_TRIAL or current_state == scene_state.STOP_TRIAL:
-		left_trigger_pressed = true 
 	print("PRESSED LEFT TRIGGER")
-	
+	if current_state == scene_state.GO_TRIAL or current_state == scene_state.STOP_TRIAL:
+		left_trigger_pressed = true
 
 
 func _right_trigger():
+	print("PRESSED RIGHT TRIGGER")
 	if current_state == scene_state.GO_TRIAL or current_state == scene_state.STOP_TRIAL:
 		right_trigger_pressed = true
-	print("PRESSED RIGHT TRIGGER")
-
 
 
 func scene_reset():
@@ -280,8 +278,6 @@ func scene_trial_start(is_stop_trial: bool):
 	else:
 		go_trial_counter += 1
 	
-	print("scene_trial_start " + str(trial_counter) + ", is_stop_trial: " + str(is_stop_trial))
-	
 	# set up flags
 	has_responded = false
 	right_trigger_pressed = false
@@ -314,10 +310,11 @@ func scene_trial_start(is_stop_trial: bool):
 	var new_teammate = teammate_scene.instantiate()
 	$PlaceholderFixation.add_child(new_teammate)
 	
-	# emit signal for ball feeder
 	trial_started.emit(true, is_feeder_left)
 	
 	ticks_msec_bookmark = Time.get_ticks_msec()
+	
+	print("scene_trial_start " + str(trial_counter) + ", is_stop_trial: " + str(is_stop_trial) + ", is_stimulus_left: " + str(is_feeder_left))
 
 
 #func stop_trial_start():
