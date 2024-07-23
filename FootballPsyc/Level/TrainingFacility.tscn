@@ -284,7 +284,7 @@ transform = Transform3D(1.16386, 0, 0, 0, 1, 0, 0, 0, 1.07887, 0, 0.693372, -35.
 multimesh = SubResource("MultiMesh_g243a")
 
 [node name="WhiteBoardCube001" type="MeshInstance3D" parent="Node3D2"]
-transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -0.754989, 1.06199, 3.54987)
+transform = Transform3D(0.971059, 0, -0.238839, 0, 1, 0, 0.238839, 0, 0.971059, -0.855681, 1.06199, 3.54987)
 mesh = ExtResource("15_1pq5m")
 
 [node name="FloatingMenu" parent="Node3D2/WhiteBoardCube001" instance=ExtResource("29_kdwo1")]
