@@ -131,8 +131,7 @@ func _process(_delta: float) -> void:
 				current_state = scene_state.WAIT
 				ticks_msec_bookmark = Time.get_ticks_msec()
 			
-			elif left_trigger_pressed == true or Input.is_action_just_pressed("kick_left") and not has_responded:# INPUT
-				left_trigger_pressed = false
+			elif (left_trigger_pressed == true or Input.is_action_just_pressed("kick_left")) and not has_responded:# INPUT
 				has_responded = true
 
 				if check_correct_kick(true): # is kick left
@@ -156,8 +155,8 @@ func _process(_delta: float) -> void:
 
 				append_new_metrics_entry(Time.get_ticks_msec() - ticks_msec_bookmark)
 			
-			elif right_trigger_pressed == true or Input.is_action_just_pressed("kick_right") and not has_responded:# INPUT
-				right_trigger_pressed = false 
+			elif (right_trigger_pressed == true or Input.is_action_just_pressed("kick_right")) and not has_responded:# INPUT
+				#right_trigger_pressed = false 
 				has_responded = true
 				if check_correct_kick(false): # is kick right
 					ball_kicked.emit($MiniGoalRight.global_position, ball_kick_magnitude)
@@ -198,9 +197,6 @@ func scene_reset():
 	print("scene_reset")
 	
 	trial_ended.emit()
-	#LevelManager.in_task = false
-	right_trigger_pressed = false
-	left_trigger_pressed = false
 	current_state = scene_state.WAIT
 	ticks_msec_bookmark = Time.get_ticks_msec()
 
@@ -229,6 +225,8 @@ func scene_trial_start():
 	
 	# set up flags
 	has_responded = false
+	right_trigger_pressed = false
+	left_trigger_pressed = false
 	is_trial_passed = false
 	
 	# determine ball colour
