@@ -22,16 +22,16 @@ func _process(delta):
 
 
 func _on_text_changed(text):
-	print("Submitted text:", text)
+	#print("Submitted text: ", text)
 	#var trial_length_int = int(text)
 	#print("Parsed integer:", trial_length_int)
 	#LevelManager.trial_length = text
 	match line_type:
 		LineType.SUBJECT:
 			LevelManager.subject_name = text
-			print("LevelManager.subject_name:", LevelManager.subject_name)
+			print("LevelManager.subject_name: ", LevelManager.subject_name)
 		
 		LineType.GROUP:
 			LevelManager.group_name = text
-			print("LevelManager.group_name:", LevelManager.group_name)
+			print("LevelManager.group_name: ", LevelManager.group_name)
 
