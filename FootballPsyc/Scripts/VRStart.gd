@@ -74,12 +74,15 @@ func _show_laser():
 		left_laser.show_laser = 1
 		right_laser.show_laser = 1
 		left_laser.show_target = true
+		left_laser.target_radius = 0.1
 		right_laser.show_target = true
+		right_laser.target_radius = 0.1
 	else:
 		left_laser.show_laser = 2
 		right_laser.show_laser = 2
 		left_laser.show_target = true
+		left_laser.target_radius = 0.01
 		right_laser.show_target = true
-		
+		right_laser.target_radius = 0.01
 
 
