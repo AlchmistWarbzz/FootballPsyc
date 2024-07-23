@@ -73,7 +73,6 @@ func _ready():
 	LevelManager.left_trigger.connect(_left_trigger)
 	LevelManager.right_trigger.connect(_right_trigger)
 	reset_counters()
-	
 	scene_reset() # ensure scene and scene_state are in agreement
 
 
@@ -138,7 +137,7 @@ func _process(_delta: float) -> void:
 			
 			elif (left_trigger_pressed == true or Input.is_action_just_pressed("kick_left")) and not has_responded:# INPUT
 				has_responded = true
-				left_trigger_pressed = false
+				#left_trigger_pressed = false
 				LevelManager.in_task = false
 				if is_feeder_left:
 					ball_kicked.emit($PlaceholderFixation.global_position, ball_kick_magnitude)
@@ -152,7 +151,7 @@ func _process(_delta: float) -> void:
 			
 			elif (right_trigger_pressed == true or Input.is_action_just_pressed("kick_right")) and not has_responded:# INPUT
 				has_responded = true
-				right_trigger_pressed = false
+				#right_trigger_pressed = false
 				LevelManager.in_task = false
 				if not is_feeder_left: # is feeder right
 					ball_kicked.emit($PlaceholderFixation.global_position, ball_kick_magnitude)
@@ -192,9 +191,10 @@ func _process(_delta: float) -> void:
 			if ((left_trigger_pressed == true or Input.is_action_just_pressed("kick_left")) or
 			(right_trigger_pressed == true or Input.is_action_just_pressed("kick_right"))) and not has_responded:# INPUT
 				has_responded = true
+				LevelManager.in_task = false
 				is_trial_passed = false
-				left_trigger_pressed == false
-				right_trigger_pressed = false
+				#left_trigger_pressed == false
+				#right_trigger_pressed = false
 				#ball_kicked.emit($PlaceholderFixation.global_position, ball_kick_magnitude)
 				stop_trial_failed.emit()
 				print("stop_trial_failed")
@@ -206,20 +206,24 @@ func _process(_delta: float) -> void:
 
 
 func _left_trigger():
-	left_trigger_pressed = true 
+	if current_state == scene_state.GO_TRIAL or current_state == scene_state.STOP_TRIAL:
+		left_trigger_pressed = true 
 	print("PRESSED LEFT TRIGGER")
+	
 
 
 func _right_trigger():
-	right_trigger_pressed = true
+	if current_state == scene_state.GO_TRIAL or current_state == scene_state.STOP_TRIAL:
+		right_trigger_pressed = true
 	print("PRESSED RIGHT TRIGGER")
+
 
 
 func scene_reset():
 	print("scene_reset")
-	right_trigger_pressed = false
-	left_trigger_pressed = false
-	LevelManager.in_task = false
+	#right_trigger_pressed = false
+	#left_trigger_pressed = false
+	#LevelManager.in_task = false
 	##AudioManager.footsteps_sfx.stop()
 	AudioManager.trial_ended.emit()
 	
@@ -282,6 +286,9 @@ func scene_trial_start(is_stop_trial: bool):
 	
 	# set up flags
 	has_responded = false
+	LevelManager.in_task = true
+	right_trigger_pressed = false
+	left_trigger_pressed = false
 	is_trial_passed = is_stop_trial
 	stop_signal_shown = false
 	if is_stop_trial:
@@ -298,12 +305,12 @@ func scene_trial_start(is_stop_trial: bool):
 	if randf() > 0.5:
 		is_feeder_left = true
 		AudioManager.ball_feeder_launch.emit()
-		LevelManager.in_task = true
+		#LevelManager.in_task = true
 		#$PlaceholderBallFeederRight/BallFeeder.process_mode = Node.PROCESS_MODE_DISABLED
 	else:
 		is_feeder_left = false
 		AudioManager.ball_feeder_launch.emit()
-		LevelManager.in_task = true
+		#LevelManager.in_task = true
 		#$PlaceholderBallFeederLeft/BallFeeder.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	# spawn teammate
