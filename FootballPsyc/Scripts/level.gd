@@ -16,7 +16,7 @@ func _ready() -> void:
 	
 	LevelManager.play_button_pressed.connect(_on_play_button_pressed)
 	
-	LevelManager.leave_trial.connect(_leave_trial)
+	LevelManager.return_button_pressed.connect(_leave_trial)
 	
 	AudioManager.football_kick.connect(_on_football_kick)
 
@@ -36,4 +36,7 @@ func _on_football_kick() -> void:
 	football_kick_sfx.play()
 
 func _leave_trial():
-	instance.queue_free()
+	if instance == null:
+		pass
+	else:
+		instance.queue_free()

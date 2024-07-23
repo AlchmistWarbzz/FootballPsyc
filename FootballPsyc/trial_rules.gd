@@ -72,6 +72,5 @@ func _on_visibility_changed() -> void:
 
 func _on_button_pressed():
 	LevelManager.return_button_pressed.emit()
-	LevelManager.leave_trial.emit()
 	LevelManager.bds_task = false
 	LevelManager.show_laser.emit()
