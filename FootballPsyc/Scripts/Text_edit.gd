@@ -3,6 +3,7 @@ extends LineEdit
 enum LineType {SUBJECT, GROUP}
 @export var line_type : LineType
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -20,12 +21,17 @@ func _process(delta):
 	#print("LevelManager.trial_length:", LevelManager.trial_length)
 
 
-
-
 func _on_text_changed(text):
 	print("Submitted text:", text)
 	#var trial_length_int = int(text)
 	#print("Parsed integer:", trial_length_int)
 	#LevelManager.trial_length = text
-	LevelManager.subject_name = text
-	print("LevelManager.subject_name:", LevelManager.subject_name)
+	match line_type:
+		LineType.SUBJECT:
+			LevelManager.subject_name = text
+			print("LevelManager.subject_name:", LevelManager.subject_name)
+		
+		LineType.GROUP:
+			LevelManager.group_name = text
+			print("LevelManager.group_name:", LevelManager.group_name)
+
