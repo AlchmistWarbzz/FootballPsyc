@@ -49,9 +49,6 @@ signal ball_kicked
 # flags
 var is_trial_passed: bool = false
 
-
-
-
 # spans
 @onready var targets = [$"0/MeshInstance3D", $"1/MeshInstance3D"
 		, $"2/MeshInstance3D", $"3/MeshInstance3D"
@@ -65,6 +62,7 @@ var is_trial_passed: bool = false
 # span pointers
 var current_target_show_index: int = -1
 #var next_target_show_index: int = current_target_show_index + 1
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -229,16 +227,13 @@ func _current_target(target):
 			scene_reset()
 		elif player_input_span.size() >= random_span.size():
 			print("trial failed")
-			LevelManager.in_task = false
 			#print("HELPPPPP")
 			append_new_metrics_entry(required_input_span, player_input_span)
 			scene_reset()
 
 
-
 func scene_reset():
 	print("scene_reset")
-	#LevelManager.in_task = false
 	# reset span stuff
 	current_target_show_index = -1
 	player_input_span = Array()
@@ -261,6 +256,7 @@ func scene_reset():
 	current_state = scene_state.WAIT
 	ticks_msec_bookmark = Time.get_ticks_msec()
 
+
 func scene_ready():
 	#print("scene_ready")
 	
@@ -269,22 +265,22 @@ func scene_ready():
 	current_state = scene_state.READY
 	ticks_msec_bookmark = Time.get_ticks_msec()
 
+
 func scene_show_target():
 	#random_span[next_target_to_show_index].set_surface_override_material(0, M_TEMP_GOAL)
 	random_span[current_target_show_index].set_surface_override_material(0, M_TEMP_GOAL)
 	print("scene_show_target " + str(random_span_numbers[current_target_show_index]))
-	LevelManager.in_task = false
 	current_state = scene_state.SHOW_TARGET
 	ticks_msec_bookmark = Time.get_ticks_msec()
+
 
 func scene_hide_target():
 	random_span[current_target_show_index].set_surface_override_material(0, null)
 
+
 func scene_trial_start():
 	# update trial counters
 	trial_counter += 1
-	LevelManager.in_task = true
-	print("scene_trial_start " + str(trial_counter))
 	
 	# remove fixation cone
 	if $PlaceholderFixation.get_child_count() != 0:
@@ -294,11 +290,14 @@ func scene_trial_start():
 	is_trial_passed = false
 	
 	current_state = scene_state.TRIAL
+	
 	ticks_msec_bookmark = Time.get_ticks_msec()
+	
+	print("scene_trial_start " + str(trial_counter))
+
 
 func reset_counters():
 	print("start TARGET DIGIT TEST block " + str(blocks_index + 1) + ". is_practice_block: " + str(blocks[blocks_index] == block_type.PRACTICE))
-	LevelManager.in_task = false
 	if blocks[blocks_index] == block_type.PRACTICE:
 		trials_per_block = trials_per_practice_block
 	else:
@@ -308,9 +307,11 @@ func reset_counters():
 	trials_passed = 0
 	span_length = 3
 
+
 func append_new_metrics_entry(required_input_array: Array, player_input_array: Array):
 	metrics_array.append([block_counter, trial_counter, span_length, is_trial_passed, required_input_array, player_input_array])
 	LevelManager.trial_ended.emit(is_trial_passed)# feedback UI
+
 
 func write_sst_raw_log(datetime_dict):
 	# open/create file
@@ -352,6 +353,7 @@ func write_sst_raw_log(datetime_dict):
 			raw_log_file.store_string("\n")
 		
 		raw_log_file.close()
+
 
 func write_sst_summary_log(datetime_dict):
 	# open/create file
@@ -410,6 +412,4 @@ func write_sst_summary_log(datetime_dict):
 		#summary_log_file.store_line("mean reaction time (in ms) in Non Shift trials that were passed: " + str(nsr_rt))
 		
 		summary_log_file.close()
-
-
 

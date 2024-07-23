@@ -56,6 +56,7 @@ var has_responded: bool = false
 var left_trigger_pressed:bool = false
 var right_trigger_pressed:bool = false
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#AudioManager.ambience_sfx.play()
@@ -181,12 +182,13 @@ func _process(_delta: float) -> void:
 
 				append_new_metrics_entry(Time.get_ticks_msec() - ticks_msec_bookmark)
 
+
 func _left_trigger():
 	if current_state == scene_state.TRIAL:
 		left_trigger_pressed = true 
 	print("PRESSED LEFT TRIGGER")
 
-	
+
 func _right_trigger():
 	if current_state == scene_state.TRIAL:
 		right_trigger_pressed = true
@@ -201,6 +203,7 @@ func scene_reset():
 	current_state = scene_state.WAIT
 	ticks_msec_bookmark = Time.get_ticks_msec()
 
+
 func scene_ready():
 	print("scene_ready")
 	# spawn fixation cone
@@ -210,6 +213,7 @@ func scene_ready():
 	current_state = scene_state.READY
 	ticks_msec_bookmark = Time.get_ticks_msec()
 
+
 func scene_trial_start():
 	# update trial counters
 	trial_counter += 1
@@ -217,8 +221,6 @@ func scene_trial_start():
 		shift_trial_counter += 1
 	else:
 		non_shift_trial_counter += 1
-		
-	print("scene_trial_start " + str(trial_counter) + ", is_shift_trial: " + str(is_shift_trial))
 	
 	# remove fixation cone
 	if $PlaceholderFixation.get_child_count() != 0:
@@ -245,7 +247,11 @@ func scene_trial_start():
 		AudioManager.ball_feeder_launch.emit()
 	
 	current_state = scene_state.TRIAL
+	
 	ticks_msec_bookmark = Time.get_ticks_msec()
+	
+	print("scene_trial_start " + str(trial_counter) + ", is_shift_trial: " + str(is_shift_trial) + ", is_stimulus_left: " + str(is_feeder_left))
+
 
 func reset_counters():
 	print("start COLOUR BALL TEST block " + str(blocks_index + 1) + ". is_practice_block: " + str(blocks[blocks_index] == block_type.PRACTICE))
@@ -263,6 +269,7 @@ func reset_counters():
 	non_shift_trial_counter = 0
 	non_shift_trials_passed = 0
 
+
 func check_correct_kick(is_kick_left: bool) -> bool:
 	if is_kick_left:
 		if is_feeder_left:
@@ -275,9 +282,11 @@ func check_correct_kick(is_kick_left: bool) -> bool:
 		else:
 			return not is_blue_ball
 
+
 func append_new_metrics_entry(response_time: int):
 	metrics_array.append([block_counter, trial_counter, is_feeder_left, is_blue_ball, is_shift_trial, is_trial_passed, response_time])
 	LevelManager.trial_ended.emit(is_trial_passed)# feedback UI
+
 
 func write_sst_raw_log(datetime_dict):
 	# open/create file
@@ -309,6 +318,7 @@ func write_sst_raw_log(datetime_dict):
 			raw_log_file.store_line(line.format(sub_array))
 		
 		raw_log_file.close()
+
 
 func write_sst_summary_log(datetime_dict):
 	# open/create file
@@ -370,6 +380,4 @@ func write_sst_summary_log(datetime_dict):
 		summary_log_file.store_line("mean reaction time (in ms) in Non Shift trials that were passed: " + str(nsr_rt))
 		
 		summary_log_file.close()
-
-
 
