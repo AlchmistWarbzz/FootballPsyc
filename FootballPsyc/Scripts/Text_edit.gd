@@ -1,5 +1,8 @@
 extends LineEdit
 
+enum LineType {SUBJECT, GROUP}
+@export var line_type : LineType
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
