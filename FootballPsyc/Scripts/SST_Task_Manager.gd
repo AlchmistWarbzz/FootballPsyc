@@ -107,7 +107,8 @@ func _process(_delta: float) -> void:
 						scene_reset()
 					else:
 						print("all blocks finished. returning to main menu.")
-						get_tree().change_scene_to_file("res://Main.tscn")
+						LevelManager.leave_trial.emit()
+						#get_tree().change_scene_to_file("res://Main.tscn")
 				else:
 					scene_ready()
 		
@@ -191,7 +192,7 @@ func _process(_delta: float) -> void:
 			if ((left_trigger_pressed == true or Input.is_action_just_pressed("kick_left")) or
 			(right_trigger_pressed == true or Input.is_action_just_pressed("kick_right"))) and not has_responded:# INPUT
 				has_responded = true
-				LevelManager.in_task = false
+
 				is_trial_passed = false
 				#left_trigger_pressed == false
 				#right_trigger_pressed = false
@@ -221,9 +222,6 @@ func _right_trigger():
 
 func scene_reset():
 	print("scene_reset")
-	#right_trigger_pressed = false
-	#left_trigger_pressed = false
-	#LevelManager.in_task = false
 	##AudioManager.footsteps_sfx.stop()
 	AudioManager.trial_ended.emit()
 	
@@ -286,7 +284,6 @@ func scene_trial_start(is_stop_trial: bool):
 	
 	# set up flags
 	has_responded = false
-	LevelManager.in_task = true
 	right_trigger_pressed = false
 	left_trigger_pressed = false
 	is_trial_passed = is_stop_trial

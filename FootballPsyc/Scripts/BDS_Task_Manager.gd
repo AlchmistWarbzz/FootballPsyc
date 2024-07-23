@@ -117,7 +117,8 @@ func _process(_delta: float) -> void:
 						scene_reset()
 					else:
 						print("all blocks finished. returning to main menu.")
-						get_tree().change_scene_to_file("res://Main.tscn")
+						LevelManager.leave_trial.emit()
+						#get_tree().change_scene_to_file("res://Main.tscn")
 				else:
 					scene_ready()
 		
@@ -199,57 +200,39 @@ func _process(_delta: float) -> void:
 					#append_new_metrics_entry(required_input_span, player_input_span)
 					#
 					#scene_reset()
-#
-#func _current_target(target):
-	#print("VR Target Hit ", target)
-	#target 
-	#player_input_span.append(target)
-	## destroy previous ball if found
-	#var old_ball = $Player/PlaceholderBall.get_child(0)
-	#if old_ball != null:
-		#old_ball.queue_free()
-					## create new ball
-	#var instance
-	#instance = BLUE_BALL.instantiate()
-	#$Player/PlaceholderBall.add_child(instance)
-	#ball_kicked.emit(target.get_global_position() + (Vector3.UP * ball_kick_height_offset)
-	#, ball_kick_magnitude)
-	
 
 
-
-# New code refactored
 # Define the new _current_target function to handle the target hit logic
 func _current_target(target):
-	#print("VR Target Hit ", target)
-	player_input_span.append(target.name)
+	if current_state == scene_state.TRIAL:
+		#print("VR Target Hit ", target)
+		player_input_span.append(target.name)
 	
-	# Destroy previous ball if found
-	var old_ball = $Player/PlaceholderBall.get_child(0)
-	if old_ball != null:
-		old_ball.queue_free()
+		# Destroy previous ball if found
+		var old_ball = $Player/PlaceholderBall.get_child(0)
+		if old_ball != null:
+			old_ball.queue_free()
 
-	# Create new ball
-	var instance = BLUE_BALL.instantiate()
-	$Player/PlaceholderBall.add_child(instance)
-	ball_kicked.emit(target.get_global_position() + (Vector3.UP * ball_kick_height_offset), ball_kick_magnitude)
-	#print("HIT ", target.name)
-	if player_input_span == required_input_span:
-		# Trial passed
-		print("trial passed")
-		is_trial_passed = true
-		LevelManager.in_task = false
-		trials_passed += 1
-		append_new_metrics_entry(required_input_span, player_input_span)
-		span_length += 1
-		print("span length increased to " + str(span_length))
-		scene_reset()
-	elif player_input_span.size() >= random_span.size():
-		print("trial failed")
-		LevelManager.in_task = false
-		#print("HELPPPPP")
-		append_new_metrics_entry(required_input_span, player_input_span)
-		scene_reset()
+		# Create new ball
+		var instance = BLUE_BALL.instantiate()
+		$Player/PlaceholderBall.add_child(instance)
+		ball_kicked.emit(target.get_global_position() + (Vector3.UP * ball_kick_height_offset), ball_kick_magnitude)
+		#print("HIT ", target.name)
+		if player_input_span == required_input_span:
+			# Trial passed
+			print("trial passed")
+			is_trial_passed = true
+			trials_passed += 1
+			append_new_metrics_entry(required_input_span, player_input_span)
+			span_length += 1
+			print("span length increased to " + str(span_length))
+			scene_reset()
+		elif player_input_span.size() >= random_span.size():
+			print("trial failed")
+			LevelManager.in_task = false
+			#print("HELPPPPP")
+			append_new_metrics_entry(required_input_span, player_input_span)
+			scene_reset()
 
 
 
