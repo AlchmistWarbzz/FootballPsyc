@@ -32,8 +32,8 @@ func _ready():
 
 
 func _on_right_hand_input_float_changed(name, value):
-	if LevelManager.in_task == true:
-		if value > 0.5 and not left_trigger_pressed:
+	#if LevelManager.in_task == true:
+		if value == 1 and not left_trigger_pressed:
 			#print("PRESSED RIGHT TRIGGER")
 			right_trigger_pressed = true
 			#print("Right is", name)
@@ -52,9 +52,9 @@ func _on_right_hand_input_float_changed(name, value):
 
 func _on_left_hand_input_float_changed(name, value):
 	#rint("This is the float", value)
-	if LevelManager.in_task == true:
+	#if LevelManager.in_task == true:
 		# Check if the value equals 1 and the trigger has not been pressed yet
-		if value > 0.5 and not right_trigger_pressed:
+		if value == 1 and not right_trigger_pressed: # Keep == 1 to work for BDS
 			#print("LEFT TRIGGER")
 			left_trigger_pressed = true
 			LevelManager.left_trigger.emit()
