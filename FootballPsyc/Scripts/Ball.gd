@@ -1,5 +1,6 @@
 extends RigidBody3D
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var task_manager_node
@@ -23,6 +24,7 @@ func _ready():
 func _process(_delta):
 	pass
 
+
 func _on_collision(body: Node):
 	if body.name == "Teammate":
 		set_linear_velocity(Vector3.ZERO)
@@ -43,3 +45,5 @@ func kick(target: Vector3, impulse_magnitude: float) -> void:
 	
 	#AudioManager.football_kick_sfx.set_pitch_scale(1.0 + (randf() / 20.0))
 	#AudioManager.football_kick_sfx.play()
+	AudioManager.football_kick.emit()
+
