@@ -18,4 +18,4 @@ update_mode = 2
 material = SubResource("StandardMaterial3D_q044d")
 
 [node name="VirtualKeyboard" parent="." instance=ExtResource("4_0kujw")]
-transform = Transform3D(0.539, 0, 0, 0, 0.381131, 0.381131, 0, -0.381131, 0.381131, -0.0283302, 0.406991, 1.47084)
+transform = Transform3D(0.539, 0, 0, 0, 0.381131, 0.381131, 0, -0.381131, 0.381131, -0.0283302, 0.559573, 1.88333)
