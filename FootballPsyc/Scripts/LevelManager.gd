@@ -14,6 +14,7 @@ var in_task: bool = false
 var bds_task: bool = false
 
 var subject_name : String = "Subject"
+var group_name : String = "1"
 
 const SST_TASK_MANAGER = preload("res://SubScenes/SST_Task_Manager.tscn")
 const SHIFTING_TASK_MANAGER = preload("res://SubScenes/Shifting_Task_Manager.tscn")
