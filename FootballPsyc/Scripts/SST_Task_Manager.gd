@@ -357,7 +357,7 @@ func write_sst_raw_log(datetime_dict):
 	if blocks[blocks_index] == block_type.PRACTICE:
 		practice_str = "practice_"
 	
-	var raw_log_file_path: String = LevelManager.subject_name + "_stop_signal_" + practice_str + "{year}-{month}-{day}-{hour}-{minute}-{second}_raw.txt".format(datetime_dict) # TODO let user choose dir
+	var raw_log_file_path: String = LevelManager.group_name + "_" + LevelManager.subject_name + "_stop_signal_" + practice_str + "{year}-{month}-{day}-{hour}-{minute}-{second}_raw.txt".format(datetime_dict) # TODO let user choose dir
 	var raw_log_file = FileAccess.open(raw_log_file_path, FileAccess.WRITE)
 	print("raw log file created at " + raw_log_file_path + " with error code " + str(FileAccess.get_open_error()))
 	
@@ -372,7 +372,7 @@ func write_sst_raw_log(datetime_dict):
 		raw_log_file.store_line("start date: {day}-{month}-{year}".format(start_datetime))
 		raw_log_file.store_line("start time: {hour}:{minute}:{second}".format(start_datetime))
 		raw_log_file.store_line("subject: " + LevelManager.subject_name)
-		raw_log_file.store_line("group: test")# TODO fill user-input subject and group
+		raw_log_file.store_line("group: " + LevelManager.group_name)
 		raw_log_file.store_string("\n-Format Guide-\n\nblock_counter, trial_counter, stimulus_left (ball feeder side), stop_trial, correct_response, response_time (ms), stop_signal_delay (ms)")
 		raw_log_file.store_string("\n\n-Raw Data-\n\n")
 		
@@ -389,7 +389,7 @@ func write_sst_summary_log(datetime_dict):
 	if blocks[blocks_index] == block_type.PRACTICE:
 		practice_str = "practice_"
 	
-	var summary_log_file_path: String = LevelManager.subject_name + "_stop_signal_" + practice_str + "{year}-{month}-{day}-{hour}-{minute}-{second}_summary.txt".format(datetime_dict) # TODO let user choose dir
+	var summary_log_file_path: String = LevelManager.group_name + "_" + LevelManager.subject_name + "_stop_signal_" + practice_str + "{year}-{month}-{day}-{hour}-{minute}-{second}_summary.txt".format(datetime_dict) # TODO let user choose dir
 	var summary_log_file = FileAccess.open(summary_log_file_path, FileAccess.WRITE)
 	print("summary log file created at " + summary_log_file_path + " with error code " + str(FileAccess.get_open_error()))
 	
@@ -401,7 +401,7 @@ func write_sst_summary_log(datetime_dict):
 		summary_log_file.store_line("start date: {day}-{month}-{year}".format(start_datetime))
 		summary_log_file.store_line("start time: {hour}:{minute}:{second}".format(start_datetime))
 		summary_log_file.store_line("subject: " + LevelManager.subject_name)
-		summary_log_file.store_line("group: test")# TODO fill user-input subject and group
+		summary_log_file.store_line("group: " + LevelManager.group_name)
 		summary_log_file.store_string("\n-Final States of Counters-\n\n")
 		
 		# write counters

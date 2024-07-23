@@ -30,7 +30,8 @@ func _process(_delta):
 
 func deactivate() -> void:
 	#hide()
-	$LineEdit.queue_free()
+	$LineEditSubject.queue_free()
+	$LineEditGroup.queue_free()
 	$PlayButton.queue_free()
 	#set_process_unhandled_input(false)
 	#set_process_input(false)

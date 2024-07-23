@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://dfi240ptdepwf"]
 
 [ext_resource type="Script" path="res://trial_rules.gd" id="1_0iudw"]
-[ext_resource type="Texture2D" uid="uid://s25i3glvvy3o" path="res://UI/StopSignal.jpg" id="2_0bcgp"]
-[ext_resource type="Texture2D" uid="uid://beuuq7jnnu0fs" path="res://UI/ColourBall.jpg" id="3_i1dh3"]
+[ext_resource type="Texture2D" uid="uid://b56oty5lscqkg" path="res://UI/StopSignal.jpg" id="2_0bcgp"]
+[ext_resource type="Texture2D" uid="uid://c100obgm55qxt" path="res://UI/ColourBall.jpg" id="3_i1dh3"]
 [ext_resource type="Script" path="res://Scripts/Text_edit.gd" id="4_gqbb3"]
-[ext_resource type="Texture2D" uid="uid://dcf0jcgkw8s5v" path="res://UI/BackwardsDigitTest.jpg" id="4_tjqt8"]
-[ext_resource type="Texture2D" uid="uid://cm61s3nbbbgep" path="res://UI/8CEDC372-E332-4EFD-A5E7-4144967F7770.jpg" id="6_c0v0m"]
+[ext_resource type="Texture2D" uid="uid://baosxlks8xtd1" path="res://UI/BackwardsDigitTest.jpg" id="4_tjqt8"]
+[ext_resource type="Texture2D" uid="uid://str53k4duouc" path="res://UI/8CEDC372-E332-4EFD-A5E7-4144967F7770.jpg" id="6_c0v0m"]
 
 [node name="TrialRules" type="Control"]
 layout_mode = 3
@@ -60,7 +60,7 @@ grow_vertical = 2
 texture = ExtResource("4_tjqt8")
 expand_mode = 3
 
-[node name="LineEdit" type="LineEdit" parent="."]
+[node name="LineEditSubject" type="LineEdit" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -79,6 +79,26 @@ alignment = 1
 expand_to_text_length = true
 script = ExtResource("4_gqbb3")
 
+[node name="LineEditGroup" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -251.0
+offset_top = -219.0
+offset_right = 252.0
+offset_bottom = -148.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+placeholder_text = "Type Group Name"
+alignment = 1
+expand_to_text_length = true
+script = ExtResource("4_gqbb3")
+line_type = 1
+
 [node name="PlayButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -87,9 +107,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -64.0
-offset_top = -246.0
+offset_top = -98.0
 offset_right = 66.0
-offset_bottom = -174.0
+offset_bottom = -26.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
@@ -108,7 +128,9 @@ grow_vertical = 0
 icon = ExtResource("6_c0v0m")
 expand_icon = true
 
-[connection signal="text_changed" from="LineEdit" to="LineEdit" method="_on_text_changed"]
-[connection signal="text_submitted" from="LineEdit" to="LineEdit" method="_on_text_submitted"]
+[connection signal="text_changed" from="LineEditSubject" to="LineEditSubject" method="_on_text_changed"]
+[connection signal="text_submitted" from="LineEditSubject" to="LineEditSubject" method="_on_text_submitted"]
+[connection signal="text_changed" from="LineEditGroup" to="LineEditGroup" method="_on_text_changed"]
+[connection signal="text_submitted" from="LineEditGroup" to="LineEditGroup" method="_on_text_submitted"]
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="LeaveTestButton" to="." method="_on_button_pressed"]

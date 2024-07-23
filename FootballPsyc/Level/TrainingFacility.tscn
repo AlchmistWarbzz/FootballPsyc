@@ -284,7 +284,7 @@ transform = Transform3D(1.16386, 0, 0, 0, 1, 0, 0, 0, 1.07887, 0, 0.693372, -35.
 multimesh = SubResource("MultiMesh_g243a")
 
 [node name="WhiteBoardCube001" type="MeshInstance3D" parent="Node3D2"]
-transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -0.754989, 1.06199, 3.54987)
+transform = Transform3D(0.971059, 0, -0.238839, 0, 1, 0, 0.238839, 0, 0.971059, -0.855681, 1.06199, 3.54987)
 mesh = ExtResource("15_1pq5m")
 
 [node name="FloatingMenu" parent="Node3D2/WhiteBoardCube001" instance=ExtResource("29_kdwo1")]
@@ -573,7 +573,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 0)
 mesh = ExtResource("3_earvg")
 
 [node name="FeedbackUI" parent="." instance=ExtResource("23_igne0")]
-transform = Transform3D(8.00364e-09, -0.087385, 0.0441112, -6.3334e-10, 0.0504518, 0.076403, -0.104099, -7.02554e-09, 2.92666e-09, -4.4665, 0.398298, 0.853666)
+transform = Transform3D(-0.0761257, 0, 0.0601744, 0, 0.100904, 0, -0.0710033, 0, -0.0645156, -2.93608, 2.09158, 2.8343)
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0264266, 0.72512, -34.9257)
